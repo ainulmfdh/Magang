@@ -1,625 +1,301 @@
+<?php
+// application/views/dokter_berita_view.php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokter & Berita</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Klinik Mata Dr. Sjamsu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <style>
-        /* .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        } */
-        .carousel-item img {
-            border-radius: 10px;
-            object-fit: cover;
+        body {
+            background-color: #f5f7f8;
         }
-        .carousel-inner {
+        .section-title {
             text-align: center;
+            margin: 30px 0;
+            color: #555;
+            font-weight: 600;
         }
-        .card-row{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .btn-jadwal{
-            margin-top: 20px;
-            gap: 5px;
-            padding: 10px 15px;
-            font-weight: 500;
-            color: white;
-            background: rgba(0, 170, 181, 1);
-            border: none;
+        .doctor-card {
+            background-color: #a9e7e7;
             border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            display: flex;
-            justify-content: flex-end;
+            overflow: hidden;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+			/* height: 400px; */
         }
-        .btn-jadwal i{
-            margin-right: 5px;
-        }
-        .btn-custom {
-            background-color: #17a2b8;
-            color: white;
-            border-radius: 20px;
-            padding: 10px 20px;
-        }
-        .btn-custom:hover {
-            background-color: #138496;
-        }
-        .card-dokter{
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            padding: 20px 30px;
-            border-radius: 10px;
-            width: 350px;
-            height: 600px;
-            margin: 0 10px;
-        }
-        .card-dokter > .desc-dokter{
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            text-align: left;
-        }
-        .card-dokter > button{
-            align-self: center;
-        }
-        .card-dokter > img {
-            border-radius: 20px;
-            height: 400px !important;
+        .doctor-card img {
             width: 100%;
-            object-fit: cover;
-            display: block;
+            height: 400px;
         }
-        .custom-carousel-nav {
+        .doctor-info {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+        .doctor-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .doctor-specialty {
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .news-card {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        .news-card img {
+            width: 100%;
+            height: auto;
+        }
+        .news-info {
+            padding: 15px;
+			display: flex;
+			flex-direction: column;
+        }
+        .news-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(0, 170, 181, 1);
+            margin-bottom: 10px;
+        }
+        .news-summary {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn-detail {
+            background-color: rgba(0, 170, 181, 1);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            padding: 5px 15px;
+			align-self: flex-end;
+        }
+        
+        /* Custom Carousel Styling */
+        .doctor-carousel-container {
+            position: relative;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
             width: 40px;
             height: 40px;
             background-color: rgba(0, 170, 181, 1);
             border-radius: 50%;
-            border: none;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
         }
         
-        .custom-carousel-prev {
-            left: 10px;
+        .carousel-control-prev {
+            left: 0;
         }
         
-        .custom-carousel-next {
-            right: 10px;
+        .carousel-control-next {
+            right: 0;
         }
         
-        .custom-carousel-nav i {
-            font-size: 18px;
-        }
-        .carousel {
-            padding-bottom: 50px;
-            position: relative;
-            overflow: hidden;
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
         }
         
         .carousel-indicators {
-            position: absolute !important;
-            bottom: 0 !important;
-            margin-bottom: 0 !important;
-            z-index: 5;
+            position: static;
+            margin-top: 20px;
+            margin-bottom: 0;
         }
         
         .carousel-indicators button {
-            width: 10px !important;
-            height: 10px !important;
-            border-radius: 50% !important;
-            background-color: #ccc !important;
-            margin: 0px 5px !important;
-        }
-        
-        .carousel-indicators .active {
-            background-color: rgba(0, 170, 181, 1) !important;
-        }
-        .card-berita{
-            backdrop-filter: blur(25px);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin: 20px;
-            align-items: start;
-            padding: 20px 30px;
-            border-radius: 10px;
-            text-align: left;
-        }
-        .card-berita > button{
-            background-color: white;
-            align-self: center;
-            border: 1px solid rgba(0, 170, 181, 1);
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            color: rgba(0, 170, 181, 1);
-        }
-        .card-berita > img{
-            border-radius: 20px;
-            height: 333px !important;
-            width: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        #dokter{
-            margin-top: 120px;
-        }
-        .container-berita{
-            margin-top: 80px;
-        }
-        #text-berita{
-            color: rgba(0, 170, 181, 1);
-        }
-        #text-dokter{
-            color: rgba(0, 170, 181, 1);
-        }
-        /* Make sure cards stay side by side */
-        .cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: nowrap;
-            width: 100%;
-        }
-        
-        /* For doctor carousel specific */
-        #doctorCarousel .carousel-item.active {
-            display: flex;
-            justify-content: center;
-        }
-        
-        @media (max-width: 1200px) {
-            .card-dokter {
-                width: 300px;
-                padding: 15px 20px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .card-dokter {
-                width: 280px;
-            }
-        }
-		#owl-demo{
-			display: flex;
-			overflow-x: scroll;
-			scrollbar-width: none; /* Firefox */
-			-ms-overflow-style: none; /* IE & Edge */
-            position: relative;
-            padding: 0 40px;
-		}
-		#owl-demo::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-		#owl-demo .item{
-		    padding: 30px 0px;
-		    margin: 10px;
-		    -webkit-border-radius: 3px;
-		    -moz-border-radius: 3px;
-		    border-radius: 3px;
-		    text-align: center;
-		}
-        .owl-controls {
-            position: relative;
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .owl-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-        }
-        #prevDoctor {
-            left: 0;
-        }
-        #nextDoctor {
-            right: 0;
-        }
-        .owl-container {
-            position: relative;
-            width: 100%;
-            padding: 0 20px;
-            margin-top: 40px;
-        }
-        .owl-indicators {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            padding: 0;
-            list-style: none;
-        }
-        .owl-indicators li {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .owl-indicators li.active {
             background-color: rgba(0, 170, 181, 1);
+            margin: 0 5px;
         }
         
-        /* News Owl Carousel Styles */
-        #news-owl-demo {
-            display: flex;
-            overflow-x: scroll;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE & Edge */
-            position: relative;
-            padding: 0 40px;
-        }
-        #news-owl-demo::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        #news-owl-demo .item {
-            padding: 30px 0px;
-            margin: 10px;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
+        .read-more-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             text-align: center;
+            padding: 8px 20px;
+            border: 1px solid rgba(0, 170, 181, 1);
+            border-radius: 30px;
+            color: rgba(0, 170, 181, 1);
+            background-color: transparent;
+		    text-decoration: none;
+            transition: all 0.3s;
         }
-        #prevNews {
-            left: 0;
-        }
-        #nextNews {
-            right: 0;
-        }
-        .news-indicators li.active {
+        
+        .read-more-btn:hover {
             background-color: rgba(0, 170, 181, 1);
+            color: white;
         }
-		#news{
-			margin-top: 100px;
-		}
     </style>
 </head>
 <body>
-<div id="dokter" class="container text-center">	
-	<h2 class="fw-bold">Tim Dokter Kami</h2>
-    <div class="owl-container">
-        <div id="owl-demo" class="owl-carousel owl-theme">      
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+    <div class="container">
+        <!-- Dokter Section -->
+        <h2 class="section-title">Dokter</h2>
+        <div class="doctor-carousel-container">
+            <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators (Dots) -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 </div>
+
+                <!-- Carousel Content -->
+                <div class="carousel-inner">
+                    <!-- First Slide -->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="doctor-card">
+                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <div class="doctor-info">
+                                        <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
+                                        <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls (Side Arrows) -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div> 
         </div>
-        <!-- Owl carousel navigation buttons -->
-        <button id="prevDoctor" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="nextDoctor" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <!-- Owl carousel indicators -->
-        <ul class="owl-indicators">
-            <li class="active" data-index="0"></li>
-            <li data-index="1"></li>
-            <li data-index="2"></li>
-        </ul>
-    </div>
-</div>
-<div id="news" class="container text-center">
-    <h2 class="fw-bold">Berita Terbaru</h2>
-    <div class="owl-container">
-        <div id="news-owl-demo" class="owl-carousel owl-theme">      
-            <div class="item">
-                <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 1">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>12 Oktober 2021</span>
+
+        <!-- Berita Section -->
+        <h2 class="section-title">Berita</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="news-card">
+                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <div class="news-info">
+                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
+                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
+                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
                     </div>
-                    <h5 id="text-berita" class="mt-2">BAKTI SOSIAL OPERASI KATARAK</h5>
-                    <p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
                 </div>
             </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 2">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>12 Oktober 2021</span>
+            <div class="col-md-4 mb-4">
+                <div class="news-card">
+                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <div class="news-info">
+                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
+                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
+                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
                     </div>
-                    <h5 id="text-berita" class="mt-2">PELAYANAN KLINIK MATA</h5>
-                    <p>Program layanan kesehatan mata kini lebih mudah...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
                 </div>
             </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 3">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>20 Oktober 2021</span>
+            <div class="col-md-4 mb-4">
+                <div class="news-card">
+                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <div class="news-info">
+                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
+                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
+                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
                     </div>
-                    <h5 id="text-berita" class="mt-2">PEMERIKSAAN MATA GRATIS</h5>
-                    <p>Kami mengadakan pemeriksaan mata gratis untuk masyarakat...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 4">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>28 Oktober 2021</span>
-                    </div>
-                    <h5 id="text-berita" class="mt-2">SEMINAR KESEHATAN MATA</h5>
-                    <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
                 </div>
             </div>
         </div>
-        <!-- Owl carousel navigation buttons -->
-        <button id="prevNews" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="nextNews" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <!-- Owl carousel indicators -->
-        <ul class="owl-indicators news-indicators">
-            <li class="active" data-index="0"></li>
-            <li data-index="1"></li>
-        </ul>
+
+        <!-- Read More Button -->
+        <a href="#" class="read-more-btn">Read More</a>
     </div>
-</div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize both carousels with Bootstrap's carousel functionality
-        var doctorCarousel = new bootstrap.Carousel(document.getElementById('doctorCarousel'), {
-            interval: 5000,
-            wrap: true
-        });
-        
-        var beritaCarousel = new bootstrap.Carousel(document.getElementById('beritaCarousel'), {
-            interval: 4000,
-            wrap: true
-        });
-
-        // For owl carousel scroll functionality
-        const owlContainer = document.getElementById('owl-demo');
-        const prevButton = document.getElementById('prevDoctor');
-        const nextButton = document.getElementById('nextDoctor');
-        const cardWidth = document.querySelector('.card-dokter').offsetWidth + 20; // width + margin
-        const indicators = document.querySelectorAll('.owl-indicators li');
-        const visibleCards = Math.floor(owlContainer.offsetWidth / cardWidth);
-        const totalCards = document.querySelectorAll('#owl-demo .item').length;
-        const maxScrollGroups = Math.ceil(totalCards / visibleCards);
-        
-        let currentGroup = 0;
-        
-        // Update indicators when scrolling
-        function updateIndicators(groupIndex) {
-            indicators.forEach((indicator, index) => {
-                if(index === groupIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-        
-        // Scroll to specific position based on indicator
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                const scrollTo = index * visibleCards * cardWidth;
-                owlContainer.scrollTo({
-                    left: scrollTo,
-                    behavior: 'smooth'
-                });
-                currentGroup = index;
-                updateIndicators(currentGroup);
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            var doctorCarousel = new bootstrap.Carousel(document.getElementById('doctorCarousel'), {
+                interval: 5000,
+                wrap: true
             });
         });
-        
-        // Scroll functions for owl carousel
-        prevButton.addEventListener('click', function() {
-            if(currentGroup > 0) {
-                currentGroup--;
-                owlContainer.scrollTo({
-                    left: currentGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateIndicators(currentGroup);
-            }
-        });
-        
-        nextButton.addEventListener('click', function() {
-            if(currentGroup < maxScrollGroups - 1) {
-                currentGroup++;
-                owlContainer.scrollTo({
-                    left: currentGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateIndicators(currentGroup);
-            }
-        });
-        
-        // Monitor scroll position to update indicators
-        owlContainer.addEventListener('scroll', function() {
-            const scrollPosition = owlContainer.scrollLeft;
-            const groupIndex = Math.round(scrollPosition / (visibleCards * cardWidth));
-            if(groupIndex !== currentGroup) {
-                currentGroup = groupIndex;
-                updateIndicators(currentGroup);
-            }
-        });
-    });
-	document.addEventListener('DOMContentLoaded', function() {
-        // Initialize the functionality for news carousel
-        const newsContainer = document.getElementById('news-owl-demo');
-        const prevNewsButton = document.getElementById('prevNews');
-        const nextNewsButton = document.getElementById('nextNews');
-        const newsCard = document.querySelector('#news-owl-demo .card-berita');
-        const cardWidth = newsCard ? newsCard.offsetWidth + 40 : 400; // width + margins
-        const newsIndicators = document.querySelectorAll('.news-indicators li');
-        const visibleCards = Math.floor(newsContainer.offsetWidth / cardWidth);
-        const totalCards = document.querySelectorAll('#news-owl-demo .item').length;
-        const maxScrollGroups = Math.ceil(totalCards / visibleCards);
-        
-        let currentNewsGroup = 0;
-        
-        // Update indicators when scrolling
-        function updateNewsIndicators(groupIndex) {
-            newsIndicators.forEach((indicator, index) => {
-                if(index === groupIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-        
-        // Scroll to specific position based on indicator
-        newsIndicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                const scrollTo = index * visibleCards * cardWidth;
-                newsContainer.scrollTo({
-                    left: scrollTo,
-                    behavior: 'smooth'
-                });
-                currentNewsGroup = index;
-                updateNewsIndicators(currentNewsGroup);
-            });
-        });
-        
-        // Scroll functions for news owl carousel
-        prevNewsButton.addEventListener('click', function() {
-            if(currentNewsGroup > 0) {
-                currentNewsGroup--;
-                newsContainer.scrollTo({
-                    left: currentNewsGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
-        
-        nextNewsButton.addEventListener('click', function() {
-            if(currentNewsGroup < maxScrollGroups - 1) {
-                currentNewsGroup++;
-                newsContainer.scrollTo({
-                    left: currentNewsGroup * visibleCards * cardWidth,
-                    behavior: 'smooth'
-                });
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
-        
-        // Monitor scroll position to update indicators
-        newsContainer.addEventListener('scroll', function() {
-            const scrollPosition = newsContainer.scrollLeft;
-            const groupIndex = Math.round(scrollPosition / (visibleCards * cardWidth));
-            if(groupIndex !== currentNewsGroup) {
-                currentNewsGroup = groupIndex;
-                updateNewsIndicators(currentNewsGroup);
-            }
-        });
-    });
-</script>
+    </script>
 </body>
 </html>
