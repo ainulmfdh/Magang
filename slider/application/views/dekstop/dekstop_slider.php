@@ -267,7 +267,7 @@
         <section class="home-section home-parallax home-fade home-full-height" id="home">
             <div class="hero-slider">
                 <ul class="slides">
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/work-7.jpg);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/work-7.jpg);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
@@ -276,7 +276,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-1.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slide-1.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
@@ -285,7 +285,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-2.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slide-2.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
@@ -303,194 +303,6 @@
             <div class="container py-5">
                 <div class="section-title-container">
                     <h2 class="text-center text-secondary mt-5">Dokter</h2>
-                </div>
-                <div class="row">
-                    <!-- Service Card 1: Skrining & Check Up -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <h3 class="service-title">Skrining & Check Up</h3>
-                                <p class="service-description">Kami turut berkontribusi dalam pencegahan gangguan kesehatan mata.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 2: Medical Check Up -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-stethoscope"></i>
-                                </div>
-                                <h3 class="service-title">Medical Check Up</h3>
-                                <p class="service-description">Pemeriksaan kesehatan menyeluruh untuk mendeteksi masalah kesehatan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 3: Konsultasi Dokter -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
-                                <h3 class="service-title">Konsultasi Dokter</h3>
-                                <p class="service-description">Konsultasi langsung dengan dokter spesialis untuk penanganan optimal.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="row">
-                    <!-- Service Card 4: Perawatan Mata -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <h3 class="service-title">Perawatan Mata</h3>
-                                <p class="service-description">Perawatan khusus untuk menjaga kesehatan mata Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 5: Laboratorium -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-flask"></i>
-                                </div>
-                                <h3 class="service-title">Laboratorium</h3>
-                                <p class="service-description">Layanan pemeriksaan laboratorium dengan hasil yang akurat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 6: Farmasi -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-pills"></i>
-                                </div>
-                                <h3 class="service-title">Farmasi</h3>
-                                <p class="service-description">Layanan obat-obatan dan farmasi untuk kebutuhan pengobatan Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="custom-section section-1" id="section1">
-            <div class="container py-5">
-                <div class="section-title-container">
-                    <h2 class="text-center text-secondary mt-5">Berita</h2>
-                </div>
-                <div class="row">
-                    <!-- Service Card 1: Skrining & Check Up -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <h3 class="service-title">Skrining & Check Up</h3>
-                                <p class="service-description">Kami turut berkontribusi dalam pencegahan gangguan kesehatan mata.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 2: Medical Check Up -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-stethoscope"></i>
-                                </div>
-                                <h3 class="service-title">Medical Check Up</h3>
-                                <p class="service-description">Pemeriksaan kesehatan menyeluruh untuk mendeteksi masalah kesehatan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 3: Konsultasi Dokter -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
-                                <h3 class="service-title">Konsultasi Dokter</h3>
-                                <p class="service-description">Konsultasi langsung dengan dokter spesialis untuk penanganan optimal.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="row">
-                    <!-- Service Card 4: Perawatan Mata -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <h3 class="service-title">Perawatan Mata</h3>
-                                <p class="service-description">Perawatan khusus untuk menjaga kesehatan mata Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 5: Laboratorium -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-flask"></i>
-                                </div>
-                                <h3 class="service-title">Laboratorium</h3>
-                                <p class="service-description">Layanan pemeriksaan laboratorium dengan hasil yang akurat.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Service Card 6: Farmasi -->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="card-container">
-                            <div class="service-card">
-                                <div class="icon-container"></div>
-                                <div class="service-icon">
-                                    <i class="fas fa-pills"></i>
-                                </div>
-                                <h3 class="service-title">Farmasi</h3>
-                                <p class="service-description">Layanan obat-obatan dan farmasi untuk kebutuhan pengobatan Anda.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="custom-section section-1" id="section1">
-            <div class="container py-5">
-                <div class="section-title-container">
-                    <h2 class="text-center text-secondary mt-5">Layanan Kami</h2>
                 </div>
                 <div class="row">
                     <!-- Service Card 1: Skrining & Check Up -->
