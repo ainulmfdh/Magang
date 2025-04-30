@@ -12,9 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        body {
-            background-color: #f5f7f8;
-        }
         .section-title {
             text-align: center;
             margin: 30px 0;
@@ -41,8 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             right: 0;
             padding: 15px;
             text-align: center;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color: white;
+            background: rgba(255, 255, 255, 0.2); 
+  			backdrop-filter: blur(10px); 
         }
         .doctor-name {
             font-size: 18px;
@@ -53,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-size: 14px;
             font-weight: 300;
         }
+		/* berita Styling */
         .news-card {
             border-radius: 10px;
             overflow: hidden;
@@ -87,6 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-size: 12px;
             padding: 5px 15px;
 			align-self: flex-end;
+			text-decoration: none;
         }
         
         /* Custom Carousel Styling */
@@ -106,11 +105,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         
         .carousel-control-prev {
-            left: 0;
+            left: -50px;
         }
         
         .carousel-control-next {
-            right: 0;
+            right: -50px;
         }
         
         .carousel-control-prev-icon,
@@ -118,21 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             width: 20px;
             height: 20px;
         }
-        
-        .carousel-indicators {
-            position: static;
-            margin-top: 20px;
-            margin-bottom: 0;
-        }
-        
-        .carousel-indicators button {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(0, 170, 181, 1);
-            margin: 0 5px;
-        }
-        
+        /* berita Styling */
         .read-more-btn {
             display: block;
             width: 200px;
@@ -159,12 +144,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2 class="section-title">Dokter</h2>
         <div class="doctor-carousel-container">
             <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- Carousel Indicators (Dots) -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
-
                 <!-- Carousel Content -->
                 <div class="carousel-inner">
                     <!-- First Slide -->
@@ -181,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -214,7 +193,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -255,7 +234,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
-                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
+                        <a class="btn-detail">11 Apr 2025</a>
                     </div>
                 </div>
             </div>
@@ -265,7 +244,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
-                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
+                        <a class="btn-detail">11 Apr 2025</a>
                     </div>
                 </div>
             </div>
@@ -275,7 +254,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
-                        <a href="#" class="btn btn-detail">11 Apr 2025</a>
+                        <a class="btn-detail">11 Apr 2025</a>
                     </div>
                 </div>
             </div>
