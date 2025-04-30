@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cover Center</title>
+
+    <!-- Default stylesheets-->
+    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="assets/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="assets/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/dekstopslider.css" rel="stylesheet">
+    <link href="asset/css/forrm.css" rel="stylesheet">
+    <link id="color-scheme" href="assets/css/colors/default.css" rel="stylesheet">
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Hindari form langsung submit
+    
+            let form = event.target; // Ambil form yang sedang di-submit
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated'); // Tampilkan pesan error
+                return false;
+            }
+    
+            // Jika valid, tampilkan form tambahan berdasarkan form yang di-submit
+            if (form.id === "bpjsForm") {
+                document.getElementById('extraForm').classList.remove('d-none');
+            } else if (form.id === "privatForm") {
+                document.getElementById('extraFormPrivat').classList.remove('d-none');
+            }
+            return true;
+        }
+    
+        function showPrivatForm() {
+            document.getElementById('bpjsForm').classList.add('d-none');
+            document.getElementById('privatForm').classList.remove('d-none');
+            document.getElementById('privat').classList.add('active');
+            document.getElementById('bpjs').classList.remove('active');
+        }
+    
+        function showBPJSForm() {
+            document.getElementById('privatForm').classList.add('d-none');
+            document.getElementById('bpjsForm').classList.remove('d-none');
+            document.getElementById('bpjs').classList.add('active');
+            document.getElementById('privat').classList.remove('active');
+        }
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+        <div class="page-loader">
+            <div class="loader">Loading...</div>
+        </div>
+        <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="https://klinikmatadrsjamsu.com/assets/themes/front/img/logo.png" alt="Logo">
+                    </a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#">Pelayanan</a></li>
+                        <li><a href="#">Dokter</a></li>
+                        <li><a href="#">Jadwal</a></li>
+                        <li><a href="#">Berita</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="home-section home-parallax home-fade home-full-height" id="home">
+            <div class="hero-slider">
+                <ul class="slides">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/work-7.jpg);">
+                        <div class="titan-caption">
+                            <div class="caption-content">
+                                <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
+                                <div class="font-alt mb-40 titan-title-size-4">We are Titan</div><a
+                                    class="section-scroll btn btn-border-w btn-round" href="#about">Booking</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-1.png);">
+                        <div class="titan-caption">
+                            <div class="caption-content">
+                                <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
+                                    template for<br />web developers who change the world
+                                </div><a class="btn btn-border-w btn-round" href="about">Booking</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-2.png);">
+                        <div class="titan-caption">
+                            <div class="caption-content">
+                                <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
+                                <div class="font-alt mb-40 titan-title-size-3">We are Amazing</div><a
+                                    class="section-scroll btn btn-border-w btn-round" href="#about">Booking</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="custom-section section-1" id="section1">
+            <div class="container mt-4">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a id="privat" class="nav-link active text-white" onclick="showPrivatForm()">Privat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="bpjs" class="nav-link active text-white" onclick="showBPJSForm()">BPJS</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="container px-3">
+                <!-- Form BPJS -->
+                <div id="bpjsForm" class="card1 card-custom p-4">
+                    <h5 class="text-white">Pesan Jadwal Pemeriksaan - BPJS</h5>
+                        <form id="bpjsForm" class="needs-validation" novalidate onsubmit="return validateForm(event)">
+                        <div class="mb-2">
+                            <label for="nik" class="form-label">NIK</label>
+                            <small class="form-example">Eg. (3576014403910003)</small>
+                            <input type="text" id="nik" class="form-control rounded-2" pattern="\d{16}" required>
+                            <div class="invalid-feedback">Masukkan NIK 16 digit.</div>
+                        </div>
+            
+                        <div class="mb-2">
+                            <label for="rujukan" class="form-label">Nomor Surat Rujukan / Kontrol</label>
+                            <small class="form-example">Eg. (021750052025K0002867)</small>
+                            <input type="text" id="rujukan" class="form-control rounded-2" pattern="[A-Z0-9]{20,25}" required>
+                            <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
+                        </div>
+            
+                        <button type="submit" class="btn1 btn-custom w-50 mt-3">Cek</button>
+                    </form>
+            
+                        <div id="extraForm" class="d-none mt-3">
+                        <div class="p-3 bg-light border rounded text-dark">
+                            <p><strong>Nama :</strong> John Doe</p>
+                            <p><strong>NIK :</strong> 3576014403910003</p>
+                            <p><strong>No. HP :</strong> 09754282839</p>
+                        </div>
+                        <div class="mt-2">
+                            <label for="tanggal" class="form-label text-white">Pilih Tanggal</label>
+                            <input type="date" id="tanggal" class="form-control rounded-2">
+                        </div>
+                        <div class="mt-2">
+                            <label for="sesi" class="form-label text-white">Pilih Sesi</label>
+                            <select id="sesi" class="form-select">
+                                <option>Pagi</option>
+                                <option>Siang</option>
+                                <option>Sore</option>
+                            </select>
+                        </div>
+                        <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
+                        <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
+                        <button type="submit" class="btn1 btn-custom w-100 mt-3">Kirim</button>
+                    </div>            
+                </div>
+            
+                <!-- Form Privat -->
+            <div id="privatForm" class="card1 card-custom-privat p-4 d-none">
+                <h5 class="text-white">Pesan Jadwal Pemeriksaan - Privat</h5>
+                <form id="privatForm" class="needs-validation" novalidate onsubmit="return validateForm(event)">
+                    <div class="mb-2">
+                        <label for="nik" class="form-label">NIK</label>
+                        <small class="form-example">Eg. (3576014403910003)</small>
+                        <input type="text" id="nik" class="form-control rounded-2" pattern="\d{16}" required>
+                        <div class="invalid-feedback">Masukkan NIK 16 digit.</div>
+                    </div>
+            
+                    <div class="mb-2">
+                        <label for="rujukan" class="form-label">Nomor Surat Rujukan / Kontrol</label>
+                        <small class="form-example">Eg. (021750052025K0002867)</small>
+                        <input type="text" id="rujukan" class="form-control rounded-2" pattern="[A-Z0-9]{20,25}" required>
+                        <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
+                    </div>
+            
+                    <button type="submit" class="btn1 btn-custom-privat w-50 mt-3">Cek</button>
+                </form>
+            
+                <div id="extraFormPrivat" class="d-none mt-3">
+                    <div class="p-3 bg-light border rounded text-dark">
+                        <p><strong>Nama :</strong> Jane Doe</p>
+                        <p><strong>NIK :</strong> 3576014403910003</p>
+                        <p><strong>No. HP :</strong> 081234567890</p>
+                    </div>
+                    <div class="mt-2">
+                        <label for="tanggalPrivat" class="form-label text-white">Pilih Tanggal</label>
+                        <input type="date" id="tanggalPrivat" class="form-control rounded-2">
+                    </div>
+                    <div class="mt-2">
+                        <label for="sesiPrivat" class="form-label text-white">Pilih Sesi</label>
+                        <select id="sesiPrivat" class="form-select">
+                            <option>Pagi</option>
+                            <option>Siang</option>
+                            <option>Sore</option>
+                        </select>
+                    </div>
+                    <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
+                    <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
+                    <button type="submit" class="btn1 btn-custom-privat w-100 mt-3">Kirim</button>
+                </div>            
+            </div>
+            </div>
+        </section>
+
+        
+        <section class="custom-section section-2" id="section1">
+            <div class="container py-5">
+                <div class="section-title-container">
+                    <h2 class="text-center text-secondary mt-5">Dokter</h2>
+                </div>
+                <div class="row">
+                    <!-- Service Card 1: Skrining & Check Up -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <h3 class="service-title">Skrining & Check Up</h3>
+                                <p class="service-description">Kami turut berkontribusi dalam pencegahan gangguan kesehatan mata.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 2: Medical Check Up -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <h3 class="service-title">Medical Check Up</h3>
+                                <p class="service-description">Pemeriksaan kesehatan menyeluruh untuk mendeteksi masalah kesehatan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 3: Konsultasi Dokter -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <h3 class="service-title">Konsultasi Dokter</h3>
+                                <p class="service-description">Konsultasi langsung dengan dokter spesialis untuk penanganan optimal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <!-- Service Card 4: Perawatan Mata -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 class="service-title">Perawatan Mata</h3>
+                                <p class="service-description">Perawatan khusus untuk menjaga kesehatan mata Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 5: Laboratorium -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3 class="service-title">Laboratorium</h3>
+                                <p class="service-description">Layanan pemeriksaan laboratorium dengan hasil yang akurat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Card 6: Farmasi -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card-container">
+                            <div class="service-card">
+                                <div class="icon-container"></div>
+                                <div class="service-icon">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <h3 class="service-title">Farmasi</h3>
+                                <p class="service-description">Layanan obat-obatan dan farmasi untuk kebutuhan pengobatan Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="custom-section section-3" id="section1">
+            <div id="dokter" class="container text-center">	
+                <h2 class="fw-bold">Tim Dokter Kami</h2>
+                <div class="owl-container">
+                    <div id="owl-demo" class="owl-carousel owl-theme">      
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/sb-web.jpg" alt="Dokter 6">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/sb-web.jpg" alt="Dokter 6">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/sb-web.jpg" alt="Dokter 6">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-dokter">
+                                <img src="asset/sb-web.jpg" alt="Dokter 6">
+                                <div class="desc-dokter">
+                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                </div>
+                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- Owl carousel navigation buttons -->
+                    <button id="prevDoctor" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextDoctor" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Owl carousel indicators -->
+                    <ul class="owl-indicators">
+                        <li class="active" data-index="0"></li>
+                        <li data-index="1"></li>
+                        <li data-index="2"></li>
+                    </ul>
+                </div>
+            </div>
+            </section>
+
+            <section class="custom-section section-4" id="section1">
+            <div id="news" class="container text-center">
+                <h2 class="fw-bold">Berita Terbaru</h2>
+                <div class="owl-container">
+                    <div id="news-owl-demo" class="owl-carousel owl-theme">      
+                        <div class="item">
+                            <div class="card-berita">
+                                <img src="asset/berita.png" class="d-block w-100" alt="Berita 1">
+                                <div class="tanggal-berita">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>12 Oktober 2021</span>
+                                </div>
+                                <h5 id="text-berita" class="mt-2">BAKTI SOSIAL OPERASI KATARAK</h5>
+                                <p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
+                                <button class="btn btn-custom">
+                                    Baca Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-berita">
+                                <img src="asset/berita.png" class="d-block w-100" alt="Berita 2">
+                                <div class="tanggal-berita">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>12 Oktober 2021</span>
+                                </div>
+                                <h5 id="text-berita" class="mt-2">PELAYANAN KLINIK MATA</h5>
+                                <p>Program layanan kesehatan mata kini lebih mudah...</p>
+                                <button class="btn btn-custom">
+                                    Baca Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-berita">
+                                <img src="asset/berita.png" class="d-block w-100" alt="Berita 3">
+                                <div class="tanggal-berita">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>20 Oktober 2021</span>
+                                </div>
+                                <h5 id="text-berita" class="mt-2">PEMERIKSAAN MATA GRATIS</h5>
+                                <p>Kami mengadakan pemeriksaan mata gratis untuk masyarakat...</p>
+                                <button class="btn btn-custom">
+                                    Baca Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-berita">
+                                <img src="asset/berita.png" class="d-block w-100" alt="Berita 4">
+                                <div class="tanggal-berita">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <span>28 Oktober 2021</span>
+                                </div>
+                                <h5 id="text-berita" class="mt-2">SEMINAR KESEHATAN MATA</h5>
+                                <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
+                                <button class="btn btn-custom">
+                                    Baca Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Owl carousel navigation buttons -->
+                    <button id="prevNews" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="nextNews" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Owl carousel indicators -->
+                    <ul class="owl-indicators news-indicators">
+                        <li class="active" data-index="0"></li>
+                        <li data-index="1"></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <!-- <section class="custom-section section-2" id="section2">
+            <div class="container">
+                <h2>Dokter</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </section>
+
+        <section class="custom-section section-3" id="section3">
+            <div class="container">
+                <h2>Berita</h2>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+        </section> -->
+
+        <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+
+        <!-- JavaScripts -->
+        <script src="assets/lib/jquery/dist/jquery.js"></script>
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/lib/wow/dist/wow.js"></script>
+        <script src="assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+        <script src="assets/lib/isotope/dist/isotope.pkgd.js"></script>
+        <script src="assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+        <script src="assets/lib/flexslider/jquery.flexslider.js"></script>
+        <script src="assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+        <script src="assets/lib/smoothscroll.js"></script>
+        <script src="assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+        <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+    </main>
+</body>
+
+</html>
