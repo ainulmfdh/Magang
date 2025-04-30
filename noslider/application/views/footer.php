@@ -78,7 +78,7 @@
   <div class="footer">
     <div class="footer-container">
       <div class="footer-section">
-        <h3>Klinik Mata dr. Sjamsu</h3>
+        <h3>Klinik Mata dr. Sjamsu</h3>  
         <p>Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.</p>
         <p class="copyright">Copyright All Right Reserved</p>
       </div>
