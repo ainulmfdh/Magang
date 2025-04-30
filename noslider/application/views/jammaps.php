@@ -16,10 +16,10 @@
       overflow-x: hidden;
     }
 
-    .container {
+    .container-maps {
       display: flex;
       width: 100%;
-      height: 450px;
+      height: 480px;
       margin-bottom: 40px; /* spasi ke footer */
     }
 
@@ -30,9 +30,10 @@
       padding: 30px 25px;
     }
 
-    .section-title {
+    .section-title-jam {
       font-size: 24px;
       margin-bottom: 30px;
+      color: white;
       font-weight: bold;
       text-align: center;
     }
@@ -76,12 +77,12 @@
       text-align: center;
     }
 
-    .map-container {
+    .map-container-maps {
       flex: 1;
       position: relative;
     }
 
-    .map-container iframe {
+    .map-container-maps iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -112,7 +113,7 @@
     }
 
     @media (max-width: 768px) {
-      .container {
+      .container-maps {
         flex-direction: column;
         height: auto;
       }
@@ -121,7 +122,7 @@
         width: 100%;
       }
 
-      .map-container {
+      .map-container-maps {
         height: 350px;
       }
     }
@@ -129,9 +130,9 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container-maps">
     <div class="info-panel">
-      <h2 class="section-title">Jam Operasional</h2>
+      <h2 class="section-title-jam">Jam Operasional</h2>
       <table class="hours-table">
         <tr>
           <td>Senin - Jumat</td>
@@ -156,7 +157,7 @@
       </div>
     </div>
 
-    <div class="map-container">
+    <div class="map-container-maps">
       <div class="map-controls">
       </div>
       <iframe
