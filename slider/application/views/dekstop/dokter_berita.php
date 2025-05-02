@@ -303,7 +303,7 @@
         <div id="owl-demo" class="owl-carousel owl-theme">      
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -313,7 +313,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -323,7 +323,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -333,7 +333,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
+                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -343,7 +343,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
+                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -353,7 +353,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
+                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -363,7 +363,7 @@
             </div>
             <div class="item">
                 <div class="card-dokter">
-                    <img src="asset/sb-web.jpg" alt="Dokter 6">
+                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
                     <div class="desc-dokter">
                         <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                         <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -394,7 +394,7 @@
         <div id="news-owl-demo" class="owl-carousel owl-theme">      
             <div class="item">
                 <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 1">
+                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 1">
                     <div class="tanggal-berita">
                         <i class="fa-regular fa-calendar"></i>
                         <span>12 Oktober 2021</span>
@@ -408,7 +408,7 @@
             </div>
             <div class="item">
                 <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 2">
+                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 2">
                     <div class="tanggal-berita">
                         <i class="fa-regular fa-calendar"></i>
                         <span>12 Oktober 2021</span>
@@ -422,7 +422,7 @@
             </div>
             <div class="item">
                 <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 3">
+                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 3">
                     <div class="tanggal-berita">
                         <i class="fa-regular fa-calendar"></i>
                         <span>20 Oktober 2021</span>
@@ -436,7 +436,7 @@
             </div>
             <div class="item">
                 <div class="card-berita">
-                    <img src="asset/berita.png" class="d-block w-100" alt="Berita 4">
+                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 4">
                     <div class="tanggal-berita">
                         <i class="fa-regular fa-calendar"></i>
                         <span>28 Oktober 2021</span>
