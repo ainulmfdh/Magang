@@ -17,14 +17,14 @@
       overflow-x: hidden;
     }
 
-    .container {
+    .container-jam {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
       margin-bottom: 40px;
     }
 
-    .info-panel, .map-container {
+    .info-panel, .map-container-jam {
       width: 100%;
       max-width: 600px;
       margin: auto;
@@ -36,7 +36,7 @@
       padding: 30px 25px;
     }
 
-    .section-title {
+    .section-tittle-jam {
       font-size: 24px;
       margin-bottom: 30px;
       font-weight: bold;
@@ -82,13 +82,13 @@
       text-align: center;
     }
 
-    .map-container {
+    .map-container-jam {
       position: relative;
       height: 450px;
       margin-top: 20px;
     }
 
-    .map-container iframe {
+    .map-container-jam iframe {
       width: 100%;
       height: 100%;
       border: none;
@@ -127,7 +127,7 @@
       border-top-right-radius: 20px;
     }
 
-    .footer-container {
+    .footer-container-jam {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
@@ -191,7 +191,7 @@
     }
 
     @media (max-width: 768px) {
-      .section-title {
+      .section-tittle-jam {
         font-size: 20px;
       }
 
@@ -208,11 +208,11 @@
         font-size: 14px;
       }
 
-      .map-container {
+      .map-container-jam {
         height: 350px;
       }
 
-      .footer-container {
+      .footer-container-jam {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -226,9 +226,9 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container-jam">
     <div class="info-panel">
-      <h2 class="section-title">Jam Operasional</h2>
+      <h2 class="section-tittle-jam">Jam Operasional</h2>
       <table class="hours-table">
         <tr><td>Senin - Jumat</td><td>08.00 – 21.00</td></tr>
         <tr><td>Sabtu</td><td>08.00 – 21.00</td></tr>
@@ -243,7 +243,7 @@
         </div>
       </div>
     </div>
-    <div class="map-container">
+    <div class="map-container-jam">
       <div class="map-controls">
         <button class="active">Map</button>
         <button>Satellite</button>
@@ -263,7 +263,7 @@
   </div>
 
   <div class="footer">
-    <div class="footer-container">
+    <div class="footer-container-jam">
       <div class="footer-section">
         <h3>Klinik Mata dr. Sjamsu</h3>
         <p>Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.</p>
@@ -289,7 +289,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const mapButtons = document.querySelectorAll('.map-controls button');
-      const mapIframe = document.querySelector('.map-container iframe');
+      const mapIframe = document.querySelector('.map-container-jam iframe');
       const originalSrc = mapIframe.src;
       
       mapButtons.forEach(button => {
