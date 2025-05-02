@@ -83,7 +83,7 @@
         <p class="copyright">Copyright All Right Reserved</p>
       </div>
       <div class="footer-section">
-        <h3>Social Media</h3>
+        <h3>Social Media</h3> 
         <div class="social-icons">
           <a href="#" class="icon"><i class="fab fa-whatsapp"></i></a>
           <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
