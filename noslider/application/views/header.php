@@ -144,7 +144,7 @@
         
         <div class="hero-image">
             <!-- Menggunakan satu gambar untuk seluruh konten kanan -->
-            <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
+            <img src="asset/hero.png" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
         </div>
     </main>
 </body>

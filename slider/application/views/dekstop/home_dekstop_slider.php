@@ -29,7 +29,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-        <section class="home-section home-parallax home-fade home-full-height" id="home" style="margin-bottom: 350px;">
+        <section class="home-section home-fade home-full-height" id="home">
             <div class="hero-slider">
                 <ul class="slides">
                     <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/work-7.jpg);">
