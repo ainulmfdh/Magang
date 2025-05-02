@@ -10,12 +10,19 @@
         .container-service {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            /* padding: 20px; */
         }
+
+        .background {
+            background-color: rgba(0, 170, 180, 0.05);
+            padding: 40px 20px;
+            margin-top: 40px;
+    }
+
         
         .header-service {
             text-align: center;
-            padding: 20px 0;
+            /* padding: 20px 0; */
             margin-bottom: 20px;
             color: #585C5C;
             fontweight: semibold;
@@ -40,16 +47,17 @@
         .service-card:hover,
         .service-card:hover .service-title,
         .service-card:hover .service-desc {
-            background-color: #20B2AA;
+            background-color: #00CDDA;
             color: white;
         }
 
-        .service-card:hover .icon-circle,{
-            border: solid 1px #FFFFFF;
+        .service-card:hover .heart-icon {
+            fill: #ffffff; 
+            transition: fill 0.3s ease;
         }
 
-        .service-card:hover .heart-icon,{
-            color:  #FFFFFF;
+        .heart-icon {
+            transition: fill 0.3s ease;
         }
         
         .icon-circle {
@@ -83,6 +91,7 @@
     </style>
 </head>
 <body>
+    <div class="background">
     <div class="container-service">
         <div class="header-service">
             <h1>Klinik Mata dr. Sjamsu</h1>
@@ -107,7 +116,7 @@
             <!-- Card 2 - White Background -->
             <div class="service-card">
                 <div class="icon-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
                     <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                     </svg>
 
@@ -122,7 +131,7 @@
             <!-- Card 3 - Teal Background -->
             <div class="service-card">
                 <div class="icon-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
                     <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                     </svg>
 
@@ -136,7 +145,7 @@
             <!-- Card 4 - White Background -->
             <div class="service-card">
                 <div class="icon-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
+                <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00CDDA" width="50px">
                     <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                     </svg>
 
@@ -147,6 +156,7 @@
                 </p>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
