@@ -21,7 +21,6 @@
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      margin-bottom: 40px;
     }
 
     .info-panel, .map-container-jam {
@@ -85,7 +84,7 @@
     .map-container-jam {
       position: relative;
       height: 450px;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     .map-container-jam iframe {
@@ -244,10 +243,6 @@
       </div>
     </div>
     <div class="map-container-jam">
-      <div class="map-controls">
-        <button class="active">Map</button>
-        <button>Satellite</button>
-      </div>
       <a href="https://maps.app.goo.gl/mSZo6wBJFN3CzFD1A" target="_blank" style="display:block;width:100%;height:100%;">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5661482558535!2d112.77454527481333!3d-7.290100992717315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa41f381d62d%3A0xc54659716036d598!2sKlinik%20Mata%20dr.%20Sjamsu!5e0!3m2!1sid!2sid!4v1745979851493!5m2!1sid!2sid" 
