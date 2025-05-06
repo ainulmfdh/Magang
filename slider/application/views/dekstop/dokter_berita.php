@@ -297,174 +297,173 @@
     </style>
 </head>
 <body>
-<div id="dokter" class="container text-center">	
-	<h2 class="fw-bold">Tim Dokter Kami</h2>
-    <div class="owl-container">
-        <div id="owl-demo" class="owl-carousel owl-theme">      
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+    <div id="dokter" class="container text-center">	
+        <h2 class="fw-bold">Tim Dokter Kami</h2>
+        <div class="owl-container">
+            <div id="owl-demo" class="owl-carousel owl-theme">      
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
                     </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
                 </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-dokter">
+                        <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
+                        <div class="desc-dokter">
+                            <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
+                            <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                        </div>
+                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                    </div>
+                </div> 
             </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-dokter">
-                    <img src=".../../../asset/sb-web.jpg" alt="Dokter 6">
-                    <div class="desc-dokter">
-                        <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
-                        <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                    </div>
-                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                </div>
-            </div> 
+            <!-- Owl carousel navigation buttons -->
+            <button id="prevDoctor" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextDoctor" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Owl carousel indicators -->
+            <ul class="owl-indicators">
+                <li class="active" data-index="0"></li>
+                <li data-index="1"></li>
+                <li data-index="2"></li>
+            </ul>
         </div>
-        <!-- Owl carousel navigation buttons -->
-        <button id="prevDoctor" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="nextDoctor" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <!-- Owl carousel indicators -->
-        <ul class="owl-indicators">
-            <li class="active" data-index="0"></li>
-            <li data-index="1"></li>
-            <li data-index="2"></li>
-        </ul>
     </div>
-</div>
-<div id="news" class="container text-center">
-    <h2 class="fw-bold">Berita Terbaru</h2>
-    <div class="owl-container">
-        <div id="news-owl-demo" class="owl-carousel owl-theme">      
-            <div class="item">
-                <div class="card-berita">
-                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 1">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>12 Oktober 2021</span>
+    <div id="news" class="container text-center">
+        <h2 class="fw-bold">Berita Terbaru</h2>
+        <div class="owl-container">
+            <div id="news-owl-demo" class="owl-carousel owl-theme">      
+                <div class="item">
+                    <div class="card-berita">
+                        <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 1">
+                        <div class="tanggal-berita">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>12 Oktober 2021</span>
+                        </div>
+                        <h5 id="text-berita" class="mt-2">BAKTI SOSIAL OPERASI KATARAK</h5>
+                        <p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
+                        <button class="btn btn-custom">
+                            Baca Selengkapnya
+                        </button>
                     </div>
-                    <h5 id="text-berita" class="mt-2">BAKTI SOSIAL OPERASI KATARAK</h5>
-                    <p>Dalam upaya meningkatkan kualitas hidup masyarakat...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
+                </div>
+                <div class="item">
+                    <div class="card-berita">
+                        <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 2">
+                        <div class="tanggal-berita">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>12 Oktober 2021</span>
+                        </div>
+                        <h5 id="text-berita" class="mt-2">PELAYANAN KLINIK MATA</h5>
+                        <p>Program layanan kesehatan mata kini lebih mudah...</p>
+                        <button class="btn btn-custom">
+                            Baca Selengkapnya
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-berita">
+                        <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 3">
+                        <div class="tanggal-berita">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>20 Oktober 2021</span>
+                        </div>
+                        <h5 id="text-berita" class="mt-2">PEMERIKSAAN MATA GRATIS</h5>
+                        <p>Kami mengadakan pemeriksaan mata gratis untuk masyarakat...</p>
+                        <button class="btn btn-custom">
+                            Baca Selengkapnya
+                        </button>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card-berita">
+                        <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 4">
+                        <div class="tanggal-berita">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>28 Oktober 2021</span>
+                        </div>
+                        <h5 id="text-berita" class="mt-2">SEMINAR KESEHATAN MATA</h5>
+                        <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
+                        <button class="btn btn-custom">
+                            Baca Selengkapnya
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 2">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>12 Oktober 2021</span>
-                    </div>
-                    <h5 id="text-berita" class="mt-2">PELAYANAN KLINIK MATA</h5>
-                    <p>Program layanan kesehatan mata kini lebih mudah...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 3">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>20 Oktober 2021</span>
-                    </div>
-                    <h5 id="text-berita" class="mt-2">PEMERIKSAAN MATA GRATIS</h5>
-                    <p>Kami mengadakan pemeriksaan mata gratis untuk masyarakat...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card-berita">
-                    <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 4">
-                    <div class="tanggal-berita">
-                        <i class="fa-regular fa-calendar"></i>
-                        <span>28 Oktober 2021</span>
-                    </div>
-                    <h5 id="text-berita" class="mt-2">SEMINAR KESEHATAN MATA</h5>
-                    <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
-                    <button class="btn btn-custom">
-                        Baca Selengkapnya
-                    </button>
-                </div>
-            </div>
+            <!-- Owl carousel navigation buttons -->
+            <button id="prevNews" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextNews" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Owl carousel indicators -->
+            <ul class="owl-indicators news-indicators">
+                <li class="active" data-index="0"></li>
+                <li data-index="1"></li>
+            </ul>
         </div>
-        <!-- Owl carousel navigation buttons -->
-        <button id="prevNews" class="custom-carousel-nav custom-carousel-prev owl-nav-btn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="nextNews" class="custom-carousel-nav custom-carousel-next owl-nav-btn">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <!-- Owl carousel indicators -->
-        <ul class="owl-indicators news-indicators">
-            <li class="active" data-index="0"></li>
-            <li data-index="1"></li>
-        </ul>
     </div>
-</div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
