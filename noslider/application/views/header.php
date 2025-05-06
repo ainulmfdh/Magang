@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klinik Mata</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -114,14 +112,51 @@
             height: 700px;
         }
 
-        /* Custom Modal Styles */
+        /* Modal Popup Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background-color: #f2f2f2;
+            width: 1000px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
         .modal-header-tabs {
             display: flex;
             justify-content: center;
             padding: 20px 0 10px;
             gap: 15px;
-            background-color: #f2f2f2;
-            border-bottom: none;
         }
 
         .tab {
@@ -132,6 +167,7 @@
             border-radius: 5px;
             background-color: transparent;
             border: none;
+            color: white;
         }
 
         .tab.active {
@@ -144,6 +180,10 @@
             color: #333;
         }
 
+        .modal-body {
+            padding: 20px 30px 30px;
+        }
+
         .modal-title {
             text-align: center;
             font-size: 22px;
@@ -151,11 +191,6 @@
             margin-bottom: 50px;
             color: #596060;
             font-weight: normal;
-        }
-
-        .modal-content {
-            background-color: #f2f2f2;
-            border-radius: 10px;
         }
 
         .form-group {
@@ -192,10 +227,21 @@
             margin-top: 30px;
         }
 
+        .btn {
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            min-width: 120px;
+            text-align: center;
+        }
+
         .button-cek {
             background-color: #16b9c8;
             color: white;
             border: none;
+            /* padding: 5px 40px; */
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
@@ -212,111 +258,6 @@
             padding-bottom: 8px;
             border-radius: 15px;
             margin-bottom: 20px;
-        }
-
-        /* Patient Data Section */
-        .data-pasien {
-            background-color: white;
-            border-radius: 5px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-        }
-
-        .data-pasien h4 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .patient-info {
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            row-gap: 10px;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .patient-info div:nth-child(odd) {
-            font-weight: 500;
-        }
-
-        /* Session Selection Styling */
-        .sesi-selection {
-            margin-top: 15px;
-        }
-
-        .sesi-options {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .sesi-option {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-            cursor: pointer;
-            background-color: white;
-            color: #333;
-            transition: all 0.2s ease;
-        }
-
-        .sesi-option.selected {
-            background-color: #16b9c8;
-            color: white;
-            border-color: #16b9c8;
-        }
-
-        /* Tanggal Selection Styling */
-        .date-picker {
-            margin-top: 15px;
-        }
-        
-        .date-picker input[type="date"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            color: #333;
-            background-color: white;
-        }
-
-        .form-notes {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #666;
-            font-style: italic;
-        }
-
-        .button-kirim {
-            background-color: #16b9c8;
-            color: white;
-            border: none;
-            width: 150px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
-
-        .hidden {
-            display: none;
-        }
-        
-        /* Error messages */
-        .error-message {
-            color: #dc3545;
-            font-size: 12px;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        /* Custom modal size */
-        .modal-xl {
-            max-width: 1000px;
         }
     </style>
 </head>
@@ -340,7 +281,7 @@
         <div class="hero-content">
             <h1>Fokus Utama Untuk Kesehatan Mata Anda</h1>
             <p>Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
-            <button class="booking-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
+            <button class="booking-btn" id="openModal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>
@@ -353,225 +294,66 @@
         </div>
     </main>
 
-    <!-- Modal Popup with Bootstrap 5 -->
-    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-                <div class="modal-header-tabs">
-                    <button class="tab active" id="bpjsTab">Bpjs</button>
-                    <button class="tab" id="privatTab">Privat</button>
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-container">
+            <div class="modal-header-tabs">
+                <button class="tab active">Bpjs</button>
+                <button class="tab">Privat</button>
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title">Pesan Jadwal Pemesanan</h3>
+                
+                <div class="form-group">
+                    <label>NIK</label>
+                    <div class="hint">Eg. (357601440390003)</div>
+                    <input type="text" class="form-control" placeholder="" />
                 </div>
-                <div class="modal-body">
-                    <!-- Single Form Content -->
-                    <div id="bookingForm">
-                        <h3 class="modal-title">Pesan Jadwal Pemesanan</h3>
-                        
-                        <div class="form-group">
-                            <label>NIK</label>
-                            <div class="hint">Eg. (357601440390003)</div>
-                            <input type="text" id="nikInput" class="form-control" placeholder="" />
-                            <div class="error-message" id="nikError"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Nomor Surat Rujukan / Kontrol</label>
-                            <div class="hint">Eg. (02175005202540002997)</div>
-                            <input type="text" id="rujukanInput" class="form-control" placeholder="" />
-                            <div class="error-message" id="rujukanError"></div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button class="button-cek" id="cekButton">Cek</button>
-                            <button class="button-cancel" data-bs-dismiss="modal">Close</button>
-                        </div>
-                        
-                        <!-- Patient Data (Hidden initially) -->
-                        <div id="patientDataSection" class="hidden">
-                            <div class="data-pasien">
-                                <h4>Data Pasien</h4>
-                                <div class="patient-info">
-                                    <div>Nama</div>
-                                    <div>: Nama Orang</div>
-                                    <div>NIK</div>
-                                    <div>: 357601440390003</div>
-                                    <div>No. Telepon</div>
-                                    <div>: 08972857372</div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Pilih Sesi</label>
-                                <select id="sesiSelect" class="form-control">
-                                    <option value="" disabled selected>Pilih sesi yang diinginkan</option>
-                                    <option value="pagi">Pagi</option>
-                                    <option value="siang">Siang</option>
-                                    <option value="malam">Malam</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group date-picker">
-                                <label>Pilih Tanggal</label>
-                                <input type="date" id="appointmentDate" class="form-control">
-                            </div>
-                            
-                            <div class="form-notes">
-                                <p>*Masa maksimum pemesanan jadwal 7 hari kedepan</p>
-                                <p>**Pilih tanggal diatas beberapa menu jika tidak puas dengan tangal lainnya</p>
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button class="button-kirim" id="kirimButton">Kirim</button>
-                                <button class="button-cancel" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="form-group">
+                    <label>Nomor Surat Rujukan / Kontrol</label>
+                    <div class="hint">Eg. (02175005202540002997)</div>
+                    <input type="text" class="form-control" placeholder="" />
+                </div>
+                
+                <div class="form-actions">
+                    <button class="button-cek">Cek</button>
+                    <button class="button-cancel" id="closeModal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Get the modal element using Bootstrap
-        const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'), {
-            backdrop: 'static',
-            keyboard: false
+        // Get the modal elements
+        const modal = document.getElementById('bookingModal');
+        const openModalBtn = document.getElementById('openModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        
+        // Open modal function
+        openModalBtn.addEventListener('click', function() {
+            modal.classList.add('active');
         });
         
-        // Form elements
-        const bookingForm = document.getElementById('bookingForm');
-        const patientDataSection = document.getElementById('patientDataSection');
+        // Close modal function
+        closeModalBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
         
-        // Inputs and error messages
-        const nikInput = document.getElementById('nikInput');
-        const rujukanInput = document.getElementById('rujukanInput');
-        const nikError = document.getElementById('nikError');
-        const rujukanError = document.getElementById('rujukanError');
-        
-        // Buttons
-        const cekButton = document.getElementById('cekButton');
-        const kirimButton = document.getElementById('kirimButton');
-        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
         // Tab switching
-        const bpjsTab = document.getElementById('bpjsTab');
-        const privatTab = document.getElementById('privatTab');
-        
-        bpjsTab.addEventListener('click', function() {
-            bpjsTab.classList.add('active');
-            privatTab.classList.remove('active');
-            resetForm();
-        });
-        
-        privatTab.addEventListener('click', function() {
-            privatTab.classList.add('active');
-            bpjsTab.classList.remove('active');
-            resetForm();
-        });
-        
-        // Reset form and errors
-        function resetForm() {
-            // Clear input fields
-            nikInput.value = '';
-            rujukanInput.value = '';
-            
-            // Hide error messages
-            nikError.style.display = 'none';
-            rujukanError.style.display = 'none';
-            
-            // Hide patient data section
-            patientDataSection.classList.add('hidden');
-            
-            // Reset select and date
-            if (document.getElementById('sesiSelect')) {
-                document.getElementById('sesiSelect').selectedIndex = 0;
-            }
-            
-            if (document.getElementById('appointmentDate')) {
-                document.getElementById('appointmentDate').value = '';
-            }
-        }
-        
-        // Modal is shown event
-        document.getElementById('bookingModal').addEventListener('show.bs.modal', function () {
-            resetForm();
-        });
-        
-        // Validate NIK and Rujukan inputs
-        function validateInputs() {
-            let isValid = true;
-            
-            // Validate NIK (must be 14 digits)
-            if (!nikInput.value.trim()) {
-                nikError.textContent = 'NIK tidak boleh kosong';
-                nikError.style.display = 'block';
-                isValid = false;
-            } else if (!/^\d{14}$/.test(nikInput.value.trim())) {
-                nikError.textContent = 'NIK harus berisi 14 angka';
-                nikError.style.display = 'block';
-                isValid = false;
-            } else {
-                nikError.style.display = 'none';
-            }
-            
-            // Validate Rujukan (must be 19 digits)
-            if (!rujukanInput.value.trim()) {
-                rujukanError.textContent = 'Nomor Surat Rujukan tidak boleh kosong';
-                rujukanError.style.display = 'block';
-                isValid = false;
-            } else if (!/^\d{19}$/.test(rujukanInput.value.trim())) {
-                rujukanError.textContent = 'Nomor Surat Rujukan harus berisi 19 angka';
-                rujukanError.style.display = 'block';
-                isValid = false;
-            } else {
-                rujukanError.style.display = 'none';
-            }
-            
-            return isValid;
-        }
-        
-        // Cek button functionality - Show patient data
-        cekButton.addEventListener('click', function() {
-            if (validateInputs()) {
-                // Show patient data section
-                patientDataSection.classList.remove('hidden');
-                
-                // Set today as minimum date for appointment
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('appointmentDate').min = today;
-                
-                // Calculate max date (7 days from today)
-                const maxDate = new Date();
-                maxDate.setDate(maxDate.getDate() + 7);
-                document.getElementById('appointmentDate').max = maxDate.toISOString().split('T')[0];
-            }
-        });
-        
-        // Kirim button functionality
-        kirimButton.addEventListener('click', function() {
-            const sesiSelect = document.getElementById('sesiSelect');
-            const appointmentDate = document.getElementById('appointmentDate');
-            
-            // Simple validation for sesi and date
-            if (!sesiSelect.value) {
-                alert('Silakan pilih sesi terlebih dahulu');
-                return;
-            }
-            
-            if (!appointmentDate.value) {
-                alert('Silakan pilih tanggal terlebih dahulu');
-                return;
-            }
-            
-            // Here you would normally submit the form data
-            // For demo purposes, we'll just close the modal and show success
-            bookingModal.hide();
-            
-            // Reset form for next use
-            resetForm();
-            
-            // Show success message
-            alert('Jadwal berhasil dipesan!');
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
     </script>
 </body>
