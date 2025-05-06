@@ -146,7 +146,6 @@
         <button type="submit" class="btn1 btn-custom-privat w-100 mt-3">Kirim</button>
     </div>            
 </div>
-</div>
 
 </body>
 </html>

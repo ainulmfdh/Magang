@@ -1,3 +1,6 @@
+<?php
+// header.php - Contains the hero section with booking button
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -82,18 +85,18 @@
         }
         
         .booking-btn {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: #16b9c8;
+            gap: 8px;
+            background-color: #00ACC1;
             color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
             border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
-            width: 150px;
+            transition: background-color 0.3s;
         }
         
         .booking-btn img {
@@ -189,8 +192,8 @@
             font-size: 22px;
             margin-top: 20px;
             margin-bottom: 50px;
-            color: #596060;
-            font-weight: normal;
+            color: #585C5C;
+            font-weight: bold;
         }
 
         .form-group {
@@ -200,9 +203,9 @@
         .form-group label {
             display: block;
             margin-bottom: 6px;
-            font-size: 14px;
+            font-size: 15px;
             color: #596060;
-            font-weight: normal;
+            font-weight: bold;
         }
 
         .form-group .hint {
@@ -245,7 +248,7 @@
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
-            border-radius: 15px;
+            border-radius: 50px;
             margin-bottom: 20px;
         }
 
@@ -256,7 +259,7 @@
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
-            border-radius: 15px;
+            border-radius: 50px;
             margin-bottom: 20px;
         }
     </style>
@@ -285,7 +288,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>
-                 Booking
+                Booking
             </button>
         </div>
         
@@ -323,6 +326,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <script>
         // Get the modal elements
