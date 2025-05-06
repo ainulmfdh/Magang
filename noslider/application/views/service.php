@@ -25,7 +25,7 @@
             /* padding: 20px 0; */
             margin-bottom: 20px;
             color: #585C5C;
-            fontweight: semibold;
+            font-weight: semibold;
         }
         
         .services-grid {

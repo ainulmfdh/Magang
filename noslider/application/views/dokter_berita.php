@@ -51,28 +51,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-weight: 300;
         }
 		/* berita Styling */
+        .berita-section {
+            background-color: #ECFFFC;
+            width: 100%;
+            margin-top: 100px;
+            padding: 3px 10px;
+        }
         .news-card {
+            background-color: white;
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             height: 100%;
         }
+        
         .news-card img {
             width: 100%;
             height: auto;
         }
         .news-info {
             padding: 15px;
-			display: flex;
-			flex-direction: column;
+            display: flex;
+            flex-direction: column;
         }
+        
         .news-title {
             font-size: 14px;
             font-weight: 700;
             color: rgba(0, 170, 181, 1);
             margin-bottom: 10px;
         }
+        
         .news-summary {
             font-size: 12px;
             color: #666;
@@ -84,8 +94,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             border-radius: 20px;
             font-size: 12px;
             padding: 5px 15px;
-			align-self: flex-end;
-			text-decoration: none;
+            align-self: flex-end;
+            text-decoration: none;
+            display: inline-block;
         }
         
         /* Custom Carousel Styling */
@@ -128,7 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             border-radius: 30px;
             color: rgba(0, 170, 181, 1);
             background-color: transparent;
-		    text-decoration: none;
+            text-decoration: none;
             transition: all 0.3s;
         }
         
@@ -224,8 +235,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button>
             </div>
         </div>
+    </div>
 
-        <!-- Berita Section -->
+    <!-- Berita Section -->
+    <section class="berita-section" style="background-color: #ECFFFC;">
+    <div class="container">
         <h2 class="section-title">Berita</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
@@ -263,6 +277,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Read More Button -->
         <a href="#" class="read-more-btn">Read More</a>
     </div>
+    </section>
+    
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
