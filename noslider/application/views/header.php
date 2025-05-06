@@ -1,3 +1,6 @@
+<?php
+// header.php - Contains the hero section with booking button
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -84,18 +87,18 @@
         }
         
         .booking-btn {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: #16b9c8;
+            gap: 8px;
+            background-color: #00ACC1;
             color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
             border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
-            width: 150px;
+            transition: background-color 0.3s;
         }
         
         .booking-btn img {
@@ -149,8 +152,8 @@
             font-size: 22px;
             margin-top: 20px;
             margin-bottom: 50px;
-            color: #596060;
-            font-weight: normal;
+            color: #585C5C;
+            font-weight: bold;
         }
 
         .modal-content {
@@ -165,9 +168,9 @@
         .form-group label {
             display: block;
             margin-bottom: 6px;
-            font-size: 14px;
+            font-size: 15px;
             color: #596060;
-            font-weight: normal;
+            font-weight: bold;
         }
 
         .form-group .hint {
@@ -199,7 +202,7 @@
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
-            border-radius: 15px;
+            border-radius: 50px;
             margin-bottom: 20px;
         }
 
@@ -210,7 +213,7 @@
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
-            border-radius: 15px;
+            border-radius: 50px;
             margin-bottom: 20px;
         }
 
@@ -226,6 +229,7 @@
             color: #333;
             margin-bottom: 15px;
             font-size: 16px;
+            font-weight: bold;
         }
 
         .patient-info {
@@ -233,7 +237,7 @@
             grid-template-columns: 100px 1fr;
             row-gap: 10px;
             color: #333;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .patient-info div:nth-child(odd) {
@@ -298,7 +302,7 @@
             width: 150px;
             padding-top: 8px;
             padding-bottom: 8px;
-            border-radius: 15px;
+            border-radius: 50px;
             margin-bottom: 20px;
         }
 
@@ -317,6 +321,14 @@
         /* Custom modal size */
         .modal-xl {
             max-width: 1000px;
+        }
+        
+        .modal-body {
+            background-color: #f2f2f2;
+        }
+
+        .patient-info p {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -344,7 +356,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>
-                 Booking
+                Booking
             </button>
         </div>
         
@@ -353,226 +365,238 @@
         </div>
     </main>
 
-    <!-- Modal Popup with Bootstrap 5 -->
-    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-                <div class="modal-header-tabs">
-                    <button class="tab active" id="bpjsTab">Bpjs</button>
-                    <button class="tab" id="privatTab">Privat</button>
-                </div>
-                <div class="modal-body">
-                    <!-- Single Form Content -->
-                    <div id="bookingForm">
-                        <h3 class="modal-title">Pesan Jadwal Pemesanan</h3>
+ <!-- Modal Popup with Bootstrap 5 -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-tabs">
+                <button class="tab active" id="bpjsTab">Bpjs</button>
+                <button class="tab" id="privatTab">Privat</button>
+            </div>
+            <div class="modal-body">
+                <!-- Single Form Content -->
+                <div id="bookingForm">
+                    <h3 class="modal-title">Pesan Jadwal Pemesanan</h3>
+                    
+                    <div class="form-group">
+                        <label>NIK</label>
+                        <div class="hint">Eg. (35760144039000)</div>
+                        <input type="text" id="nikInput" class="form-control" placeholder="" />
+                        <div class="error-message" id="nikError"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Nomor Surat Rujukan / Kontrol</label>
+                        <div class="hint">Eg. (0217500520254000299)</div>
+                        <input type="text" id="rujukanInput" class="form-control" placeholder="" />
+                        <div class="error-message" id="rujukanError"></div>
+                    </div>
+                    
+                    <!-- Initial Buttons Section -->
+                    <div class="form-actions" id="initialButtonsSection">
+                        <button class="button-cek" id="cekButton">Cek</button>
+                        <button class="button-cancel" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    
+                    <!-- Patient Data (Hidden initially) -->
+                    <div id="patientDataSection" class="hidden">
+                        <div class="data-pasien">
+                            <h4>Data Pasien</h4>
+                            <div class="patient-info">
+                                <p>Nama</p>
+                                <div>: Nama Orang</div>
+                                <p class="title-info">NIK</p>
+                                <div>: 357601440390003</div>
+                                <p class="title-info">No. Telepon</p>
+                                <div>: 08972857372</div>
+                            </div>
+                        </div>
                         
                         <div class="form-group">
-                            <label>NIK</label>
-                            <div class="hint">Eg. (357601440390003)</div>
-                            <input type="text" id="nikInput" class="form-control" placeholder="" />
-                            <div class="error-message" id="nikError"></div>
+                            <label>Pilih Sesi</label>
+                            <select id="sesiSelect" class="form-control">
+                                <option value="" disabled selected>Pilih sesi yang diinginkan</option>
+                                <option value="pagi">Pagi</option>
+                                <option value="siang">Siang</option>
+                                <option value="malam">Malam</option>
+                            </select>
                         </div>
                         
-                        <div class="form-group">
-                            <label>Nomor Surat Rujukan / Kontrol</label>
-                            <div class="hint">Eg. (02175005202540002997)</div>
-                            <input type="text" id="rujukanInput" class="form-control" placeholder="" />
-                            <div class="error-message" id="rujukanError"></div>
+                        <div class="form-group date-picker">
+                            <label>Pilih Tanggal</label>
+                            <input type="date" id="appointmentDate" class="form-control">
                         </div>
                         
-                        <div class="form-actions">
-                            <button class="button-cek" id="cekButton">Cek</button>
-                            <button class="button-cancel" data-bs-dismiss="modal">Close</button>
+                        <div class="form-notes">
+                            <p>*Masa maksimum pemesanan jadwal 7 hari kedepan</p>
+                            <p>**Pilih tanggal diatas beberapa menu jika tidak puas dengan tangal lainnya</p>
                         </div>
-                        
-                        <!-- Patient Data (Hidden initially) -->
-                        <div id="patientDataSection" class="hidden">
-                            <div class="data-pasien">
-                                <h4>Data Pasien</h4>
-                                <div class="patient-info">
-                                    <div>Nama</div>
-                                    <div>: Nama Orang</div>
-                                    <div>NIK</div>
-                                    <div>: 357601440390003</div>
-                                    <div>No. Telepon</div>
-                                    <div>: 08972857372</div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Pilih Sesi</label>
-                                <select id="sesiSelect" class="form-control">
-                                    <option value="" disabled selected>Pilih sesi yang diinginkan</option>
-                                    <option value="pagi">Pagi</option>
-                                    <option value="siang">Siang</option>
-                                    <option value="malam">Malam</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group date-picker">
-                                <label>Pilih Tanggal</label>
-                                <input type="date" id="appointmentDate" class="form-control">
-                            </div>
-                            
-                            <div class="form-notes">
-                                <p>*Masa maksimum pemesanan jadwal 7 hari kedepan</p>
-                                <p>**Pilih tanggal diatas beberapa menu jika tidak puas dengan tangal lainnya</p>
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button class="button-kirim" id="kirimButton">Kirim</button>
-                                <button class="button-cancel" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
+                    </div>
+                    
+                    <!-- Final Buttons Section (Hidden initially) -->
+                    <div class="form-actions hidden" id="finalButtonsSection">
+                        <button class="button-kirim" id="kirimButton">Kirim</button>
+                        <button class="button-cancel" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Bootstrap 5 JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Get the modal element using Bootstrap
-        const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'), {
-            backdrop: 'static',
-            keyboard: false
-        });
+<!-- Bootstrap 5 JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+      // Get the modal element using Bootstrap
+    const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'), {
+        backdrop: 'static', // Prevents closing when clicking outside the modal
+        keyboard: false     // Prevents closing when pressing escape key
+    });
+
+    // Form elements
+    const bookingForm = document.getElementById('bookingForm');
+    const patientDataSection = document.getElementById('patientDataSection');
+
+    // Inputs and error messages
+    const nikInput = document.getElementById('nikInput');
+    const rujukanInput = document.getElementById('rujukanInput');
+    const nikError = document.getElementById('nikError');
+    const rujukanError = document.getElementById('rujukanError');
+
+    // Buttons
+    const cekButton = document.getElementById('cekButton');
+    const kirimButton = document.getElementById('kirimButton');
+    const initialButtonsSection = document.getElementById('initialButtonsSection');
+    const finalButtonsSection = document.getElementById('finalButtonsSection');
+
+    // Tab switching
+    const bpjsTab = document.getElementById('bpjsTab');
+    const privatTab = document.getElementById('privatTab');
+
+    bpjsTab.addEventListener('click', function() {
+        bpjsTab.classList.add('active');
+        privatTab.classList.remove('active');
+        resetForm();
+    });
+
+    privatTab.addEventListener('click', function() {
+        privatTab.classList.add('active');
+        bpjsTab.classList.remove('active');
+        resetForm();
+    });
+
+    // Reset form and errors
+    function resetForm() {
+        // Clear input fields
+        nikInput.value = '';
+        rujukanInput.value = '';
         
-        // Form elements
-        const bookingForm = document.getElementById('bookingForm');
-        const patientDataSection = document.getElementById('patientDataSection');
+        // Hide error messages
+        nikError.style.display = 'none';
+        rujukanError.style.display = 'none';
         
-        // Inputs and error messages
-        const nikInput = document.getElementById('nikInput');
-        const rujukanInput = document.getElementById('rujukanInput');
-        const nikError = document.getElementById('nikError');
-        const rujukanError = document.getElementById('rujukanError');
+        // Hide patient data section
+        patientDataSection.classList.add('hidden');
         
-        // Buttons
-        const cekButton = document.getElementById('cekButton');
-        const kirimButton = document.getElementById('kirimButton');
+        // Show initial buttons, hide final buttons
+        initialButtonsSection.classList.remove('hidden');
+        finalButtonsSection.classList.add('hidden');
         
-        // Tab switching
-        const bpjsTab = document.getElementById('bpjsTab');
-        const privatTab = document.getElementById('privatTab');
+        // Reset select and date
+        if (document.getElementById('sesiSelect')) {
+            document.getElementById('sesiSelect').selectedIndex = 0;
+        }
         
-        bpjsTab.addEventListener('click', function() {
-            bpjsTab.classList.add('active');
-            privatTab.classList.remove('active');
-            resetForm();
-        });
+        if (document.getElementById('appointmentDate')) {
+            document.getElementById('appointmentDate').value = '';
+        }
+    }
+
+    // Modal is shown event
+    document.getElementById('bookingModal').addEventListener('show.bs.modal', function () {
+        resetForm();
+    });
+
+    // Validate NIK and Rujukan inputs
+    function validateInputs() {
+        let isValid = true;
         
-        privatTab.addEventListener('click', function() {
-            privatTab.classList.add('active');
-            bpjsTab.classList.remove('active');
-            resetForm();
-        });
-        
-        // Reset form and errors
-        function resetForm() {
-            // Clear input fields
-            nikInput.value = '';
-            rujukanInput.value = '';
-            
-            // Hide error messages
+        // Validate NIK (must be 14 digits)
+        if (!nikInput.value.trim()) {
+            nikError.textContent = 'NIK tidak boleh kosong';
+            nikError.style.display = 'block';
+            isValid = false;
+        } else if (!/^\d{14}$/.test(nikInput.value.trim())) {
+            nikError.textContent = 'NIK harus berisi 14 angka';
+            nikError.style.display = 'block';
+            isValid = false;
+        } else {
             nikError.style.display = 'none';
+        }
+        
+        // Validate Rujukan (must be 19 digits)
+        if (!rujukanInput.value.trim()) {
+            rujukanError.textContent = 'Nomor Surat Rujukan tidak boleh kosong';
+            rujukanError.style.display = 'block';
+            isValid = false;
+        } else if (!/^\d{19}$/.test(rujukanInput.value.trim())) {
+            rujukanError.textContent = 'Nomor Surat Rujukan harus berisi 19 angka';
+            rujukanError.style.display = 'block';
+            isValid = false;
+        } else {
             rujukanError.style.display = 'none';
-            
-            // Hide patient data section
-            patientDataSection.classList.add('hidden');
-            
-            // Reset select and date
-            if (document.getElementById('sesiSelect')) {
-                document.getElementById('sesiSelect').selectedIndex = 0;
-            }
-            
-            if (document.getElementById('appointmentDate')) {
-                document.getElementById('appointmentDate').value = '';
-            }
         }
         
-        // Modal is shown event
-        document.getElementById('bookingModal').addEventListener('show.bs.modal', function () {
-            resetForm();
-        });
-        
-        // Validate NIK and Rujukan inputs
-        function validateInputs() {
-            let isValid = true;
+        return isValid;
+    }
+
+    // Cek button functionality - Show patient data
+    cekButton.addEventListener('click', function() {
+        if (validateInputs()) {
+            // Show patient data section
+            patientDataSection.classList.remove('hidden');
             
-            // Validate NIK (must be 14 digits)
-            if (!nikInput.value.trim()) {
-                nikError.textContent = 'NIK tidak boleh kosong';
-                nikError.style.display = 'block';
-                isValid = false;
-            } else if (!/^\d{14}$/.test(nikInput.value.trim())) {
-                nikError.textContent = 'NIK harus berisi 14 angka';
-                nikError.style.display = 'block';
-                isValid = false;
-            } else {
-                nikError.style.display = 'none';
-            }
+            // Hide initial buttons section and show final buttons section
+            initialButtonsSection.classList.add('hidden');
+            finalButtonsSection.classList.remove('hidden');
             
-            // Validate Rujukan (must be 19 digits)
-            if (!rujukanInput.value.trim()) {
-                rujukanError.textContent = 'Nomor Surat Rujukan tidak boleh kosong';
-                rujukanError.style.display = 'block';
-                isValid = false;
-            } else if (!/^\d{19}$/.test(rujukanInput.value.trim())) {
-                rujukanError.textContent = 'Nomor Surat Rujukan harus berisi 19 angka';
-                rujukanError.style.display = 'block';
-                isValid = false;
-            } else {
-                rujukanError.style.display = 'none';
-            }
+            // Set today as minimum date for appointment
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('appointmentDate').min = today;
             
-            return isValid;
+            // Calculate max date (7 days from today)
+            const maxDate = new Date();
+            maxDate.setDate(maxDate.getDate() + 7);
+            document.getElementById('appointmentDate').max = maxDate.toISOString().split('T')[0];
         }
-        
-        // Cek button functionality - Show patient data
-        cekButton.addEventListener('click', function() {
-            if (validateInputs()) {
-                // Show patient data section
-                patientDataSection.classList.remove('hidden');
-                
-                // Set today as minimum date for appointment
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('appointmentDate').min = today;
-                
-                // Calculate max date (7 days from today)
-                const maxDate = new Date();
-                maxDate.setDate(maxDate.getDate() + 7);
-                document.getElementById('appointmentDate').max = maxDate.toISOString().split('T')[0];
-            }
-        });
-        
-        // Kirim button functionality
+    });
+
+    // Kirim button functionality
         kirimButton.addEventListener('click', function() {
-            const sesiSelect = document.getElementById('sesiSelect');
-            const appointmentDate = document.getElementById('appointmentDate');
-            
-            // Simple validation for sesi and date
-            if (!sesiSelect.value) {
-                alert('Silakan pilih sesi terlebih dahulu');
-                return;
-            }
-            
-            if (!appointmentDate.value) {
-                alert('Silakan pilih tanggal terlebih dahulu');
-                return;
-            }
-            
-            // Here you would normally submit the form data
-            // For demo purposes, we'll just close the modal and show success
-            bookingModal.hide();
-            
-            // Reset form for next use
-            resetForm();
-            
-            // Show success message
-            alert('Jadwal berhasil dipesan!');
-        });
+        const sesiSelect = document.getElementById('sesiSelect');
+        const appointmentDate = document.getElementById('appointmentDate');
+        
+        if (!sesiSelect.value) {
+            alert('Silakan pilih sesi terlebih dahulu');
+            return;
+        }
+        
+        if (!appointmentDate.value) {
+            alert('Silakan pilih tanggal terlebih dahulu');
+            return;
+        }
+        
+        // Close the modal properly
+        const modalElement = document.getElementById('bookingModal');
+        const modalInstance = bootstrap.Modal.getInstance(modalElement);
+        modalInstance.hide();
+        
+        resetForm();
+        
+        alert('Jadwal berhasil dipesan!');
+
+        bookingModal.hide();
+    });
     </script>
 </body>
 </html>
