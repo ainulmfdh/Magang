@@ -330,6 +330,90 @@
         .patient-info p {
             font-weight: bold;
         }
+
+        /* Pop up succes message */
+
+        .success-modal-content {
+            border-radius: 10px;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .success-header {
+            background-color: #2ECC71;
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .success-header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 500;
+        }
+        
+        .success-header .successbtn-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            opacity: 1;
+        }
+        
+        .success-body {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .success-body p {
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .successbooking-code {
+            margin: 25px 0;
+        }
+        
+        .successbooking-code h3 {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .successbooking-date {
+            margin-bottom: 25px;
+        }
+        
+        .successbooking-date p {
+            font-size: 18px;
+            color: #555;
+            margin: 0;
+        }
+        
+        .successbooking-instruction {
+            font-size: 16px;
+            color: #555;
+            margin: 30px 0;
+        }
+        
+        .successbtn-kembali {
+            background-color: #2ECC71;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .successbtn-kembali:hover {
+            background-color: #27AE60;
+        }
     </style>
 </head>
 <body>
@@ -444,14 +528,73 @@
     </div>
 </div>
 
+<!-- Pop up messages -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content success-modal-content">
+            <div class="success-header">
+                <button type="button" class="successbtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h2>Success</h2>
+            </div>
+            <div class="success-body">
+                <p>
+                    Pemesanan jadwal pemeriksaan BPJS telah berhasil, silahkan catat kode berikut sebagai bukti anda telah mendaftar :
+                </p>
+                <div class="successbooking-code">
+                    <h3>BOOKING CODE: <span id="generatedCode">B7P1</span></h3>
+                </div>
+                <div class="successbooking-date">
+                    <p id="appointmentDateTime">Wed, 05/03/2025, Pukul : 19.00</p>
+                </div>
+                <p class="successbooking-instruction">
+                    Screenshot kode booking, dan tunjukkan ke bagian pelayanan untuk melanjutkan pendaftaran
+                </p>
+                <button class="successbtn-kembali" id="successBackBtn" data-bs-dismiss="modal">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Bootstrap 5 JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-      // Get the modal element using Bootstrap
+    // Add this at the beginning of your script section
+    let clickCount = 0;
+
+    // Get the modal element using Bootstrap
     const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'), {
         backdrop: 'static', // Prevents closing when clicking outside the modal
         keyboard: false     // Prevents closing when pressing escape key
     });
+
+    // Create warning modal element
+    const warningModalHTML = `
+    <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content success-modal-content">
+                <div class="success-header" style="background-color: #f44336;">
+                    <button type="button" class="successbtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h2>Warning!</h2>
+                </div>
+                <div class="success-body">
+                    <p>
+                        Anda telah melewati batas pengisian formulir, hubungi admin KMDS untuk booking lebih lanjut.
+                    </p>
+                    <button class="successbtn-kembali" style="background-color: #f44336;" 
+                        id="hubungiAdminBtn" 
+                        data-bs-dismiss="modal"
+                        onclick="window.open('https://api.whatsapp.com/send?phone=62082328834899&text=HaloKMDS', '_blank')">
+                     Hubungi Admin
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+
+    // Add the warning modal to document body
+    document.body.insertAdjacentHTML('beforeend', warningModalHTML);
 
     // Form elements
     const bookingForm = document.getElementById('bookingForm');
@@ -515,12 +658,13 @@
     // Modal is shown event
     document.getElementById('bookingModal').addEventListener('show.bs.modal', function () {
         resetForm();
+        // Reset click count when modal is reopened
+        clickCount = 0;
     });
 
     // Validate NIK and Rujukan inputs
     function validateInputs() {
         let isValid = true;
-        
         // Validate NIK (must be 14 digits)
         if (!nikInput.value.trim()) {
             nikError.textContent = 'NIK tidak boleh kosong';
@@ -550,8 +694,29 @@
         return isValid;
     }
 
+    // Show warning modal
+    function showWarningModal() {
+        // Hide booking modal
+        const bookingModalElement = document.getElementById('bookingModal');
+        const bookingModalInstance = bootstrap.Modal.getInstance(bookingModalElement);
+        bookingModalInstance.hide();
+        
+        // Show warning modal
+        const warningModal = new bootstrap.Modal(document.getElementById('warningModal'));
+        warningModal.show();
+    }
+
     // Cek button functionality - Show patient data
     cekButton.addEventListener('click', function() {
+        // Increment click count
+        clickCount++;
+        
+        // If click count reaches 4, show warning
+        if (clickCount >= 4) {
+            showWarningModal();
+            return;
+        }
+        
         if (validateInputs()) {
             // Show patient data section
             patientDataSection.classList.remove('hidden');
@@ -571,8 +736,51 @@
         }
     });
 
+    // Function to generate a random booking code
+    function generateBookingCode() {
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const numbers = "0123456789";
+        let code = "";
+        
+        // Generate a pattern like "X0X0"
+        code += letters.charAt(Math.floor(Math.random() * letters.length));
+        code += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        code += letters.charAt(Math.floor(Math.random() * letters.length));
+        code += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        
+        return code;
+    }
+
+    // Function to format date to "Day, MM/DD/YYYY, Pukul: HH.MM" 
+    function formatAppointmentDate(date, session) {
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const dayName = days[date.getDay()];
+        
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const year = date.getFullYear();
+        
+        // Set time based on session
+        let time = "";
+        switch(session) {
+            case "pagi":
+                time = "08.00";
+                break;
+            case "siang":
+                time = "13.00";
+                break;
+            case "malam":
+                time = "19.00";
+                break;
+            default:
+                time = "08.00";
+        }
+        
+        return `${dayName}, ${month}/${day}/${year}, Pukul : ${time}`; 
+    }
+
     // Kirim button functionality
-        kirimButton.addEventListener('click', function() {
+    kirimButton.addEventListener('click', function() {
         const sesiSelect = document.getElementById('sesiSelect');
         const appointmentDate = document.getElementById('appointmentDate');
         
@@ -586,17 +794,66 @@
             return;
         }
         
-        // Close the modal properly
-        const modalElement = document.getElementById('bookingModal');
-        const modalInstance = bootstrap.Modal.getInstance(modalElement);
-        modalInstance.hide();
+        // Close the booking modal
+        const bookingModalElement = document.getElementById('bookingModal');
+        const bookingModalInstance = bootstrap.Modal.getInstance(bookingModalElement);
+        bookingModalInstance.hide();
         
+        // Generate booking code
+        const bookingCode = generateBookingCode();
+        document.getElementById('generatedCode').textContent = bookingCode;
+        
+        // Set appointment date/time
+        const selectedDate = new Date(appointmentDate.value);
+        const formattedDateTime = formatAppointmentDate(selectedDate, sesiSelect.value);
+        document.getElementById('appointmentDateTime').textContent = formattedDateTime;
+        
+        // Show success modal
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+        
+        // Reset form for next use
         resetForm();
-        
-        alert('Jadwal berhasil dipesan!');
-
-        bookingModal.hide();
+        // Reset click count
+        clickCount = 0;
     });
-    </script>
+
+    // Add event listener for the success back button
+    document.getElementById('successBackBtn').addEventListener('click', function() {
+        // Ensure both the modal and backdrop are removed
+        document.body.classList.remove('modal-open');
+        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        if (modalBackdrops.length > 0) {
+            for (let i = 0; i < modalBackdrops.length; i++) {
+                modalBackdrops[i].parentNode.removeChild(modalBackdrops[i]);
+            }
+        }
+    });
+
+    // Add event listener for the close button in success modal
+    document.getElementById('successModal').addEventListener('hidden.bs.modal', function () {
+        // Ensure the backdrop is removed properly when modal is hidden
+        document.body.classList.remove('modal-open');
+        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        if (modalBackdrops.length > 0) {
+            for (let i = 0; i < modalBackdrops.length; i++) {
+                modalBackdrops[i].parentNode.removeChild(modalBackdrops[i]);
+            }
+        }
+    });
+
+    // Add event listener for Hubungi Admin button
+    document.getElementById('hubungiAdminBtn').addEventListener('click', function() {
+        // You can add functionality here to actually contact admin
+        // For now, just ensure proper cleanup
+        document.body.classList.remove('modal-open');
+        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        if (modalBackdrops.length > 0) {
+            for (let i = 0; i < modalBackdrops.length; i++) {
+                modalBackdrops[i].parentNode.removeChild(modalBackdrops[i]);
+            }
+        }
+    });
+</script>
 </body>
 </html>
