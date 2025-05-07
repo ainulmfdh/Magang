@@ -535,7 +535,7 @@
         <section id="slider" class="home-section home-fade home-full-height">
             <div class="hero-slider">
                 <ul class="slides">
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/work-7.jpg);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
@@ -544,7 +544,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-1.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
@@ -553,7 +553,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-2.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
@@ -1039,7 +1039,7 @@
         }
 
         function showPrivatForm() {
-            document.getElementById('bpjsForm').classList.add('d-none');
+            document.getElementById('bpjsForm').classLbghist.add('d-none');
             document.getElementById('privatForm').classList.remove('d-none');
             document.getElementById('privat').classList.add('active');
             document.getElementById('bpjs').classList.remove('active');
