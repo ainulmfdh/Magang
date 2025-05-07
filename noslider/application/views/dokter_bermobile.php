@@ -53,6 +53,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-weight: 300;
         }
         /* berita Styling */
+		.berita-section {
+            background-color: #ECFFFC;
+			width: 100%;
+            margin-top: 100px;
+            padding: 3px 10px;
+		}
         .news-card {
             border-radius: 10px;
             overflow: hidden;
@@ -60,6 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             height: 100%;
             max-width: 300px;
+			background-color: white;
         }
         .news-card img {
             width: 100%;
@@ -144,14 +151,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         
         /* Container padding for mobile */
-        .container {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="container">
+	<section class="dokter-section">
+    <div class="container-docter">
         <!-- Dokter Section -->
         <h2 class="section-title">Dokter</h2>
         <div class="doctor-carousel-container">
@@ -200,8 +205,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button>
             </div>
         </div>
+		</section>
 
         <!-- Berita Section -->
+		<section class="berita-section" style="background-color: #ECFFFC;">
+		<div class="container-berita">
         <h2 class="section-title">Berita</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
@@ -219,6 +227,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Read More Button -->
         <a href="#" class="read-more-btn">Read More</a>
     </div>
+	</section>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

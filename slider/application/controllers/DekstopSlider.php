@@ -3,7 +3,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class DekstopSlider extends CI_Controller {
-
+    public function __construct() {
+        parent::__construct();
+        // if (!detect_device_and_redirect()) {
+		// 	redirect('homedekstop');
+		// }
+    }
     function index() {
         // $this->load->view('dekstop/header');
         // $this->load->view('dekstop/home_dekstop_slider');
@@ -14,6 +19,10 @@ class DekstopSlider extends CI_Controller {
         // $this->load->view('dekstop/background');
 
         $this->load->view('dekstop/home_dekstop');
+    }
+
+    public function test() {
+        echo "test";
     }
 }
 

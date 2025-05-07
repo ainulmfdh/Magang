@@ -461,107 +461,58 @@
 		}
 
         /* footer */
-        .footer-section {
-            background-color: #00AAB5;
-            color: white;
-            padding: 40px 0;
-        }
-        
-        .footer-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .social-media-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 4px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .social-media-logo {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .social-media-title {
-            color: #337ab7;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .social-media-followers {
-            font-size: 14px;
-            color: #555;
-        }
-        
-        .social-btn {
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-right: 5px;
-            font-size: 14px;
-        }
-        
-        .follow-btn {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            color: #333;
-        }
-        
-        .contact-form .form-control {
-            margin-bottom: 15px;
-            border-radius: 4px;
-        }
-        
-        .contact-form textarea {
-            resize: none;
-            height: 120px;
-        }
-        
-        .input-group {
-            margin-bottom: 15px;
-            width: 100%;
-        }
-        
-        .input-group-text {
-            color: #00AAB5; /* Updated to match Send button color */
-        }
-        
-        .btn-send {
-            background-color: #FFFFFF;
-            color: #00AAB5;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 4px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .whatsapp-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-        }
-        
-        .copyright {
-            font-size: 12px;
-            margin-top: 20px;
-        }
+        /* FOOTER STYLES */
+.footer-section {
+    background-color: #00AAB5;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.social-btn {
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.follow-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* Copyright */
+.copyright {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+/* Utility: text align right untuk desktop */
+.text-md-end {
+    text-align: right;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .text-md-end {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+
 
     </style>
 </head>
@@ -584,7 +535,7 @@
         <section id="slider" class="home-section home-fade home-full-height">
             <div class="hero-slider">
                 <ul class="slides">
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/work-7.jpg);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
@@ -593,7 +544,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-1.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
@@ -602,7 +553,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-2.png);">
+                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
                         <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
@@ -988,88 +939,42 @@
                 </div>
         </section>
 
-        <footer id="footer" class="footer-section">
-                <div class="container">
-                    <div class="row">
+                <footer id="footer" class="footer-section">
+                    <div class="container">
+                        <div class="row align-items-start">
+                        
                         <!-- Left Column -->
                         <div class="col-md-4 mb-4">
                             <h3 class="footer-title">Klinik Mata dr. Sjamsu</h3>
                             <p class="footer-text">
-                                Kami adalah tim dokter mata yang profesional dan berkompetensi tinggi. Kami peduli atas kesehatan mata anda.
+                            Kami adalah tim dokter mata yang profesional dan berkompetensi tinggi. Kami peduli atas kesehatan mata anda.
                             </p>
                             <p class="footer-text">
-                                Dengan menggunakan alat-alat operasi modern beserta kelengkapan penunjang lain yang canggih dan mutakhir, kami siap menjaga kesehatan mata anda.
+                            Dengan menggunakan alat-alat operasi modern beserta kelengkapan penunjang lain yang canggih dan mutakhir, kami siap menjaga kesehatan mata anda.
                             </p>
                         </div>
-                        
+
                         <!-- Middle Column -->
                         <div class="col-md-4 mb-4">
                             <h3 class="footer-title">Social Media</h3>
-                            <div class="social-media-container">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div>
-                                        <div class="social-media-title">Klinik Mata dr. Sjamsu</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <button class="social-btn follow-btn">
-                                        <i class="fab fa-facebook-f me-1"></i> Follow Page
-                                    </button>
-                                    <button class="social-btn follow-btn">
-                                        <i class="fab fa-instagram me-1"></i> Follow Page
-                                    </button>
-                                    <button class="social-btn follow-btn">
-                                        <i class="fab fa-whatsapp me-1"></i> 
-                                    </button>
-                                </div>
+                            <div class="d-flex">
+                            <button class="social-btn follow-btn">
+                                <i class="fab fa-facebook-f me-1"></i> Follow Page
+                            </button>
+                            <button class="social-btn follow-btn">
+                                <i class="fab fa-instagram me-1"></i> Follow Page
+                            </button>
                             </div>
                         </div>
-                        
-                        <!-- Right Column -->
-                        <div class="col-md-4">
-                            <h3 class="footer-title">Contact Us</h3>
-                            <form class="contact-form">
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fas fa-user" style="color: #00AAB5;"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Full Name">
-                                </div>
-                                
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fas fa-envelope" style="color: #00AAB5;"></i>
-                                    </span>
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                                
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white">
-                                        <i class="fas fa-pen" style="color: #00AAB5;"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="Subject">
-                                </div>
-                                
-                                <textarea class="form-control" placeholder="Message" style="margin-bottom: 15px;"></textarea>
-                                
-                                <button type="submit" class="btn-send">Send</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <!-- Copyright -->
-                    <div class="row">
-                        <div class="col-12">
+
+                        <!-- Right Column (Copyright) -->
+                        <div class="col-md-4 mb-4 text-md-end">
                             <p class="copyright">Copyright © 2025 CV SB</p>
                         </div>
+
+                        </div>
                     </div>
-                </div>
-                
-                <!-- WhatsApp Floating Button -->
-                <a href="#" class="whatsapp-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-        </footer>
+                </footer>
     </div>
 
     <!-- jQuery -->

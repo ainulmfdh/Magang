@@ -102,49 +102,49 @@
     </div>
 
     <!-- Form Privat -->
-<div id="privatForm" class="card1 card-custom-privat p-4 d-none">
-    <h5 class="text-white">Pesan Jadwal Pemeriksaan - Privat</h5>
-    <form id="privatForm" class="needs-validation" novalidate onsubmit="return validateForm(event)">
-        <div class="mb-2">
-            <label for="nik" class="form-label">NIK</label>
-            <small class="form-example">Eg. (3576014403910003)</small>
-            <input type="text" id="nik" class="form-control rounded-2" pattern="\d{16}" required>
-            <div class="invalid-feedback">Masukkan NIK 16 digit.</div>
-        </div>
+    <div id="privatForm" class="card1 card-custom-privat p-4 d-none">
+        <h5 class="text-white">Pesan Jadwal Pemeriksaan - Privat</h5>
+        <form id="privatForm" class="needs-validation" novalidate onsubmit="return validateForm(event)">
+            <div class="mb-2">
+                <label for="nik" class="form-label">NIK</label>
+                <small class="form-example">Eg. (3576014403910003)</small>
+                <input type="text" id="nik" class="form-control rounded-2" pattern="\d{16}" required>
+                <div class="invalid-feedback">Masukkan NIK 16 digit.</div>
+            </div>
 
-        <div class="mb-2">
-            <label for="rujukan" class="form-label">Nomor Surat Rujukan / Kontrol</label>
-            <small class="form-example">Eg. (021750052025K0002867)</small>
-            <input type="text" id="rujukan" class="form-control rounded-2" pattern="[A-Z0-9]{20,25}" required>
-            <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
-        </div>
+            <div class="mb-2">
+                <label for="rujukan" class="form-label">Nomor Surat Rujukan / Kontrol</label>
+                <small class="form-example">Eg. (021750052025K0002867)</small>
+                <input type="text" id="rujukan" class="form-control rounded-2" pattern="[A-Z0-9]{20,25}" required>
+                <div class="invalid-feedback">Masukkan Nomor Rujukan yang valid.</div>
+            </div>
 
-        <button type="submit" class="btn1 btn-custom-privat w-50 mt-3">Cek</button>
-    </form>
+            <button type="submit" class="btn1 btn-custom-privat w-50 mt-3">Cek</button>
+        </form>
 
-    <div id="extraFormPrivat" class="d-none mt-3">
-        <div class="p-3 bg-light border rounded text-dark">
-            <p><strong>Nama :</strong> Jane Doe</p>
-            <p><strong>NIK :</strong> 3576014403910003</p>
-            <p><strong>No. HP :</strong> 081234567890</p>
-        </div>
-        <div class="mt-2">
-            <label for="tanggalPrivat" class="form-label text-white">Pilih Tanggal</label>
-            <input type="date" id="tanggalPrivat" class="form-control rounded-2">
-        </div>
-        <div class="mt-2">
-            <label for="sesiPrivat" class="form-label text-white">Pilih Sesi</label>
-            <select id="sesiPrivat" class="form-select">
-                <option>Pagi</option>
-                <option>Siang</option>
-                <option>Sore</option>
-            </select>
-        </div>
-        <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
-        <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
-        <button type="submit" class="btn1 btn-custom-privat w-100 mt-3">Kirim</button>
-    </div>            
-</div>
+        <div id="extraFormPrivat" class="d-none mt-3">
+            <div class="p-3 bg-light border rounded text-dark">
+                <p><strong>Nama :</strong> Jane Doe</p>
+                <p><strong>NIK :</strong> 3576014403910003</p>
+                <p><strong>No. HP :</strong> 081234567890</p>
+            </div>
+            <div class="mt-2">
+                <label for="tanggalPrivat" class="form-label text-white">Pilih Tanggal</label>
+                <input type="date" id="tanggalPrivat" class="form-control rounded-2">
+            </div>
+            <div class="mt-2">
+                <label for="sesiPrivat" class="form-label text-white">Pilih Sesi</label>
+                <select id="sesiPrivat" class="form-select">
+                    <option>Pagi</option>
+                    <option>Siang</option>
+                    <option>Sore</option>
+                </select>
+            </div>
+            <small class="text-white d-block mt-2">*Batas maksimum pemesanan jadwal 3 bulan ke depan</small>
+            <small class="text-white d-block">*Pilihan tanggal akan berwarna merah jika kuota penuh</small>
+            <button type="submit" class="btn1 btn-custom-privat w-100 mt-3">Kirim</button>
+        </div>            
+    </div>
 </div>
 
 </body>
