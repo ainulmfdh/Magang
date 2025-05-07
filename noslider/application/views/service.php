@@ -13,7 +13,7 @@
             /* padding: 20px; */
         }
 
-        .background {
+        .background-service {
             background-color: rgba(0, 170, 180, 0.05);
             padding: 40px 20px;
             margin-top: 40px;
@@ -91,7 +91,7 @@
     </style>
 </head>
 <body>
-    <div class="background">
+    <div class="background-service">
     <div class="container-service">
         <div class="header-service">
             <h1>Klinik Mata dr. Sjamsu</h1>
