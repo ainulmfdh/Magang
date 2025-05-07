@@ -22,7 +22,11 @@
     <style>
         body {
             min-height: 100vh;
-            background-color: black;
+            background-image: url('asset/PORTOFOLIO.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
         }
         
         #hamburger-menu {
