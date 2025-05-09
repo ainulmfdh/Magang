@@ -5,7 +5,7 @@ class Mobile extends CI_Controller {
 
 	public function index()
 	{
-        // $this->load->view('header');
+        $this->load->view('Mobile/header');
 		$this->load->view('dokter_bermobile');
         // $this->load->view('jammapsmobile');
 	}

@@ -7,8 +7,9 @@ class Desktop extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('service');
-		$this->load->view('dokter_bermobile');
-		$this->load->view('jammapsmobile');
-    $this->load->view('footer');
+		$this->load->view('popup');
+		$this->load->view('dokter_berita');
+		$this->load->view('jammaps');
+    	$this->load->view('footer');
 	}
 }
