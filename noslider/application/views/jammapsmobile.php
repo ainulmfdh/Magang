@@ -225,6 +225,7 @@
   </style>
 </head>
 <body>
+<section id="jam">
   <div class="container-jam">
     <div class="info-panel">
       <h2 class="section-tittle-jam">Jam Operasional</h2>
@@ -256,6 +257,7 @@
       </a>
     </div>
   </div>
+	</section>
 
   <div class="footer">
     <div class="footer-container-jam">

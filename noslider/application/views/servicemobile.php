@@ -117,6 +117,7 @@
     </style>
 </head>
 <body>
+<section id="service">
     <div class="container-service">
     <div class="background-service">
         <div class="header-service">
@@ -204,5 +205,6 @@
         </div>
     </div>
     </div>
+	</section>
 </body>
 </html>
