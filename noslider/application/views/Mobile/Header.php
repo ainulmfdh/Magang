@@ -314,7 +314,9 @@
         
         <div class="hero">
             <div class="hero-bg">
+			<section id="header">
                 <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik" style="max-width: 380px; justify-content: center;">
+			</section>
             </div>
                 
         
