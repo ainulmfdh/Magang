@@ -5,11 +5,11 @@ class Desktop extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('service');
-		$this->load->view('popup');
-		$this->load->view('dokter_berita');
-		$this->load->view('jammaps');
-    	$this->load->view('footer');
+		$this->load->view('Desktop/header');
+		$this->load->view('Desktop/service');
+		$this->load->view('Desktop/popup');
+		$this->load->view('Desktop/dokter_berita');
+		$this->load->view('Desktop/jammaps');
+    	$this->load->view('Desktop/footer');
 	}
 }
