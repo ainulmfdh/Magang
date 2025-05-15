@@ -57,6 +57,23 @@
         nav ul li a:hover {
             color: #16b9c8;
         }
+
+        /* Efek garis bawah untuk menu aktif dan hover */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: #00aaff; /* Warna garis bawah */
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li.active a {
+            color: #00aaff; /* Warna teks saat hover atau aktif */
+        }
         
     </style>
 </head>
@@ -65,13 +82,23 @@
         <div class="logo">
             <img src="<?= base_url('asset/logo.png'); ?>" alt="Logo Klinik Mata dr Sjarsu">
         </div>
-        <nav>
+       <nav>
             <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Pelayanan</a></li>
-                <li><a href="<?= base_url('Desktop/doctor') ; ?>">Dokter</a></li>
-                <li><a href="#">Jadwal Dokter</a></li>
-                <li><a href="#">Berita Terbaru</a></li>
+                <li class="<?= $this->uri->segment(1) == 'desktop' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('desktop'); ?>">Beranda</a>
+                </li>
+                <li class="<?= $this->uri->segment(1) == 'pelayanan' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('pelayanan'); ?>">Pelayanan</a>
+                </li>
+                <li class="<?= $this->uri->segment(1) == 'doctor' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('doctor'); ?>">Dokter</a>
+                </li>
+                <li class="<?= $this->uri->segment(1) == 'jadwal_dokter' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('jadwal_dokter'); ?>">Jadwal Dokter</a>
+                </li>
+                <li class="<?= $this->uri->segment(1) == 'berita' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('berita'); ?>">Berita Terbaru</a>
+                </li>
             </ul>
         </nav>
     </header>
