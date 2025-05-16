@@ -162,7 +162,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="doctor-card">
+<<<<<<< HEAD:noslider/application/views/dokter_berita.php
+                                    <img src="asset/dkt.png" alt="Doctor" class="img-fluid">
+=======
                                     <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
+>>>>>>> fc63b38044ac189456b1e4a6a4300b7a2f6a5860:noslider/application/views/Desktop/dokter_berita.php
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -180,7 +184,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
+<<<<<<< HEAD:noslider/application/views/dokter_berita.php
+                                    <img src="asset/dkt.png" alt="Doctor" class="img-fluid">
+=======
                                     <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
+>>>>>>> fc63b38044ac189456b1e4a6a4300b7a2f6a5860:noslider/application/views/Desktop/dokter_berita.php
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -204,7 +212,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
+<<<<<<< HEAD:noslider/application/views/dokter_berita.php
+                                    <img src="asset/dkt.png" alt="Doctor" class="img-fluid">
+=======
                                     <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
+>>>>>>> fc63b38044ac189456b1e4a6a4300b7a2f6a5860:noslider/application/views/Desktop/dokter_berita.php
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
