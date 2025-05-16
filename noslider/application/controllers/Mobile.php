@@ -10,4 +10,11 @@ class Mobile extends CI_Controller {
 		$this->load->view('Mobile/dokter_bermobile');
         $this->load->view('Mobile/jammapsmobile');
 	}
+
+	public function jadwaldokter()
+	{
+		$this->load->view('Mobile/header');
+		$this->load->view('Mobile/jadwaldokter');
+		$this->load->view('Mobile/jammapsmobile');
+	}
 }

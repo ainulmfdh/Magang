@@ -767,7 +767,7 @@
             <li><a href="#">Beranda</a></li>
             <li><a href="#">Pelayanan</a></li>
             <li><a href="#">Dokter</a></li>
-            <li><a href="#">Jadwal Dokter</a></li>
+            <li><a href="<?= base_url('Mobile/jadwaldokter')?>">Jadwal Dokter</a></li>
             <li><a href="#">Berita Terbaru</a></li>
         </ul>
     </div>

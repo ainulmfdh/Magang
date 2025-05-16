@@ -70,7 +70,7 @@
                 <li><a href="#">Beranda</a></li>
                 <li><a href="#">Pelayanan</a></li>
                 <li><a href="<?= base_url('Desktop/doctor') ; ?>">Dokter</a></li>
-                <li><a href="#">Jadwal Dokter</a></li>
+                <li><a href="<?= base_url('Desktop/jadwal_dokter') ; ?>">Jadwal Dokter</a></li>
                 <li><a href="#">Berita Terbaru</a></li>
             </ul>
         </nav>

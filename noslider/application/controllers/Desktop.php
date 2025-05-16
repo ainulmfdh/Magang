@@ -19,4 +19,12 @@ class Desktop extends CI_Controller {
 		$this->load->view('Desktop/header');
 		$this->load->view('Desktop/dokter_page');
 	}
+
+	public function jadwal_dokter()
+	{
+		$this->load->view('Desktop/header');
+		$this->load->view('Desktop/jadwal_dokter');
+		$this->load->view('Desktop/jammaps');
+		$this->load->view('Desktop/footer');
+	}
 }
