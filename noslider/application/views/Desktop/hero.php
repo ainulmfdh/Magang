@@ -392,6 +392,7 @@
 <body>
     
     <main class="hero">
+        
         <div class="hero-content">
             <h1>Fokus Utama Untuk Kesehatan Mata Anda</h1>
             <p>Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>

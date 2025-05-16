@@ -76,7 +76,7 @@
 </head>
 <body>
 <div class="mobile-navbar">
-    <a href="#header">
+    <a href="#hero">
         <div class="nav-item">
 		<i class="fa-solid fa-house" style="color: #fafafa;"></i>
             <span class="text_nav">Home</span>
