@@ -1,5 +1,5 @@
 <?php
-// header.php - Contains the hero section with booking button
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -21,13 +21,6 @@
             background-color: #ffffff;
         }
         
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
         
         .logo {
             display: flex;
@@ -36,26 +29,6 @@
         
         .logo img {
             height: 30px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 2.5rem;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 17px;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
-            color: #16b9c8;
         }
         
         .hero {
@@ -417,22 +390,17 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="asset/logo.png" alt="Logo Klinik Mata dr Sjarsu">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Pelayanan</a></li>
-                <li><a href="#">Dokter</a></li>
-                <li><a href="#">Jadwal Dokter</a></li>
-                <li><a href="#">Berita Terbaru</a></li>
-            </ul>
-        </nav>
-    </header>
     
     <main class="hero">
+<<<<<<< HEAD:noslider/application/views/headermobile.php
+        <div class="hero-image">
+			<section id="hero">
+            <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik">
+			</section>
+        </div>
+        
+=======
+>>>>>>> fc63b38044ac189456b1e4a6a4300b7a2f6a5860:noslider/application/views/Desktop/hero.php
         <div class="hero-content">
             <h1>Fokus Utama Untuk Kesehatan Mata Anda</h1>
             <p>Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
@@ -445,7 +413,7 @@
         </div>
         
         <div class="hero-image">
-            <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
+            <img src="<?= base_url('asset/hero-img.png'); ?>" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
         </div>
     </main>
 

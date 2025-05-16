@@ -10,5 +10,6 @@ class Mobile extends CI_Controller {
 		$this->load->view('dokter_bermobile');
         $this->load->view('jammapsmobile');
         $this->load->view('navbar');
+
 	}
 }
