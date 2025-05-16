@@ -392,15 +392,7 @@
 <body>
     
     <main class="hero">
-<<<<<<< HEAD:noslider/application/views/headermobile.php
-        <div class="hero-image">
-			<section id="hero">
-            <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik">
-			</section>
-        </div>
         
-=======
->>>>>>> fc63b38044ac189456b1e4a6a4300b7a2f6a5860:noslider/application/views/Desktop/hero.php
         <div class="hero-content">
             <h1>Fokus Utama Untuk Kesehatan Mata Anda</h1>
             <p>Jadwalkan waktu anda untuk periksa maupun konsultasi pada klinik kami, dengan klik booking dibawah ini</p>
