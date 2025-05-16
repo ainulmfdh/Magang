@@ -784,7 +784,9 @@
     
     <main class="hero">
         <div class="hero-image">
+			<section id="hero">
             <img src="asset/hero-img.png" alt="Dokter dengan keterangan klinik">
+			</section>
         </div>
         
         <div class="hero-content">
