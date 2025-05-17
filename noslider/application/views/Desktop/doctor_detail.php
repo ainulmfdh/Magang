@@ -129,6 +129,7 @@
             font-size: 30px;
             margin-left: 10px;
             color: #333;
+            font-weight: 600;
         }
         
         .detail-title img {

@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         .doctor-card {
             background-color: #a9e7e7;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
