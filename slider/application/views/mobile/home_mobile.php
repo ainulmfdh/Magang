@@ -13,7 +13,7 @@
     <link href=".../../../assets/css/style.css" rel="stylesheet">
 
     <!-- form -->
-    <link rel="stylesheet" href="<?= base_url('asset/css/form.css') ?>">
+    <link rel="stylesheet" href=".../../../asset/css/form.css">
 
     <!-- layanan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -337,11 +337,11 @@
         <section id="header">
             <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
                 <div class="d-flex align-items-center h-100">
-                    <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
-                    <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
+                    <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src=".../../../asset/image_2.png">
+                    <img style="margin-left: 85px;" src=".../../../asset/image_4.png">
                 </div>
                 <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-                    <img src="<?= base_url('asset/material-symbols_menu.png');?>">   
+                    <img src=".../../../asset/material-symbols_menu.png">   
                 </div>
             </div>
             
@@ -560,7 +560,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="card-dokter">
-                                <img src="<?= base_url ('/asset/dokter2.png');?>" alt="Dokter 2">
+                                <img src=".../../../asset/dokter2.png" alt="Dokter 2">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Budi Santoso, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -644,7 +644,7 @@
                 <!-- Clinic Logo and Description (Left-aligned) -->
                 <div class="mb-4">
                     <div class="d-flex align-items-center">
-                        <img src="<?= base_url('/asset/image3.png'); ?>" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
+                        <img src=".../../../asset/image3.png" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
                     </div>
                     <p class="mt-4">
                         Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.
@@ -724,19 +724,19 @@
             }
         });
 
-        // $(document).ready(() => {
-        //     detectScreen();
-        //     $(window).on('resize', detectScreen);
-        // })
+        $(document).ready(() => {
+            detectScreen();
+            $(window).on('resize', detectScreen);
+        })
 
-        // function detectScreen() {
-        //     var width = $(window).width();
+        function detectScreen() {
+            var width = $(window).width();
             
-        //     if (width >= 768) {
-        //         window.location.href = '<?= base_url('homedekstop') ?>';
-        //         console.log('mobile');
-        //     } 
-        // }
+            if (width >= 768) {
+                window.location.href = '<?= base_url('DekstopSlider') ?>';
+                console.log('dekstop');
+            } 
+        }
     </script>
 
     <!-- slider -->

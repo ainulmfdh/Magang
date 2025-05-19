@@ -11,7 +11,7 @@
     <link href=".../../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
     <link href=".../../../assets/css/style.css" rel="stylesheet">
     <!-- Form -->
-    <link rel="stylesheet" href="<?= base_url('asset/css/form.css') ?>">
+    <link rel="stylesheet" href=".../../../asset/css/form.css">
     <!-- Layanan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Dokter dan Berita -->
@@ -19,7 +19,7 @@
     <title>Document</title>
     <style>
         html, body {
-            background-image: url('<?= base_url('asset/PORTOFOLIO.png');?>');
+            background-image: url('.../../../asset/PORTOFOLIO.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -521,8 +521,8 @@
     <div id="container">
         <section id="header" class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
             <div class="d-flex align-items-center">
-                <img id="logomata" src="<?= base_url('asset/image_2.png');?>">
-                <img src="<?= base_url('asset/image_4.png');?>">
+                <img id="logomata" src=".../../../asset/image_2.png">
+                <img src=".../../../asset/image_4.png">
             </div>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
                 <p class="menu-border">Beranda</p>
