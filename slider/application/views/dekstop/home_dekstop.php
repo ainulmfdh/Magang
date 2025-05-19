@@ -536,32 +536,35 @@
         <section id="slider" class="home-section home-fade home-full-height">
             <div class="hero-slider">
                 <ul class="slides">
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
                                 <div class="font-alt mb-40 titan-title-size-4">We are Titan</div>
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html template for<br />web developers who change the world</div>
                                 <a class="btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <img src=".../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png" alt="" style="height: 100%; width:100%">
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
                                 <div class="font-alt mb-40 titan-title-size-3">We are Amazing</div>
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
                     </li>
+                    <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                 </ul>
             </div>
         </section>
@@ -991,15 +994,11 @@
         </footer>
     </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Slider -->
     <script src=".../../../assets/lib/jquery/dist/jquery.js"></script>
     <script src=".../../../assets/lib/wow/dist/wow.js"></script>
-    <script src=".../../../assets/lib/flexslider/jquery.flexslider.js"></script>
-    <script src=".../../../assets/js/main.js"></script>
+    <script type="text/javascript" src=".../../../assets/lib/flexslider/jquery.flexslider.js"></script>
+    <script type="text/javascript" src=".../../../assets/js/main.js"></script>
 
     <!-- Form JavaScript -->
     <script>
