@@ -92,4 +92,22 @@ class News extends CI_Controller {
         $this->News_model->delete_news($id);
         redirect('news');
     }
+    
+
+    // NEWS MOBILE
+     public function mobile() {
+		$this->load->view('Mobile/header');
+        $data['news'] = $this->News_model->get_all_news();
+
+		// Mapping data
+		foreach ($data['news'] as &$item) {
+			$item->id = $item->news_id;
+			$item->judul_berita = $item->news_id_title;
+			$item->deskripsi = $item->news_id_contents;
+			$item->gambar = $item->news_cover;
+			$item->tanggal = $item->updated_at;
+		}
+        $this->load->view('Desktop/news', $data);
+		$this->load->view('Mobile/jammapsmobile');
+    }
 }
