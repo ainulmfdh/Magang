@@ -8,17 +8,26 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Berita - Portal Berita Terbaru</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins';
+    /* Breadcrumb Start */
+        .breadcrumb {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 170, 181, 0.05);
+            padding: 12px 12px;
         }
-        
-        body {
-            background-color:rgb(255, 255, 255);
+        .breadcrumb-item {
+            padding-left: 60px;
         }
-        
+        .breadcrumb li {
+            font-size: 15px;
+        }
+
+        .breadcrumb li a {
+            text-decoration: none;
+            font-weight: 500;
+        }
+    /* Breadcrumb End */
+
         .container-news {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,6 +44,7 @@
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
+            color: #434343;
         }
         
         .tagline {
@@ -82,8 +92,8 @@
         }
         
         .news-image {
-            width: 100%;
-            height: 150px;
+            width: 50px
+            height: 50px;
             object-fit: cover;
         }
         
@@ -205,9 +215,36 @@
             margin: 20px auto;
             overflow: hidden;
         }
+
+        .limit-3-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;      
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .limit-2-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;      
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .spacer{
+            margin-bottom: 60px;
+        }
     </style>
 </head>
 <body>
+    <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'%236c757d\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a href="#">Dokter</a></li> -->
+            <li class="breadcrumb-item active" aria-current="page">Berita</li>
+        </ol>
+    </nav>
+
     <div class="container-news">
        
             <h1 class="title-news">Berita</h1>
@@ -218,62 +255,60 @@
             </div>
         </div>
    
-        
 
      <!-- Berita Section -->
        <h1 class="title-news">Berita Terbaru</h1>
     <section class="berita-section" style="background-color: rgba(0, 170, 181, 0.05);">
     <div class="container">
-       
-       <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="news-card">
-                    <img src="<?= base_url('asset/berita.png'); ?>" alt="News" class="img-fluid">
-                    <div class="news-info">
-                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
-                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia...</p>
-                        <a class="btn-detail">11 Apr 2025</a>
-                    </div>
+      
+    <?php
+    // Tambahkan fungsi tanggal_indo di atas sebelum looping jika belum ada
+    function tanggal_indo($tanggal) {
+        $bulan = [
+            1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        ];
+
+        $tanggal = date('Y-m-d', strtotime($tanggal));
+        $pecah = explode('-', $tanggal);
+        $tgl = (int)$pecah[2];
+        $bln = (int)$pecah[1];
+        $thn = $pecah[0];
+
+        return $tgl . ' ' . $bulan[$bln] . ' ' . $thn;
+    }
+    ?>
+
+<div class="row">
+    <?php foreach ($news as $item): ?>
+        <div class="col-md-3 mb-4">
+            <div class="news-card">
+                <a href="<?= site_url('news/view/' . $item->id); ?>">
+                    <?php if (!empty($item->gambar)): ?>
+                        <img src="<?= base_url('asset/' . $item->gambar); ?>" alt="Foto Berita" class="img-fluid">
+                    <?php else: ?>
+                        <div class="no-photo">Tidak ada foto</div>
+                    <?php endif; ?>
+                </a>
+                <div class="news-info">
+                     <h3 class="news-title limit-2-lines">
+                        <?= strip_tags($item->judul_berita); ?>
+                    </h3>
+                    <p class="news-summary limit-3-lines">
+                        <?= strip_tags($item->deskripsi); ?>
+                    </p>
+                    <a class="btn-detail"><?= tanggal_indo($item->tanggal); ?></a>
                 </div>
             </div>
-     <div class="col-md-3 mb-4">
-                <div class="news-card">
-                    <img src="<?= base_url('asset/berita.png'); ?>" alt="News" class="img-fluid">
-                    <div class="news-info">
-                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
-                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia...</p>
-                        <a class="btn-detail">11 Apr 2025</a>
-                    </div>
-                </div>
-            </div>
-              <div class="col-md-3 mb-4">
-                <div class="news-card">
-                    <img src="<?= base_url('asset/berita.png'); ?>" alt="News" class="img-fluid">
-                    <div class="news-info">
-                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
-                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia...</p>
-                        <a class="btn-detail">11 Apr 2025</a>
-                    </div>
-                </div>
-            </div>
-              <div class="col-md-3 mb-4">
-                <div class="news-card">
-                    <img src="<?= base_url('asset/berita.png'); ?>" alt="News" class="img-fluid">
-                    <div class="news-info">
-                        <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
-                        <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia...</p>
-                        <a class="btn-detail">11 Apr 2025</a>
-                    </div>
-                </div>
-            </div>
+        </div>
+    <?php endforeach; ?>
 </div>
 
             
         </div>
     </section>
 
-
-    
+    <div class="spacer"></div>
     <!-- Bootstrap 5 JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
