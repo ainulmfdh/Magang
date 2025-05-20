@@ -1,0 +1,628 @@
+body {
+    background-color: #ffffff;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    min-height: 100vh;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content h1 {
+    color: #333;
+    font-size: 24px;
+    /* Disesuaikan untuk mobile */
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    color: #666;
+    font-size: 20px;
+    margin-bottom: 24px;
+    line-height: 2;
+}
+
+.booking-btn {
+    background-color: #00ACC1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.booking-btn:hover {
+    background-color: #008B9A;
+}
+
+.booking-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.hero-image {
+    display: flex;
+    padding-top: 50px;
+}
+
+.hero-image img {
+    width: 500px;
+    height: 700px;
+    margin-bottom: 50px;
+}
+
+/* Custom Modal Styles */
+.modal-header-tabs {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px;
+    gap: 15px;
+    background-color: #f2f2f2;
+    border-bottom: none;
+}
+
+.tab {
+    padding: 12px 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.tab.active {
+    background-color: #16b9c8;
+    color: white;
+}
+
+.tab:not(.active) {
+    background-color: white;
+    color: #333;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #585C5C;
+    font-weight: bold;
+}
+
+.modal-content {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    color: #596060;
+    font-weight: bold;
+}
+
+.form-group .hint {
+    font-size: 12px;
+    color: #596060;
+    margin-top: 2px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+}
+
+.form-actions {
+    justify-content: space-between;
+}
+
+.button-cek {
+    background-color: #16b9c8;
+    color: white;
+    border: none;
+    width: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 50px;
+    margin-right: 30px;
+}
+
+.button-cancel {
+    background-color: rgb(196, 42, 42);
+    color: white;
+    border: none;
+    width: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 50px;
+}
+
+/* Patient Data Section */
+.data-pasien {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.data-pasien h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.patient-info {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    row-gap: 10px;
+    color: #333;
+    font-size: 15px;
+}
+
+.patient-info div:nth-child(odd) {
+    font-weight: 500;
+}
+
+/* Session Selection Styling */
+.sesi-selection {
+    margin-top: 15px;
+}
+
+.sesi-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sesi-option {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.sesi-option.selected {
+    background-color: #16b9c8;
+    color: white;
+    border-color: #16b9c8;
+}
+
+/* Tanggal Selection Styling */
+.date-picker {
+    margin-top: 15px;
+}
+
+.date-picker input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+}
+
+.form-notes {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.button-kirim {
+    background-color: #16b9c8;
+    color: white;
+    border: none;
+    width: 150px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Error messages */
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Custom modal size */
+.modal-xl {
+    max-width: 1000px;
+}
+
+.modal-body {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.patient-info p {
+    font-weight: bold;
+}
+
+/* Success Modal Styles */
+.success-modal-content {
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.success-header {
+    background-color: #2ECC71;
+    color: white;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.success-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.success-header .successbtn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.success-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.success-body p {
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.successbooking-code {
+    margin: 15px 0;
+}
+
+.successbooking-code h3 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.successbooking-date {
+    margin-bottom: 15px;
+}
+
+.successbooking-date p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.successbooking-instruction {
+    font-size: 13px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.successbtn-kembali {
+    background-color: #2ECC71;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.successbtn-kembali:hover {
+    background-color: #27AE60;
+}
+
+/* Override bootstrap modal fullscreen */
+@media (max-width: 576px) {
+    .modal-dialog-centered {
+        min-height: calc(100% - 1rem);
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-fullscreen-sm-down {
+        width: auto !important;
+        max-width: 95% !important;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 991px) {
+    nav ul {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .booking-btn {
+        margin: 0 auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .modal-header-tabs {
+        gap: 5px;
+    }
+
+    .tab {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group .hint {
+        font-size: 11px;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .patient-info {
+        grid-template-columns: 80px 1fr;
+        font-size: 14px;
+    }
+
+    .success-header h2 {
+        font-size: 22px;
+    }
+
+    .success-body {
+        padding: 20px 15px;
+    }
+
+    .successbooking-code h3 {
+        font-size: 20px;
+    }
+
+    .successbooking-date p {
+        font-size: 16px;
+    }
+
+    .successbooking-instruction {
+        font-size: 14px;
+    }
+
+    .successbtn-kembali {
+        padding: 8px 30px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Small Screens */
+@media screen and (max-width: 575px) {
+    header {
+        padding: 0.8rem 4%;
+    }
+
+    .logo img {
+        height: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .booking-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .modal-header-tabs {
+        padding: 15px 0 5px;
+    }
+
+    .tab {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .modal-title {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .data-pasien {
+        padding: 10px 15px;
+    }
+
+    .data-pasien h4 {
+        font-size: 14px;
+    }
+
+    .patient-info {
+        grid-template-columns: 70px 1fr;
+        font-size: 13px;
+        row-gap: 5px;
+    }
+
+    .form-notes p {
+        font-size: 11px;
+    }
+
+    .successbooking-code h3 {
+        font-size: 18px;
+    }
+
+    .successbooking-date p {
+        font-size: 14px;
+    }
+
+    .successbooking-instruction {
+        font-size: 13px;
+        margin: 20px 0;
+    }
+}
+
+/* Custom mobile styling from image */
+@media screen and (max-width: 767px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .hero {
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    .hero-image {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        object-fit: cover;
+        max-height: 50vh;
+    }
+
+    .hero-content {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        z-index: 1;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .hero-content h1 {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .booking-btn {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    /* Modal adjustments for mobile */
+    .modal-dialog {
+        margin: 0.5rem;
+        max-width: none;
+    }
+
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+}
