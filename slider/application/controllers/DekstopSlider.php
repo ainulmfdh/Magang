@@ -21,8 +21,8 @@ class DekstopSlider extends CI_Controller {
         $this->load->view('dekstop/home_dekstop');
     }
 
-    public function test() {
-        echo "test";
+    public function dokter_page() {
+        $this->load->view('dekstop/dokter_page');
     }
 }
 

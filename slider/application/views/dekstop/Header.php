@@ -24,8 +24,8 @@
 <body id="header">
     <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
         <div class="d-flex align-items-center">
-            <img id="logomata" src="<?= base_url('asset/image_2.png');?>">
-            <img src="<?= base_url('asset/image_4.png');?>">
+            <img id="logomata" src=".../../../../asset/image_2.png">
+            <img src=".../../../../asset/image_4.png">
         </div>
         <div id="menu-navbar" class="d-flex flex-row align-items-center">
             <p class="menu-border">Beranda</p>
