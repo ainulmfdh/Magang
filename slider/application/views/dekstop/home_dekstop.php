@@ -563,8 +563,8 @@
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
                         </div> -->
+                        <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
-                    <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                 </ul>
             </div>
         </section>
