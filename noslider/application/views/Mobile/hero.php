@@ -12,7 +12,7 @@
     <main class="hero">
         <div class="hero-image">
             <section id="hero">
-                <img src="<?= base_url('asset/hero-img.png'); ?>" alt="Dokter dengan keterangan klinik">
+                <img src="<?= base_url('asset/images/hero-img.png'); ?>" alt="Dokter dengan keterangan klinik">
             </section>
         </div>
         

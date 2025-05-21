@@ -80,7 +80,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="<?= base_url('asset/logo.png'); ?>" alt="Logo Klinik Mata dr Sjarsu">
+            <img src="<?= base_url('asset/images/logo.png'); ?>" alt="Logo Klinik Mata dr Sjarsu">
         </div>
        <nav>
             <ul>

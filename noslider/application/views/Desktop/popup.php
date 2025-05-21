@@ -74,7 +74,7 @@
     <!-- Struktur Pop-up -->
     <div id="popupOverlay" class="popup-overlay">
         <div class="popup-container popup-animation">
-            <img src="<?= base_url('asset/popup-dekstop.png'); ?>" alt="Pengumuman BPJS" class="popup-image">
+            <img src="<?= base_url('asset/images/popup-dekstop.png'); ?>" alt="Pengumuman BPJS" class="popup-image">
             <button id="closeButton" class="close-button">✕</button>
         </div>
     </div>
