@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Dosen - Prof. dr. Sjamsu Budiono, Sp.M(K)</title>
+    <title>Detail Dokter</title>
     <style>
         * {
             margin: 0;

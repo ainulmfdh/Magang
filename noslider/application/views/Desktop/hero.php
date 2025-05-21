@@ -405,7 +405,7 @@
         </div>
         
         <div class="hero-image">
-            <img src="<?= base_url('asset/hero-img.png'); ?>" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
+            <img src="<?= base_url('asset/images/hero-img.png'); ?>" alt="Dokter dengan keterangan klinik" style="max-width: 500px; height: auto;">
         </div>
     </main>
 

@@ -85,7 +85,7 @@
                 <div class="doctor-card">
                     <a href="<?php echo site_url('doctor/view/' . $doctor->doctor_id); ?>">
                         <?php if (!empty($doctor->doctor_photo_open)): ?>
-                            <img src="<?php echo base_url('asset/' . $doctor->doctor_photo_open); ?>" alt="Foto Dokter">
+                            <img src="<?php echo base_url('asset/images/' . $doctor->doctor_photo_open); ?>" alt="Foto Dokter">
                         <?php else: ?>
                             <div class="no-photo">Tidak ada foto</div>
                         <?php endif; ?>
