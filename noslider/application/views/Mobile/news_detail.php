@@ -6,13 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <title>Bakti Sosial Operasi Katarak Klinik Mata Dr. Sjamsu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
          /* Breadcrumb Start */
         .breadcrumb {
             width: 100%;
@@ -21,7 +14,7 @@
             padding: 12px 12px;
         }
         .breadcrumb-item {
-            padding-left: 60px;
+            padding-left: 20px;
         }
         .breadcrumb li {
             font-size: 15px;
@@ -34,7 +27,6 @@
         /* Breadcrumb End */
         
         .body-news {
-            display: flex;
             justify-content: space-between;
             padding: 20px;
             max-width: 1200px;
@@ -51,7 +43,7 @@
         }
         
         h1 {
-            font-size: 24px;
+            font-size: 20px;
             color: #333;
             margin-bottom: 10px;
             font-weight: bold;
@@ -169,7 +161,7 @@
 
   <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'%236c757d\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="<?= base_url('news'); ?>">Berita</a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url('news/mobile'); ?>">Berita</a></li>
       <li class="breadcrumb-item active" aria-current="page">Detail</li>
     </ol>
   </nav>

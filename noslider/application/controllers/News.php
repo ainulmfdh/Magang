@@ -26,14 +26,8 @@ class News extends CI_Controller {
     	$this->load->view('Desktop/footer');
     }
 
-    // public function view($id) {
-	// 	$this->load->view('Desktop/header');
-    //     $data['news'] = $this->News_model->get_news_by_id($id);
-    //     $this->load->view('Desktop/news_detail', $data);
-    // }
-
 	public function view($id)
-{
+    {
     $this->load->model('News_model');
     
     $data['news'] = $this->News_model->get_news_by_id($id);
@@ -107,7 +101,33 @@ class News extends CI_Controller {
 			$item->gambar = $item->news_cover;
 			$item->tanggal = $item->updated_at;
 		}
-        $this->load->view('Desktop/news', $data);
+        $this->load->view('Mobile/news', $data);
 		$this->load->view('Mobile/jammapsmobile');
+    }
+
+    // NEWS MOBILE DETAIL
+    public function mobile_detail($id)
+    {
+    $this->load->model('News_model');
+    
+    $data['news'] = $this->News_model->get_news_by_id($id);
+    if (!$data['news']) {
+        show_404();
+    }
+
+    // Mapping data utama
+    $item = $data['news'];
+    $item->id = $item->news_id;
+    $item->judul_berita = $item->news_id_title;
+    $item->deskripsi = $item->news_id_contents;
+    $item->gambar = $item->news_cover;
+    $item->tanggal = $item->updated_at;
+
+    // Ambil berita lain kecuali yang sedang dibaca
+    $data['related_news'] = $this->News_model->get_related_news($id);
+
+    $this->load->view('Mobile/header');
+    $this->load->view('Mobile/news_detail', $data);
+    $this->load->view('Mobile/jammapsmobile');
     }
 }
