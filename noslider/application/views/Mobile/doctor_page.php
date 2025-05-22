@@ -14,7 +14,7 @@
       padding: 12px 12px;
     }
     .breadcrumb-item {
-      padding-left: 60px;
+      padding-left: 20px;
     }
     .breadcrumb li {
       font-size: 15px;

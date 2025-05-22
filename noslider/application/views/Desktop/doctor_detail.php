@@ -169,14 +169,14 @@
                 </p>
             </div>
             <div class="profile-image">
-                <img src="<?php echo base_url('asset/' . $doctor->doctor_photo_open); ?>" alt="Prof. dr. Sjamsu Budiono">
+                <img src="<?php echo base_url('asset/images/' . $doctor->doctor_photo_open); ?>" alt="Prof. dr. Sjamsu Budiono">
             </div>
         </div>
     </div>
 
     <div class="profile-detail-section">
             <div class="detail-title">
-                <img src="<?= base_url('asset/profil.png'); ?>" alt="Profile icon">
+                <img src="<?= base_url('asset/images/profil.png'); ?>" alt="Profile icon">
                 <h2>Detail Profil</h2>
             </div>
             <div class="detail-content">

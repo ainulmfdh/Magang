@@ -16,7 +16,7 @@
             padding: 12px 12px;
         }
         .breadcrumb-item {
-            padding-left: 60px;
+            padding-left: 20px;
         }
         .breadcrumb li {
             font-size: 15px;
@@ -40,7 +40,7 @@
         }
         
         .title-news {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
             margin-bottom: 20px;
             text-align: center;
@@ -48,7 +48,7 @@
         }
         
         .tagline {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
             margin-bottom: 15px;
             text-align: center;
@@ -283,7 +283,7 @@
     <?php foreach ($news as $item): ?>
         <div class="col-md-3 mb-4">
             <div class="news-card">
-                <a href="<?= site_url('news/view/' . $item->id); ?>">
+                <a href="<?= site_url('news/mobile_detail/' . $item->id); ?>">
                     <?php if (!empty($item->gambar)): ?>
                         <img src="<?= base_url('asset/images/' . $item->gambar); ?>" alt="Foto Berita" class="img-fluid">
                     <?php else: ?>
