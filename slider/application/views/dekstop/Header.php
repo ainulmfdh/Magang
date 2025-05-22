@@ -22,17 +22,19 @@
     </style>
 </head>
 <body id="header">
-    <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
-        <div class="d-flex align-items-center">
-            <img id="logomata" src=".../../../../asset/image_2.png">
-            <img src=".../../../../asset/image_4.png">
-        </div>
-        <div id="menu-navbar" class="d-flex flex-row align-items-center">
-            <p class="menu-border">Beranda</p>
-            <p class="menu-border">Pelayanan</p>
-            <p class="menu-border">Dokter</p>
-            <p class="menu-border">Jadwal Dokter</p>
-            <p class="menu-border">Berita Terbaru</p>
+    <div class="container">
+        <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; z-index: 30;">
+            <div class="d-flex align-items-center">
+                <img id="logomata" src=".../../../../asset/image_2.png">
+                <img src=".../../../../asset/image_4.png">
+            </div>
+            <div id="menu-navbar" class="d-flex flex-row align-items-center">
+                <p class="menu-border">Beranda</p>
+                <p class="menu-border">Pelayanan</p>
+                <p class="menu-border">Dokter</p>
+                <p class="menu-border">Jadwal Dokter</p>
+                <p class="menu-border">Berita Terbaru</p>
+            </div>
         </div>
     </div>
 
