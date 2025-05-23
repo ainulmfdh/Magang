@@ -1,3 +1,14 @@
+<?php
+// Helper function untuk mencari ID dokter berdasarkan nama
+function findDoctorId($doctors, $doctorName) {
+    foreach ($doctors as $doctor) {
+        if (strtolower(trim($doctor->doctor_name)) == strtolower(trim($doctorName))) {
+            return $doctor->doctor_id;
+        }
+    }
+    return null; // Jika tidak ditemukan
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -187,6 +198,10 @@
             font-weight: 500;
         }
         
+        .doctor-name:hover {
+            text-decoration: underline;
+        }
+        
         .register-btn {
             display: inline-block;
             background-color: #00b7c2;
@@ -199,6 +214,11 @@
         
         .highlight {
             color: #ff0000;
+        }
+        
+        .time-slot {
+            font-size: 12px;
+            color: #666;
         }
     </style>
 </head>
@@ -215,23 +235,11 @@
             <h2 class="section-title">Jadwal Berdasarkan Dokter</h2>
             
             <!-- Doctor Selection Dropdown -->
-            <select class="doctor-select" id="doctorSelect">
-                <option value="dr. Ria Sandy, Sp.M(K)">dr. Ria Sandy, Sp.M(K)</option>
-                <option value="Prof. dr. Sjamsu Budiono, Sp.M(K)">Prof. dr. Sjamsu Budiono, Sp.M(K)</option>
-                <option value="dr. M. Firmansyah, Sp.M(K)">dr. M. Firmansyah, Sp.M(K)</option>
-                <option value="dr. Maha Arina Dian Ishriani, Sp.M">dr. Maha Arina Dian Ishriani, Sp.M</option>
-                <option value="dr. Vinca Deopardhi, Sp.M">dr. Vinca Deopardhi, Sp.M</option>
-                <option value="dr. Agaprina Caesari Putri, Sp.M">dr. Agaprina Caesari Putri, Sp.M</option>
-                <option value="dr. Finika Wahyu Lestari, Sp.M">dr. Finika Wahyu Lestari, Sp.M</option>
-                <option value="dr. Astrid Pricilla Syarifudin, SpM">dr. Astrid Pricilla Syarifudin, SpM</option>
-                <option value="dr. Valeri Al Hakim, Sp.M">dr. Valeri Al Hakim, Sp.M</option>
-                <option value="dr. Sylvia Dharmaji T, Sp.M, M.Ked.Klin">dr. Sylvia Dharmaji T, Sp.M, M.Ked.Klin</option>
-                <option value="dr. Indrani Kartika Dewi, Sp.M">dr. Indrani Kartika Dewi, Sp.M</option>
-                <option value="dr. Amir Surya, Sp.M">dr. Amir Surya, Sp.M</option>
-                <option value="dr. Daya Ranyu Renang, Sp.M">dr. Daya Ranyu Renang, Sp.M</option>
-                <option value="dr. Cilra Dewi Maharani, Sp.M">dr. Cilra Dewi Maharani, Sp.M</option>
+           <select class="doctor-select" id="doctorSelect">
+                <?php foreach ($doctors as $doctor): ?>
+                    <option value="<?= htmlspecialchars($doctor->doctor_name) ?>"><?= htmlspecialchars($doctor->doctor_name) ?></option>
+                <?php endforeach; ?>
             </select>
-            
             <!-- Calendar -->
             <div class="calendar">
                 <div class="calendar-header">
@@ -276,133 +284,143 @@
                         <th>Saturday</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="#" class="doctor-name">Prof. dr. Sjamsu Budiono, Sp.M(K)</a></td>
-                        <td>17:30 - 20:30</td>
-                        <td>17:30 - 20:30</td>
-                        <td>17:30 - 20:30</td>
-                        <td>17:30 - 20:30</td>
-                        <td>18:30 - 20:30</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. M. Firmansyah, Sp.M(K)</a></td>
-                        <td>19:30 - 20:00</td>
-                        <td>15:30 - 16:00</td>
-                        <td>-</td>
-                        <td>18:00 - 20:00</td>
-                        <td>18:00 - 20:00</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Ria Sandy Demetria, Sp.M(K)</a></td>
-                        <td>-</td>
-                        <td>15:15 - 19:05</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Maha Arina Dian Ishriani, Sp.M</a></td>
-                        <td>-</td>
-                        <td>8:40 - 11:40</td>
-                        <td>-</td>
-                        <td>9:00 - 11:40</td>
-                        <td>8:40 - 12:00</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Vinca Deopardhi, Sp.M</a></td>
-                        <td>8:40 - 12:00</td>
-                        <td>9:40 - 11:40</td>
-                        <td>8:40 - 11:30</td>
-                        <td>8:40 - 9:30</td>
-                        <td>13:00 - 15:00</td>
-                        <td>9:40 - 11:40</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Agaprina Caesari Putri, Sp.M</a></td>
-                        <td>-</td>
-                        <td>18:00 - 20:00</td>
-                        <td>14:30 - 16:30</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Finika Wahyu Lestari, Sp.M</a></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Astrid Pricilla Syarifudin, SpM</a></td>
-                        <td>14:00 - 16:00</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Valeri Al Hakim, Sp.M</a></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>14:30 - 16:30</td>
-                        <td>14:45 - 16:15</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Sylvia Dharmaji T, Sp.M, M.Ked.Klin</a></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>14:30 - 16:30</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Indrani Kartika Dewi, Sp.M</a></td>
-                        <td>-</td>
-                        <td>14:30 - 16:30</td>
-                        <td>-</td>
-                        <td>17:00 - 19:00</td>
-                        <td>17:00 - 19:00</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Amir Surya, Sp.M</a></td>
-                        <td>16:45 - 18:45</td>
-                        <td>-</td>
-                        <td>16:45 - 18:45</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Daya Ranyu Renang, Sp.M</a></td>
-                        <td>12:40 - 14:40</td>
-                        <td>-</td>
-                        <td>8:40 - 14:40</td>
-                        <td>12:40 - 14:40</td>
-                        <td>13:00 - 15:00</td>
-                        <td>9:40 - 11:40</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#" class="doctor-name">dr. Cilra Dewi Maharani, Sp.M</a></td>
-                        <td>8:40 - 14:40</td>
-                        <td>12:40 - 14:40</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>8:40 - 11:40</td>
-                        <td>-</td>
-                    </tr>
+               <tbody>
+                    <?php foreach ($doctors as $doctor): ?>
+                        <tr data-doctor="<?= htmlspecialchars($doctor->doctor_name) ?>">
+                            <td>
+                                <a href="<?= site_url('jadwaldokter/view/' . $doctor->doctor_id); ?>" class="doctor-name">
+                                    <?= htmlspecialchars($doctor->doctor_name) ?>
+                                </a>
+                            </td>
+                            <td>
+                                <?php
+                                // Logika untuk menampilkan jadwal berdasarkan nama dokter
+                                $doctorName = $doctor->doctor_name;
+                                
+                                // Jadwal Monday
+                                if (stripos($doctorName, 'Sjamsu Budiono') !== false) {
+                                    echo '17:30 - 20:30';
+                                } elseif (stripos($doctorName, 'Firmansyah') !== false) {
+                                    echo '19:30 - 20:00';
+                                } elseif (stripos($doctorName, 'Maha Arma') !== false) {
+                                    echo '8:40 - 11:40';
+                                } elseif (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '8:40 - 12:00';
+                                } elseif (stripos($doctorName, 'Astrid') !== false) {
+                                    echo '14:00 - 16:00';
+                                } elseif (stripos($doctorName, 'Amir') !== false) {
+                                    echo '16:45 - 18:45';
+                                } elseif (stripos($doctorName, 'Daya') !== false) {
+                                    echo '12:40 - 14:40';
+                                } elseif (stripos($doctorName, 'Citra') !== false) {
+                                    echo '8:40 - 14:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // Jadwal Tuesday
+                                if (stripos($doctorName, 'Sjamsu Budiono') !== false) {
+                                    echo '17:30 - 20:30';
+                                } elseif (stripos($doctorName, 'Firmansyah') !== false) {
+                                    echo '15:30 - 16:00';
+                                } elseif (stripos($doctorName, 'Ria Sandy') !== false) {
+                                    echo '15:15 - 19:05';
+                                } elseif (stripos($doctorName, 'Maha Arma') !== false) {
+                                    echo '9:00 - 11:40';
+                                } elseif (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '9:40 - 11:40';
+                                } elseif (stripos($doctorName, 'Agustina') !== false) {
+                                    echo '19:00 - 20:00';
+                                } elseif (stripos($doctorName, 'Valeri') !== false) {
+                                    echo '14:30 - 16:30';
+                                } elseif (stripos($doctorName, 'Indiana') !== false) {
+                                    echo '14:30 - 16:30';
+                                } elseif (stripos($doctorName, 'Amir') !== false) {
+                                    echo '16:45 - 18:45';
+                                } elseif (stripos($doctorName, 'Citra') !== false) {
+                                    echo '12:40 - 14:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // Jadwal Wednesday
+                                if (stripos($doctorName, 'Sjamsu Budiono') !== false) {
+                                    echo '17:30 - 20:30';
+                                } elseif (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '8:40 - 11:30';
+                                } elseif (stripos($doctorName, 'Agustina') !== false) {
+                                    echo '14:30 - 16:30';
+                                } elseif (stripos($doctorName, 'Valeri') !== false) {
+                                    echo '14:45 - 16:15';
+                                } elseif (stripos($doctorName, 'Sylvia') !== false) {
+                                    echo '14:30 - 16:30';
+                                } elseif (stripos($doctorName, 'Indiana') !== false) {
+                                    echo '17:00 - 19:00';
+                                } elseif (stripos($doctorName, 'Daya') !== false) {
+                                    echo '8:40 - 14:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // Jadwal Thursday
+                                if (stripos($doctorName, 'Sjamsu Budiono') !== false) {
+                                    echo '17:30 - 20:30';
+                                } elseif (stripos($doctorName, 'Firmansyah') !== false) {
+                                    echo '18:00 - 20:00';
+                                } elseif (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '8:40 - 9:30';
+                                } elseif (stripos($doctorName, 'Indiana') !== false) {
+                                    echo '17:00 - 19:00';
+                                } elseif (stripos($doctorName, 'Daya') !== false) {
+                                    echo '12:40 - 14:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // Jadwal Friday
+                                if (stripos($doctorName, 'Sjamsu Budiono') !== false) {
+                                    echo '18:30 - 20:30';
+                                } elseif (stripos($doctorName, 'Firmansyah') !== false) {
+                                    echo '18:00 - 20:00';
+                                } elseif (stripos($doctorName, 'Maha Arma') !== false) {
+                                    echo '8:40 - 12:00';
+                                } elseif (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '13:00 - 15:00';
+                                } elseif (stripos($doctorName, 'Daya') !== false) {
+                                    echo '13:00 - 15:00';
+                                } elseif (stripos($doctorName, 'Citra') !== false) {
+                                    echo '8:40 - 11:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                            <td>
+                                <?php
+                                // Jadwal Saturday
+                                if (stripos($doctorName, 'Vinca') !== false) {
+                                    echo '8:40 - 11:40';
+                                } elseif (stripos($doctorName, 'Daya') !== false) {
+                                    echo '8:40 - 11:40';
+                                } else {
+                                    echo '-';
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -513,22 +531,28 @@
             // Doctor selection change
             const doctorSelect = document.getElementById('doctorSelect');
             doctorSelect.addEventListener('change', function() {
-                // Here you can add logic to filter the schedule based on selected doctor
                 const selectedDoctor = this.value;
                 console.log('Selected doctor:', selectedDoctor);
                 
+                // Reset all table rows
+                document.querySelectorAll('table tbody tr').forEach(row => {
+                    row.style.background = '';
+                });
+                
                 // Highlight the selected doctor in the table
-                document.querySelectorAll('.doctor-name').forEach(name => {
-                    if (name.textContent === selectedDoctor) {
-                        name.parentElement.parentElement.style.background = '#f0f9fa';
-                    } else {
-                        name.parentElement.parentElement.style.background = '';
+                document.querySelectorAll('table tbody tr').forEach(row => {
+                    const doctorCell = row.querySelector('.doctor-name');
+                    if (doctorCell && doctorCell.textContent.trim() === selectedDoctor) {
+                        row.style.background = '#f0f9fa';
                     }
                 });
             });
             
             // Initialize with the first doctor highlighted
-            document.querySelector('.doctor-name').parentElement.parentElement.style.background = '#f0f9fa';
+            const firstRow = document.querySelector('table tbody tr');
+            if (firstRow) {
+                firstRow.style.background = '#f0f9fa';
+            }
         });
     </script>
 </body>

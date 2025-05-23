@@ -9,7 +9,7 @@ class Mobile extends CI_Controller {
         $this->load->view('Mobile/servicemobile');
 		$this->load->view('Mobile/dokter_bermobile');
         $this->load->view('Mobile/jammapsmobile');
-        $this->load->view('Mobile/navbar');
+        // $this->load->view('Mobile/navbar');
 
 	}
 
