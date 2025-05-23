@@ -94,7 +94,7 @@
                     <a href="<?= base_url('doctor'); ?>">Dokter</a>
                 </li>
                 <li class="<?= $this->uri->segment(1) == 'jadwal_dokter' ? 'active' : ''; ?>">
-                    <a href="<?= base_url('jadwal_dokter'); ?>">Jadwal Dokter</a>
+                    <a href="<?= base_url('jadwaldokter'); ?>">Jadwal Dokter</a>
                 </li>
                 <li class="<?= $this->uri->segment(1) == 'news' ? 'active' : ''; ?>">
                     <a href="<?= base_url('news'); ?>">Berita Terbaru</a>
