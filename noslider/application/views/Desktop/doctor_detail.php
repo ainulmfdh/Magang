@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Dosen - Prof. dr. Sjamsu Budiono, Sp.M(K)</title>
+    <title>Detail Dokter</title>
     <style>
         * {
             margin: 0;
@@ -129,6 +129,7 @@
             font-size: 30px;
             margin-left: 10px;
             color: #333;
+            font-weight: 600;
         }
         
         .detail-title img {
@@ -168,14 +169,14 @@
                 </p>
             </div>
             <div class="profile-image">
-                <img src="<?php echo base_url('asset/' . $doctor->doctor_photo_open); ?>" alt="Prof. dr. Sjamsu Budiono">
+                <img src="<?php echo base_url('asset/images/' . $doctor->doctor_photo_open); ?>" alt="Prof. dr. Sjamsu Budiono">
             </div>
         </div>
     </div>
 
     <div class="profile-detail-section">
             <div class="detail-title">
-                <img src="<?= base_url('asset/profil.png'); ?>" alt="Profile icon">
+                <img src="<?= base_url('asset/images/profil.png'); ?>" alt="Profile icon">
                 <h2>Detail Profil</h2>
             </div>
             <div class="detail-content">

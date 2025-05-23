@@ -11,7 +11,7 @@
     <link href=".../../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
     <link href=".../../../assets/css/style.css" rel="stylesheet">
     <!-- Form -->
-    <link rel="stylesheet" href="<?= base_url('asset/css/form.css') ?>">
+    <link rel="stylesheet" href=".../../../asset/css/form.css">
     <!-- Layanan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Dokter dan Berita -->
@@ -19,7 +19,7 @@
     <title>Document</title>
     <style>
         html, body {
-            background-image: url('<?= base_url('asset/PORTOFOLIO.png');?>');
+            background-image: url('.../../../asset/PORTOFOLIO.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -521,8 +521,8 @@
     <div id="container">
         <section id="header" class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
             <div class="d-flex align-items-center">
-                <img id="logomata" src="<?= base_url('asset/image_2.png');?>">
-                <img src="<?= base_url('asset/image_4.png');?>">
+                <img id="logomata" src=".../../../asset/image_2.png">
+                <img src=".../../../asset/image_4.png">
             </div>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
                 <p class="menu-border">Beranda</p>
@@ -536,31 +536,34 @@
         <section id="slider" class="home-section home-fade home-full-height">
             <div class="hero-slider">
                 <ul class="slides">
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
                                 <div class="font-alt mb-40 titan-title-size-4">We are Titan</div>
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html template for<br />web developers who change the world</div>
                                 <a class="btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <img src=".../../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png" alt="" style="height: 100%; width:100%">
                     </li>
-                    <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slider-1.png);">
-                        <div class="titan-caption">
+                    <li class="bg-dark-30 bg-dark">
+                        <!-- <div class="titan-caption">
                             <div class="caption-content">
                                 <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
                                 <div class="font-alt mb-40 titan-title-size-3">We are Amazing</div>
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
-                        </div>
+                        </div> -->
+                        <img src=".../../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
                 </ul>
             </div>
@@ -991,15 +994,11 @@
         </footer>
     </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Slider -->
     <script src=".../../../assets/lib/jquery/dist/jquery.js"></script>
     <script src=".../../../assets/lib/wow/dist/wow.js"></script>
-    <script src=".../../../assets/lib/flexslider/jquery.flexslider.js"></script>
-    <script src=".../../../assets/js/main.js"></script>
+    <script type="text/javascript" src=".../../../assets/lib/flexslider/jquery.flexslider.js"></script>
+    <script type="text/javascript" src=".../../../assets/js/main.js"></script>
 
     <!-- Form JavaScript -->
     <script>

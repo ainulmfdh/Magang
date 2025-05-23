@@ -80,7 +80,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="<?= base_url('asset/logo.png'); ?>" alt="Logo Klinik Mata dr Sjarsu">
+            <img src="<?= base_url('asset/images/logo.png'); ?>" alt="Logo Klinik Mata dr Sjarsu">
         </div>
        <nav>
             <ul>
@@ -96,8 +96,8 @@
                 <li class="<?= $this->uri->segment(1) == 'jadwal_dokter' ? 'active' : ''; ?>">
                     <a href="<?= base_url('jadwaldokter'); ?>">Jadwal Dokter</a>
                 </li>
-                <li class="<?= $this->uri->segment(1) == 'berita' ? 'active' : ''; ?>">
-                    <a href="<?= base_url('berita'); ?>">Berita Terbaru</a>
+                <li class="<?= $this->uri->segment(1) == 'news' ? 'active' : ''; ?>">
+                    <a href="<?= base_url('news'); ?>">Berita Terbaru</a>
                 </li>
             </ul>
         </nav>

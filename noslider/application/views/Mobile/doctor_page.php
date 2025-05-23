@@ -14,7 +14,7 @@
       padding: 12px 12px;
     }
     .breadcrumb-item {
-      padding-left: 60px;
+      padding-left: 20px;
     }
     .breadcrumb li {
       font-size: 15px;
@@ -75,7 +75,6 @@
       <li class="breadcrumb-item active" aria-current="page">Dokter</li>
     </ol>
   </nav>
-
   
    <div class="container py-4">
         <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
@@ -83,7 +82,7 @@
              
             <div class="col d-flex justify-content-center">
                 <div class="doctor-card">
-                    <a href="<?php echo site_url('doctor/view/' . $doctor->doctor_id); ?>">
+                    <a href="<?php echo site_url('doctor/mobile_detail/' . $doctor->doctor_id); ?>">
                         <?php if (!empty($doctor->doctor_photo_open)): ?>
                             <img src="<?php echo base_url('asset/images/' . $doctor->doctor_photo_open); ?>" alt="Foto Dokter">
                         <?php else: ?>

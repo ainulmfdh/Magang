@@ -30,4 +30,24 @@ class Doctor extends CI_Controller {
         $this->load->view('Desktop/jammaps');
     	$this->load->view('Desktop/footer');
     }
+
+    // Menampilkan daftar dokter Mobile
+    public function mobile() {
+        $this->load->view('Mobile/Header');
+        $data['doctors'] = $this->Doctor_model->get_all_doctors();
+        $this->load->view('Mobile/doctor_page', $data);
+        $this->load->view('Mobile/jammapsmobile');
+    }
+
+     // Menampilkan detail dokter Mobile
+    public function mobile_detail($doctor_id) {
+         $this->load->view('Mobile/header');
+        $data['doctor'] = $this->Doctor_model->get_doctor_by_id($doctor_id);
+        if ($data['doctor']) {
+            $this->load->view('Mobile/doctor_detail', $data);
+        } else {
+            show_404();
+        }
+        $this->load->view('Mobile/jammapsmobile');
+    }
 }
