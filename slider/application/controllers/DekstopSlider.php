@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class DekstopSlider extends CI_Controller {
     public function __construct() {
         parent::__construct();
+        $this->load->model('Dokter_model');
         // if (!detect_device_and_redirect()) {
 		// 	redirect('homedekstop');
 		// }
@@ -22,7 +23,8 @@ class DekstopSlider extends CI_Controller {
     }
 
     public function dokter_page() {
-        $this->load->view('dekstop/dokter_page');
+        $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+        $this->load->view('dekstop/dokter_page', $data);
     }
 
     public function detail_dokter() {
