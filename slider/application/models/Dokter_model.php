@@ -15,4 +15,11 @@ class Dokter_model extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result();
     }
+
+    // Fungsi untuk mendapatkan data dokter berdasarkan ID
+    public function get_doctor_by_id($doctor_id) {
+        $this->db->where('doctor_id', $doctor_id);
+        $query = $this->db->get($this->table);
+        return $query->row();
+    }
 }
