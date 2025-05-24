@@ -8,11 +8,11 @@
         .heading {
             color: #00AAB5;
             margin-top: 70px;
-            font-size: 40px;
+            font-size: 35px;
         }
         .line-heading {
             background-color: #00AAB5;
-            height: 8px;
+            height: 6px;
             width: 200px;
             border-radius: 8px;
             display: inline-block;
@@ -44,15 +44,15 @@
         <?php $this->load->view("dekstop/Header"); ?>
 
         <div class="container" style="padding-bottom: 30px;">
-            <h2 class="heading">Dokter</h2>
+            <h4 class="heading">Dokter</h4>
             <div class="line-heading"></div>
-            <p class="desc-heading">Berita dan informasi terkini seputar inovasi pelayanan kesehatan terintegrasi di Klinik Inter Medika, termasuk pengembangan layanan dan teknologi terbaru yang mendukung pendekatan holistik dalam perawatan kesehatan.</p>
+            <p class="desc-heading">Berikut adalah daftar dokter yang praktik di Klinik Mata dr. Sjamsu, sebuah klinik mata terkemuka di Surabaya yang dikenal dengan pelayanan profesional dan teknologi canggih untuk perawatan kesehatan mata. Klinik ini menawarkan berbagai layanan, termasuk konsultasi, pemeriksaan dasar, serta perawatan khusus untuk kondisi seperti katarak, glaukoma, gangguan retina, dan masalah mata pada anak</p>
             <div class="dokter-card-container row g-3 mt-5">
                 <?php foreach ($data_dokter as $dokter): ?>
 
                     <div class="col-3">
                         <div class="dokter-card">
-                            <a href="<?php echo site_url('dokter_detail/' . $dokter->doctor_id); ?>">
+                            <a href="<?php echo site_url('DekstopSlider/detail_dokter/' . $dokter->doctor_id); ?>">
                                 <?php if (!empty($dokter->doctor_photo_open)): ?>
                                     <img style="height: 100%; width: 100%;" src="<?php echo base_url('../asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
                                 <?php else: ?>
