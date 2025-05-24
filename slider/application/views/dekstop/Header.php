@@ -50,19 +50,19 @@
             document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
         });
 
-        $(document).ready(() => {
-            detectScreen();
-            $(window).on('resize', detectScreen);
-        })
+        // $(document).ready(() => {
+        //     detectScreen();
+        //     $(window).on('resize', detectScreen);
+        // })
 
-        function detectScreen() {
-            var width = $(window).width();
+        // function detectScreen() {
+        //     var width = $(window).width();
             
-            if (width < 768) {
-                window.location.href = '<?= base_url('home_mobile') ?>';
-                console.log('mobile');
-            } 
-        }
+        //     if (width < 768) {
+        //         window.location.href = '<?= base_url('home_mobile') ?>';
+        //         console.log('mobile');
+        //     } 
+        // }
     </script>
 </body>
 </html>

@@ -22,12 +22,11 @@
             margin-top: 40px;
             background-color: #F0EAEA;
             border-radius: 10px;
-            height: 450px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 50px;
-            padding: 10px 30px;
+            padding: 60px 30px;
         }
     </style>
 </head>
