@@ -11,7 +11,6 @@
     <style>
         body {
             min-height: 100vh;
-            background-color: black;
         }
         
         #hamburger-menu {
@@ -35,11 +34,11 @@
 <body id="header">
     <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
         <div class="d-flex align-items-center h-100">
-            <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
-            <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
+            <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('../asset/image_2.png');?>">
+            <img style="margin-left: 85px;" src="<?= base_url('../asset/image_4.png');?>">
         </div>
         <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-            <img src="<?= base_url('asset/material-symbols_menu.png');?>">   
+            <img src="<?= base_url('../asset/material-symbols_menu.png');?>">   
         </div>
     </div>
     
