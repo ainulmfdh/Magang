@@ -527,7 +527,7 @@
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
                 <p class="menu-border">Beranda</p>
                 <p class="menu-border">Pelayanan</p>
-                <a href="<?php echo base_url('DekstopSlider/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
+                <a href="<?php echo base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
                 <p class="menu-border">Jadwal Dokter</p>
                 <p class="menu-border">Berita Terbaru</p>
             </div>
@@ -1385,7 +1385,7 @@
         function detectScreen() {
             var width = $(window).width();
             if (width < 768) {
-                window.location.href = '<?= base_url('home_mobile') ?>';
+                window.location.href = '<?= base_url('Mobile') ?>';
                 console.log('mobile');
             }
         }

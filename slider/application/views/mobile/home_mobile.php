@@ -733,7 +733,7 @@
             var width = $(window).width();
             
             if (width >= 768) {
-                window.location.href = '<?= base_url('DekstopSlider') ?>';
+                window.location.href = '<?= base_url('Dekstop') ?>';
                 console.log('dekstop');
             } 
         }
