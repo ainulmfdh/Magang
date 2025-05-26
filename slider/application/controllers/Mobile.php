@@ -28,4 +28,14 @@ class Mobile extends CI_Controller {
 		 $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
 		$this->load->view('mobile/dokter_page', $data);
 	}
+
+	 public function detail_dokter($doctor_id) {
+        $data['data_dokter'] = $this->Dokter_model->get_doctor_by_id($doctor_id);
+        if ($data['data_dokter']) {
+            $this->load->view('mobile/dokter_detail', $data);
+        } else {
+            show_404();
+        }
+        // $this->load->view('dekstop/detail_dokter');
+    }
 }
