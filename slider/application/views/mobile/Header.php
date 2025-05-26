@@ -33,10 +33,12 @@
 </head>
 <body id="header">
     <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
-        <div class="d-flex align-items-center h-100">
-            <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('../asset/image_2.png');?>">
-            <img style="margin-left: 85px;" src="<?= base_url('../asset/image_4.png');?>">
-        </div>
+        <a href="<?php echo base_url('Mobile') ?>">
+            <div class="d-flex align-items-center h-100">
+                <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('../asset/image_2.png');?>">
+                <img style="margin-left: 85px;" src="<?= base_url('../asset/image_4.png');?>">
+            </div>
+        </a>
         <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
             <img src="<?= base_url('../asset/material-symbols_menu.png');?>">   
         </div>
@@ -49,7 +51,7 @@
         <div class="d-flex flex-column gap-4 mt-5 px-2 pe-4">
             <p class="menu-border">Beranda</p>
             <p class="menu-border">Pelayanan</p>
-            <p class="menu-border">Dokter</p>
+            <a href="<?php echo base_url('Mobile/dokter_page') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Dokter</p></a>
             <p class="menu-border">Jadwal Dokter</p>
             <p class="menu-border">Berita Terbaru</p>
         </div>
