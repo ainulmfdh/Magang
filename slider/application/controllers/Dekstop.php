@@ -36,6 +36,9 @@ class Dekstop extends CI_Controller {
         }
         // $this->load->view('dekstop/detail_dokter');
     }
+    public function news() {
+        $this->load->view('dekstop/news');
+    }
 }
 
 ?>

@@ -968,15 +968,15 @@
                 <div class="row align-items-start" style="padding-top: 5px;">
                     <div class="col-md-4 mb-4">
                         <h3 class="footer-title">Klinik Mata dr. Sjamsu</h3>
-                        <!-- <p class="footer-text">
+                        <p class="footer-text">
                             Kami adalah tim dokter mata yang profesional dan berkompetensi tinggi. Kami peduli atas kesehatan mata anda.
-                        </p> -->
-                        <!-- <p class="footer-text">
+                        </p>
+                        <p class="footer-text">
                             Dengan menggunakan alat-alat operasi modern beserta kelengkapan penunjang lain yang canggih dan mutakhir, kami siap menjaga kesehatan mata anda.
-                        </p> -->
+                        </p>
                     </div>
                     <div class="col-md-4 mb-4">
-                        <!-- <h3 class="footer-title">Social Media</h3> -->
+                        <h3 class="footer-title">Social Media</h3>
                         <div class="d-flex">
                             <button class="social-btn follow-btn">
                                 <i class="fab fa-facebook-f me-1"></i> Follow Page
