@@ -37,7 +37,7 @@
         <h4 class="heading">Profil Dokter</h4>
         <div class="line-heading"></div>
         <div class="container-profil-dokter">
-            <img style="height: 400px; width: 350px; border-radius: 8px;" src="<?php echo base_url('../asset/' . $data_dokter->doctor_photo_open); ?>">
+            <img style="height: 400px; width: 350px; border-radius: 8px;" src="<?php echo base_url('asset/' . $data_dokter->doctor_photo_open); ?>">
             <div class="container-desc-dokter">
                 <p class="nama-dokter" style="font-size: 25px; font-weight: 500; color: #00AAB5"><?php echo $data_dokter->doctor_name; ?></p>
                 <p class="spesialis-dokter" style="font-size: 17px; font-weight: 500"><?php echo $data_dokter->doctor_id_position; ?></p>

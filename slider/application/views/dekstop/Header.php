@@ -26,8 +26,8 @@
         <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; z-index: 30;">
             <a class="logo" href="<?php echo base_url('Dekstop'); ?>">
                 <div class="d-flex align-items-center">
-                    <img id="logomata" src="<?php echo base_url('../asset/image_2.png'); ?>">
-                    <img src="<?php echo base_url('../asset/image_4.png'); ?>">
+                    <img id="logomata" src="<?php echo base_url('asset/image_2.png'); ?>">
+                    <img src="<?php echo base_url('asset/image_4.png'); ?>">
                 </div>
             </a>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
