@@ -8,21 +8,21 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Slider -->
-    <link href="<?= base_url('assets/lib/flexslider/flexslider.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+    <link href=".../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href=".../../assets/css/style.css" rel="stylesheet">
     <!-- Form -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/form.css') ?>">
+    <link rel="stylesheet" href=".../../asset/css/form.css">
     <!-- Layanan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Dokter dan Berita -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link href="<?= base_url('assets/css/app.css') ?>"" rel="stylesheet">
+    <link href=".../../assets/css/app.css" rel="stylesheet">
     
     <title>Document</title>
     <style>
         html, body {
-            background-image: url(<?= base_url('asset/PORTOFOLIO.png') ?>);
+            background-image: url('.../../asset/PORTOFOLIO.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -524,8 +524,8 @@
     <div id="container">
         <section id="header" class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
             <div class="d-flex align-items-center">
-                <img id="logomata" src="<?= base_url('asset/image_2.png') ?>">
-                <img src="<?= base_url('/asset/image_4.png') ?>">
+                <img id="logomata" src=".../../asset/image_2.png">
+                <img src=".../../asset/image_4.png">
             </div>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
                 <p class="menu-border">Beranda</p>
@@ -547,7 +547,7 @@
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
                         </div> -->
-                        <img src="<?= base_url('assets//images/slider-1.png') ?>" alt="" style="height: 100%; width:100%">
+                        <img src=".../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
                     <li class="bg-dark-30 bg-dark">
                         <!-- <div class="titan-caption">
@@ -556,7 +556,7 @@
                                 <a class="btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
                         </div> -->
-                        <img src="<?= base_url('assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png') ?>" alt="" style="height: 100%; width:100%">
+                        <img src=".../../assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png" alt="" style="height: 100%; width:100%">
                     </li>
                     <li class="bg-dark-30 bg-dark">
                         <!-- <div class="titan-caption">
@@ -566,7 +566,7 @@
                                 <a class="section-scroll btn btn-border-w btn-round" href="#form">Booking</a>
                             </div>
                         </div> -->
-                        <img src="<?= base_url('assets/images/slider-1.png') ?>" alt="" style="height: 100%; width:100%">
+                        <img src=".../../assets/images/slider-1.png" alt="" style="height: 100%; width:100%">
                     </li>
                 </ul>
             </div>
@@ -814,7 +814,7 @@
                     <div id="owl-demo" class="owl-carousel owl-theme">      
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/dokter.png') ?>" class="d-block w-100" alt="Dokter 1">
+                                <img src=".../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -824,7 +824,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/dokter.png') ?>" class="d-block w-100" alt="Dokter 1">
+                                <img src=".../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -834,7 +834,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/dokter.png') ?>" class="d-block w-100" alt="Dokter 1">
+                                <img src=".../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -844,7 +844,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/sb-web.jpg') ?>" alt="Dokter 6">
+                                <img src=".../../asset/sb-web.jpg" alt="Dokter 6">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -854,7 +854,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/sb-web.jpg') ?>" alt="Dokter 6">
+                                <img src=".../../asset/sb-web.jpg" alt="Dokter 6">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -864,7 +864,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/sb-web.jpg') ?>" alt="Dokter 6">
+                                <img src=".../../asset/sb-web.jpg" alt="Dokter 6">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -874,7 +874,7 @@
                         </div>
                         <div class="item">
                             <div class="card-dokter">
-                                <img src="<?= base_url('asset/sb-web.jpg') ?>" alt="Dokter 6">
+                                <img src=".../../asset/sb-web.jpg" alt="Dokter 6">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Hadi Wijaya, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -905,7 +905,7 @@
                     <div id="news-owl-demo" class="owl-carousel owl-theme">      
                         <div class="item">
                             <div class="card-berita">
-                                <img src="<?= base_url('asset/berita.png') ?>" class="d-block w-100" alt="Berita 1">
+                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 1">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>12 Oktober 2021</span>
@@ -917,7 +917,7 @@
                         </div>
                         <div class="item">
                             <div class="card-berita">
-                                <img src="<?= base_url('asset/berita.png') ?>" class="d-block w-100" alt="Berita 2">
+                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 2">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>12 Oktober 2021</span>
@@ -929,7 +929,7 @@
                         </div>
                         <div class="item">
                             <div class="card-berita">
-                                <img src="<?= base_url('asset/berita.png') ?>" class="d-block w-100" alt="Berita 3">
+                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 3">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>20 Oktober 2021</span>
@@ -941,7 +941,7 @@
                         </div>
                         <div class="item">
                             <div class="card-berita">
-                                <img src="<?= base_url('asset/berita.png') ?>" class="d-block w-100" alt="Berita 4">
+                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 4">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>28 Oktober 2021</span>
@@ -992,10 +992,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url('assets/lib/jquery/dist/jquery.js') ?>"></script>
-    <script src="<?= base_url('assets/lib/wow/dist/wow.js') ?>"></script>
-    <script type="text/javascript" src="<?= base_url('assets/lib/flexslider/jquery.flexslider.js') ?>"></script>
-    <script type="text/javascript" src<?= base_url('assets/js/main.js') ?>"></script>
+    <script src=".../../assets/lib/jquery/dist/jquery.js"></script>
+    <script src=".../../assets/lib/wow/dist/wow.js"></script>
+    <script type="text/javascript" src=".../../assets/lib/flexslider/jquery.flexslider.js"></script>
+    <script type="text/javascript" src=".../../assets/js/main.js"></script>
 
     <!-- Form JavaScript -->
     <script>
