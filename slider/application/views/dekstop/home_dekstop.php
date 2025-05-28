@@ -16,6 +16,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Dokter dan Berita -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link href=".../../../assets/css/app.css" rel="stylesheet">
+    
     <title>Document</title>
     <style>
         html, body {
@@ -527,7 +530,7 @@
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
                 <p class="menu-border">Beranda</p>
                 <p class="menu-border">Pelayanan</p>
-                <a href="<?php echo base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
+                <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
                 <p class="menu-border">Jadwal Dokter</p>
                 <p class="menu-border">Berita Terbaru</p>
             </div>
@@ -965,28 +968,22 @@
 
         <footer id="footer" class="footer-section">
             <div class="container">
-                <div class="row align-items-start" style="padding-top: 5px;">
-                    <div class="col-md-4 mb-4">
+                <div class="row align-items-start align-items-center">
+                    <div class="col-md-4 align-items-center">
                         <h3 class="footer-title">Klinik Mata dr. Sjamsu</h3>
-                        <p class="footer-text">
-                            Kami adalah tim dokter mata yang profesional dan berkompetensi tinggi. Kami peduli atas kesehatan mata anda.
-                        </p>
-                        <p class="footer-text">
-                            Dengan menggunakan alat-alat operasi modern beserta kelengkapan penunjang lain yang canggih dan mutakhir, kami siap menjaga kesehatan mata anda.
-                        </p>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <h3 class="footer-title">Social Media</h3>
-                        <div class="d-flex">
+                    <div class="col-md-4" >
+                        <!-- <h3 class="footer-title">Social Media</h3> -->
+                        <div class="d-flex justify-content-center">
                             <button class="social-btn follow-btn">
-                                <i class="fab fa-facebook-f me-1"></i> Follow Page
+                                <i class="fab fa-facebook-f me-1"></i>
                             </button>
                             <button class="social-btn follow-btn">
-                                <i class="fab fa-instagram me-1"></i> Follow Page
+                                <i class="fab fa-instagram me-1"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4 text-md-end">
+                    <div class="col-md-4 text-md-end" >
                         <p class="copyright">Copyright © 2025 CV SB</p>
                     </div>
                 </div>
