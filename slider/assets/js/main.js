@@ -142,11 +142,11 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
          * Rotate
          /* ---------------------------------------------- */
 
-        $(".rotate").textrotator({
-            animation: "dissolve",
-            separator: "|",
-            speed: 3000
-        });
+        // $(".rotate").textrotator({
+        //     animation: "dissolve",
+        //     separator: "|",
+        //     speed: 3000
+        // });
 
 
         /* ---------------------------------------------- /*
@@ -238,23 +238,23 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
          * Video popup, Gallery
          /* ---------------------------------------------- */
 
-        $('.video-pop-up').magnificPopup({
-            type: 'iframe'
-        });
+        // $('.video-pop-up').magnificPopup({
+        //     type: 'iframe'
+        // });
 
-        $(".gallery-item").magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0,1]
-            },
-            image: {
-                titleSrc: 'title',
-                tError: 'The image could not be loaded.'
-            }
-        });
+        // $(".gallery-item").magnificPopup({
+        //     delegate: 'a',
+        //     type: 'image',
+        //     gallery: {
+        //         enabled: true,
+        //         navigateByImgClick: true,
+        //         preload: [0,1]
+        //     },
+        //     image: {
+        //         titleSrc: 'title',
+        //         tError: 'The image could not be loaded.'
+        //     }
+        // });
 
 
         /* ---------------------------------------------- /*
@@ -270,12 +270,12 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
             worksgrid_mode = 'fitRows';
         }
 
-        worksgrid.imagesLoaded(function() {
-            worksgrid.isotope({
-                layoutMode: worksgrid_mode,
-                itemSelector: '.work-item'
-            });
-        });
+        // worksgrid.imagesLoaded(function() {
+        //     worksgrid.isotope({
+        //         layoutMode: worksgrid_mode,
+        //         itemSelector: '.work-item'
+        //     });
+        // });
 
         $('#filters a').click(function() {
             $('#filters .current').removeClass('current');
@@ -349,9 +349,9 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
          * Youtube video background
          /* ---------------------------------------------- */
 
-        $(function(){
-            $(".video-player").mb_YTPlayer();
-        });
+        // $(function(){
+        //     $(".video-player").mb_YTPlayer();
+        // });
 
         $('#video-play').click(function(event) {
             event.preventDefault();
@@ -380,51 +380,51 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
          * Owl Carousel
          /* ---------------------------------------------- */
 
-        $('.owl-carousel').each(function(i) {
+        // $('.owl-carousel').each(function(i) {
 
-            // Check items number
-            if ($(this).data('items') > 0) {
-                items = $(this).data('items');
-            } else {
-                items = 4;
-            }
+        //     // Check items number
+        //     if ($(this).data('items') > 0) {
+        //         items = $(this).data('items');
+        //     } else {
+        //         items = 4;
+        //     }
 
-            // Check pagination true/false
-            if (($(this).data('pagination') > 0) && ($(this).data('pagination') === true)) {
-                pagination = true;
-            } else {
-                pagination = false;
-            }
+        //     // Check pagination true/false
+        //     if (($(this).data('pagination') > 0) && ($(this).data('pagination') === true)) {
+        //         pagination = true;
+        //     } else {
+        //         pagination = false;
+        //     }
 
-            // Check navigation true/false
-            if (($(this).data('navigation') > 0) && ($(this).data('navigation') === true)) {
-                navigation = true;
-            } else {
-                navigation = false;
-            }
+        //     // Check navigation true/false
+        //     if (($(this).data('navigation') > 0) && ($(this).data('navigation') === true)) {
+        //         navigation = true;
+        //     } else {
+        //         navigation = false;
+        //     }
 
-            // Build carousel
-            $(this).owlCarousel( {
-                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-                nav: navigation,
-                dots: pagination,
-                loop: true,
-                dotsSpeed: 400,
-                items: items,
-                navSpeed: 300,
-                autoplay: 2000
-            });
+        //     // Build carousel
+        //     $(this).owlCarousel( {
+        //         navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+        //         nav: navigation,
+        //         dots: pagination,
+        //         loop: true,
+        //         dotsSpeed: 400,
+        //         items: items,
+        //         navSpeed: 300,
+        //         autoplay: 2000
+        //     });
 
-        });
+        // });
 
 
         /* ---------------------------------------------- /*
          * Blog masonry
          /* ---------------------------------------------- */
 
-        $('.post-masonry').imagesLoaded(function() {
-            $('.post-masonry').masonry();
-        });
+        // $('.post-masonry').imagesLoaded(function() {
+        //     $('.post-masonry').masonry();
+        // });
 
 
         /* ---------------------------------------------- /*

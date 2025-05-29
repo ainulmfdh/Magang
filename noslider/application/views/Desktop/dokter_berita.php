@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         .doctor-card {
             background-color: #a9e7e7;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -51,28 +51,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             font-weight: 300;
         }
 		/* berita Styling */
+        .berita-section {
+            background-color: #ECFFFC;
+            width: 100%;
+            margin-top: 100px;
+            padding: 3px 10px;
+        }
         .news-card {
+            background-color: white;
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             height: 100%;
         }
+        
         .news-card img {
             width: 100%;
             height: auto;
         }
         .news-info {
             padding: 15px;
-			display: flex;
-			flex-direction: column;
+            display: flex;
+            flex-direction: column;
         }
+        
         .news-title {
             font-size: 14px;
             font-weight: 700;
             color: rgba(0, 170, 181, 1);
             margin-bottom: 10px;
         }
+        
         .news-summary {
             font-size: 12px;
             color: #666;
@@ -84,8 +94,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             border-radius: 20px;
             font-size: 12px;
             padding: 5px 15px;
-			align-self: flex-end;
-			text-decoration: none;
+            align-self: flex-end;
+            text-decoration: none;
+            display: inline-block;
         }
         
         /* Custom Carousel Styling */
@@ -128,7 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             border-radius: 30px;
             color: rgba(0, 170, 181, 1);
             background-color: transparent;
-		    text-decoration: none;
+            text-decoration: none;
             transition: all 0.3s;
         }
         
@@ -151,7 +162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -160,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -169,7 +180,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -184,7 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -193,7 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/dokter.png" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -202,7 +213,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="asset/sb-web.jpg" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -224,13 +235,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button>
             </div>
         </div>
+    </div>
 
-        <!-- Berita Section -->
+    <!-- Berita Section -->
+    <section class="berita-section" style="background-color: #ECFFFC;">
+    <div class="container">
         <h2 class="section-title">Berita</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="news-card">
-                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <img src="<?= base_url('asset/images/berita.png'); ?>" alt="News" class="img-fluid">
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
@@ -240,7 +254,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="col-md-4 mb-4">
                 <div class="news-card">
-                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <img src="<?= base_url('asset/images/berita.png'); ?>" alt="News" class="img-fluid">
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
@@ -250,7 +264,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="col-md-4 mb-4">
                 <div class="news-card">
-                    <img src="asset/berita.png" alt="News" class="img-fluid">
+                    <img src="<?= base_url('asset/images/berita.png'); ?>" alt="News" class="img-fluid">
                     <div class="news-info">
                         <h3 class="news-title">BAKTI SOSIAL OPERASI KATARAK KLINIK MATA DR. SJAMSU</h3>
                         <p class="news-summary">Klinik Mata Dr.Sjamsu menyelenggarakan kegiatan bakti sosial berupa Operasi Katarak Gratis bekerja sama dengan Blink Indonesia yang merupakan bentuk nyata komitmen untuk melayani masyarakat luas.</p>
@@ -263,6 +277,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Read More Button -->
         <a href="#" class="read-more-btn">Read More</a>
     </div>
+    </section>
+    
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
