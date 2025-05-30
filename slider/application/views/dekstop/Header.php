@@ -31,7 +31,7 @@
                 </div>
             </a>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
-                <p class="menu-border">Beranda</p>
+                <a href="<?php echo base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
                 <p class="menu-border">Pelayanan</p>
                 <a href="<?php echo base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
                 <p class="menu-border">Jadwal Dokter</p>
