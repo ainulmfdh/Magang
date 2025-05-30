@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale="1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome CDN -->
-        <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <!-- Slider Theme -->
         <link href=".../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
         <link href=".../../assets/css/style.css" rel="stylesheet">
@@ -25,7 +25,6 @@
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
-                font-family: Arial, sans-serif;
                 overflow: hidden;
             }
 
@@ -45,10 +44,10 @@
                 width: 100%;
             }
 
-            #menu-navbar p {
+            /* #menu-navbar p {
                 margin: 0;
-                font-weight: 500;
-            }
+                font-weight: 400;
+            } */
 
             /* Layanan */
             .service-card {
@@ -612,10 +611,10 @@
                     <img src=".../../asset/image_4.png" alt="Logo">
                 </div>
                 <div id="menu-navbar" class="d-flex flex-row align-items-center">
-                    <p class="menu-border">Beranda</p>
-                    <p class="menu-border">Pelayanan</p>
-                    <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
-                    <p class="menu-border">Jadwal Dokter</p>
+                    <a href="<?= base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
+                    <p>Pelayanan</p>
+                    <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p>Dokter</p></a>
+                    <a href="<?= base_url('Dekstop/jadwal_dokter') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Jadwal Dokter</p></a>
                     <p class="menu-border">Berita Terbaru</p>
                 </div>
             </section>

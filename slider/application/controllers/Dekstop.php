@@ -45,6 +45,10 @@ class Dekstop extends CI_Controller {
     public function detail_layanan() {
         $this->load->view('dekstop/detail_layanan');
     }
+    public function jadwal_dokter() {
+        $data['doctors'] = $this->Dokter_model->get_all_doctors(); 
+        $this->load->view('dekstop/jadwal_dokter', $data);
+    }
 }
 
 ?>
