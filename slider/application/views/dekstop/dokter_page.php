@@ -40,7 +40,7 @@
 
 <body>
     <?php $this->load->view("dekstop/Header"); ?>
-   <div>
+    <div>
         <div class="container" style="padding-bottom: 30px;">
             <h4 class="heading">Dokter</h4>
             <div class="line-heading"></div>
