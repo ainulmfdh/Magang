@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Dokter</title>
     <style>
+        .bread-crumb {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            background-color: #00AAB5;
+            color: white;
+        }
+
+        .bread-crumb > .container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bread-crumb > .container > a {
+            cursor: pointer;
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+        .bread-crumb > .container > p {
+            cursor: pointer;
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 16px;
+        }
         .heading {
             color: #00AAB5;
             margin-top: 70px;
@@ -33,6 +61,14 @@
 <body>
     <?php $this->load->view("dekstop/Header"); ?>
 
+    <div class="bread-crumb">
+        <div class="container">
+            <a href="<?= base_url('Dekstop') ?>"><p>Home</p></a>
+            <p>|</p>
+            <a href="<?= base_url('Dekstop/dokter_page') ?>"><p>Dokter</p></a>
+        </div>
+    </div>
+    
     <div class="container" style="padding-bottom: 20px;">
         <h4 class="heading">Profil Dokter</h4>
         <div class="line-heading"></div>
