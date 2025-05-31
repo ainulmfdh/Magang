@@ -422,7 +422,7 @@ $doctorSchedules = [
                     <?php foreach ($doctors as $doctor): ?>
                         <tr class="doctor-row" data-doctor="<?= htmlspecialchars($doctor->doctor_name) ?>">
                             <td>
-                                <a href="<?= site_url('jadwaldokter/view/' . $doctor->doctor_id); ?>" class="doctor-name">
+                                <a href="<?= site_url('Dekstop/detail_dokter/' . $doctor->doctor_id); ?>" class="doctor-name">
                                     <?= htmlspecialchars($doctor->doctor_name) ?>
                                 </a>
                             </td>
