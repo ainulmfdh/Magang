@@ -36,6 +36,10 @@ class Mobile extends CI_Controller {
         } else {
             show_404();
         }
-        // $this->load->view('dekstop/detail_dokter');
     }
+
+	public function jadwal_dokter() {
+		$data['doctors'] = $this->Dokter_model->get_all_doctors(); 
+		$this->load->view('mobile/jadwal_dokter', $data);
+	}
 }

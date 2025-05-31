@@ -192,13 +192,15 @@
                         <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                             <div class="card-dokter">
                                 <a href="<?php echo site_url('Mobile/detail_dokter/' . $dokter->doctor_id); ?>">
-                                    <img src="<?php echo base_url('../asset/' . $dokter->doctor_photo_open); ?>" class="d-block w-100" alt="Dokter">
+                                    <img src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" class="d-block w-100" alt="Dokter">
                                 </a>
                                 <div class="desc-dokter">
                                     <h5 class="mt-2 fw-bold"><?php echo $dokter->doctor_name; ?></h5>
                                     <p><?php echo $dokter->doctor_id_position; ?></p>
                                 </div>
-                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                                <a href="<?php echo site_url('Mobile/detail_dokter/' . $dokter->doctor_id); ?>" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                                    <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -224,6 +226,8 @@
             </div>
         </div>
     </div>
+
+    <?php $this->load->view("mobile/footer"); ?>
     
     <!-- Bootstrap dan Font Awesome -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
