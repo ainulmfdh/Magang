@@ -23,19 +23,11 @@
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobileNav">
         <ul>
-<<<<<<< HEAD
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Pelayanan</a></li>
-            <li><a href="#">Dokter</a></li>
-            <li><a href="<?= base_url('Mobile/jadwaldokter')?>">Jadwal Dokter</a></li>
-            <li><a href="#">Berita Terbaru</a></li>
-=======
             <li><a href="<?= site_url('mobile'); ?>">Beranda</a></li>
             <li><a href="<?= site_url('mobile'); ?>">Pelayanan</a></li>
             <li><a href="<?= site_url('doctor/mobile'); ?>">Dokter</a></li>
             <li><a href="<?= site_url('mobile'); ?>">Jadwal Dokter</a></li>
             <li><a href="<?= site_url('news/mobile'); ?>">Berita Terbaru</a></li>
->>>>>>> 2d81647a2b69a79a2256169e3c41ed42f399b256
         </ul>
     </div>
     

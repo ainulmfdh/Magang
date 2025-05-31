@@ -88,7 +88,7 @@
                     <a href="<?= base_url('desktop'); ?>">Beranda</a>
                 </li>
                 <li class="<?= $this->uri->segment(1) == 'pelayanan' ? 'active' : ''; ?>">
-                    <a href="<?= base_url('pelayanan'); ?>">Pelayanan</a>
+                    <a href="<?= base_url('skrining'); ?>">Pelayanan</a>
                 </li>
                 <li class="<?= $this->uri->segment(1) == 'doctor' ? 'active' : ''; ?>">
                     <a href="<?= base_url('doctor'); ?>">Dokter</a>
