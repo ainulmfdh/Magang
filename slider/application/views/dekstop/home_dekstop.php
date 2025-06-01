@@ -340,10 +340,10 @@
                 position: relative;
                 min-width: 350px;
                 max-width: 350px;
+                height: 400px;
             }
             .doctor-card img {
                 width: 100%;
-                height: 400px;
             }
             .doctor-info {
                 position: absolute;
@@ -877,75 +877,47 @@
                         <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
                             <!-- Carousel Indicators -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <?php
+                                $total_doctors = count($data_dokter);
+                                $total_slides = ceil($total_doctors / 3);
+                                for ($i = 0; $i < $total_slides; $i++):
+                                ?>
+                                    <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>" aria-current="<?= $i == 0 ? 'true' : 'false' ?>" aria-label="Slide <?= $i + 1 ?>"></button>
+                                <?php endfor; ?>
                             </div>
                             <!-- Carousel Content -->
                             <div class="carousel-inner">
-                                <!-- First Slide -->
-                                <div class="carousel-item active">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
+                                <?php $index_dokter = 0; ?>
+                                <?php foreach($data_dokter as $dokter): ?>
+                                    <?php if($index_dokter % 3 == 0): ?>
+                                        <div class="carousel-item <?= $index_dokter == 0 ? 'active' : '' ?>">
+                                            <div class="row justify-content-center">
+                                    <?php endif; ?>
+                                                <div class="col-md-4">
+                                                    <div class="doctor-card">
+                                                        <a class="dokter-img" href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>">
+                                                            <?php if (!empty($dokter->doctor_photo_open)): ?>
+                                                                <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                                            <?php else: ?>
+                                                                <div class="no-photo">Tidak ada foto</div>
+                                                            <?php endif; ?>
+                                                        </a>
+                                                        <div class="doctor-info">
+                                                            <h3 class="doctor-name"><?php echo $dokter->doctor_name; ?></h3>
+                                                            <p class="doctor-specialty"><?php echo $dokter->doctor_id_position; ?></p>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                    <?php if($index_dokter % 3 == 2): ?>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Second Slide -->
-                                <div class="carousel-item">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="doctor-card">
-                                                <img src="<?= base_url('asset/dokter.png'); ?>" alt="Doctor" class="img-fluid">
-                                                <div class="doctor-info">
-                                                    <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
-                                                    <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                                </div>
-                                            </div>
+                                    <?php endif; ?>
+                                    <?php $index_dokter++; ?>
+                                <?php endforeach; ?>
+                                <?php if($index_dokter % 3 != 0): ?>
                                         </div>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                             <!-- Carousel Controls -->
                             <button class="carousel-control-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">

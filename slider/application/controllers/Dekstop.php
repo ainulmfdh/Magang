@@ -18,8 +18,8 @@ class Dekstop extends CI_Controller {
         // $this->load->view('dekstop/dokter_berita');
         // $this->load->view('dekstop/footer');
         // $this->load->view('dekstop/background');
-
-        $this->load->view('dekstop/home_dekstop');
+        $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+        $this->load->view('dekstop/home_dekstop', $data);
     }
 
     public function dokter_page() {

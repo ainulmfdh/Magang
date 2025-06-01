@@ -205,7 +205,7 @@
         .card-dokter > button{
             align-self: center;
         }
-        .card-dokter > img {
+        .card-dokter > a > img {
             border-radius: 20px;
             height: 474px !important;
             width: 100%;
@@ -305,30 +305,45 @@
 		}
 
         /* footer */
-        .footer-section {
+         .footer-section {
             background-color: #00AAB5;
             color: white;
-            padding: 20px;
+            padding: 40px 0;
         }
-        
-        .form-control {
-            margin-bottom: 15px;
-            border-radius: 0;
+        .footer-title {
+            font-size: 20px;
+            margin-bottom: 20px;
         }
-        
-        .btn-submit {
-            background-color: white;
-            color: #00B3B3;
-            border: none;
-            border-radius: 0;
-            padding: 8px 0;
-            font-weight: 500;
-            width: 100%;
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
         }
-        
-        .social-icons a {
-            margin-right: 15px;
-            color: white;
+        .social-btn {
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .follow-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+        .copyright {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        .text-md-end {
+            text-align: right;
+        }
+        @media (max-width: 768px) {
+            .text-md-end {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .footer-section {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -352,7 +367,7 @@
                     <i id="close-hamburger-menu" class="fa-solid fa-x"></i>
                 </div>
                 <div class="d-flex flex-column gap-4 mt-5 px-2 pe-4">
-                    <p class="menu-border">Beranda</p>
+                    <a href="<?php echo base_url('Mobile') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Beranda</p></a>
                     <p class="menu-border">Pelayanan</p>
                     <a href="<?php echo base_url('Mobile/dokter_page') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Dokter</p></a>
                     <a href="<?php echo base_url('Mobile/jadwal_dokter') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Jadwal Dokter</p></a>
@@ -365,7 +380,7 @@
             <section class="home-section home-fade home-full-height" id="home">
                 <div class="hero-slider">
                     <ul class="slides">
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/work-7.jpg);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(<?= base_url('assets/images/work-7.jpg') ?>);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
@@ -374,7 +389,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/slide-1.png);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(<?= base_url('assets/images/20220825_-_tv_datang_sesuai_jadwal_fix.png') ?>);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
@@ -383,7 +398,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/slide-2.png);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(<?= base_url('assets/images/slider-1.png') ?>);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
@@ -546,45 +561,55 @@
         </section>
 
         <section id="dokter">
-            <div id="dokter" class="container text-center">
+            <div class="container text-center">
                 <h2 class="fw-bold">Tim Dokter Kami</h2>
                 <div id="doctorCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card-dokter">
-                                <img src=".../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
-                                <div class="desc-dokter">
-                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
-                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                </div>
-                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card-dokter">
-                                <img src=".../../asset/dokter2.png" alt="Dokter 2">
-                                <div class="desc-dokter">
-                                    <h5 id="text-dokter" class="mt-2 fw-bold">dr. Budi Santoso, Sp.M(K)</h5>
-                                    <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
-                                </div>
-                                <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
-                            </div>
-                        </div>
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        <?php
+                        // Calculate the number of slides (one per doctor)
+                        $total_doctors = count($data_dokter);
+                        $total_slides = $total_doctors;
+                        // Limit to maximum 3 visible indicators
+                        $visible_slides = min($total_slides, 3);
+                        for ($i = 0; $i < $visible_slides; $i++):
+                        ?>
+                            <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>" aria-current="<?= $i == 0 ? 'true' : 'false' ?>" aria-label="Slide <?= $i + 1 ?>"></button>
+                        <?php endfor; ?>
                     </div>
-                    
-                    <!-- Custom carousel navigation arrows -->
+                    <!-- Carousel Content -->
+                    <div class="carousel-inner">
+                        <?php $index_dokter = 0; ?>
+                        <?php foreach($data_dokter as $dokter): ?>
+                            <div class="carousel-item <?= $index_dokter == 0 ? 'active' : '' ?>">
+                                <div class="card-dokter mx-auto">
+                                    <a href="<?php echo site_url('Mobile/detail_dokter/' . $dokter->doctor_id); ?>">
+                                        <img src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                    </a>
+                                    <div class="desc-dokter">
+                                        <h5 id="text-dokter" class="mt-2 fw-bold"><?php echo $dokter->doctor_name; ?></h5>
+                                        <p><?php echo $dokter->doctor_id_position; ?></p>
+                                    </div>
+                                    <a href="<?php echo site_url('Mobile/detail_dokter/' . $dokter->doctor_id); ?>" style="width: 100%; display: flex; justify-content: center; text-decoration: none;">
+                                        <button class="btn-jadwal"><i class="fa-solid fa-book-open-reader"></i> Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php $index_dokter++; ?>
+                        <?php endforeach; ?>
+                        <?php if ($index_dokter == 0): ?>
+                            <p>No doctors available.</p>
+                        <?php endif; ?>
+                    </div>
+                    <!-- Carousel Navigation Buttons -->
                     <button class="custom-carousel-nav custom-carousel-prev" type="button" data-bs-target="#doctorCarousel" data-bs-slide="prev">
                         <i class="fas fa-chevron-left"></i>
+                        <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="custom-carousel-nav custom-carousel-next" type="button" data-bs-target="#doctorCarousel" data-bs-slide="next">
                         <i class="fas fa-chevron-right"></i>
+                        <span class="visually-hidden">Next</span>
                     </button>
-                    
-                    <!-- Keep indicators inside carousel but position with CSS -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#doctorCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -641,159 +666,152 @@
             </div>
         </section>
 
-        <footer id="footer" class="footer-section">
-            <div class="container">
-                <!-- Clinic Logo and Description (Left-aligned) -->
-                <div class="mb-4">
-                    <div class="d-flex align-items-center">
-                        <img src=".../../asset/image3.png" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
-                    </div>
-                    <p class="mt-4">
-                        Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.
-                    </p>
+       <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="row align-items-start align-items-center">
+                <div class="col-md-4 align-items-center">
+                    <h3 class="footer-title">Klinik Mata dr. Sjamsu</h3>
                 </div>
-                
-                <!-- Social Media Section -->
-                <div class="mb-4">
-                    <h5>Ikuti Kami</h5>
-                    <div class="social-icons mt-2">
-                        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp-square fa-2x"></i></a>
-                        <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <div class="col-md-4" >
+                    <!-- <h3 class="footer-title">Social Media</h3> -->
+                    <div class="d-flex justify-content-center">
+                        <button class="social-btn follow-btn">
+                            <i class="fab fa-facebook-f me-1"></i>
+                        </button>
+                        <button class="social-btn follow-btn">
+                            <i class="fab fa-instagram me-1"></i>
+                        </button>
                     </div>
                 </div>
-                
-                <!-- Contact Form Section (Centered) -->
-                <div>
-                    <h5>Kontak Kami</h5>
-                    <form action="#" method="post" class="mt-3">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="subjek" placeholder="Subjek" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" name="pesan" rows="4" placeholder="Pesan" required></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="btn-submit">Kirim</button>
-                        </div>
-                    </form>
+                <div class="col-md-4 text-md-end" >
+                    <p class="copyright">Copyright © 2025 CV SB</p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Ensure single jQuery version -->
+<script src=".../../assets/lib/jquery/dist/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src=".../../assets/lib/flexslider/jquery.flexslider.js"></script>
+<script src=".../../assets/js/main.js"></script>
 
-    <script>
-        document.getElementById('logomata').addEventListener('click', function (event) {
-            event.preventDefault(); // Mencegah perilaku default (jika tombol dalam form)
-            document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
-        });
+<!-- slider -->
+<script src=".../../assets/lib/jquery/dist/jquery.js"></script>
+<!-- <script src=".../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+<script src=".../../assets/lib/wow/dist/wow.js"></script>
+<!-- <script src=".../../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script> -->
+<!-- <script src=".../../assets/lib/isotope/dist/isotope.pkgd.js"></script> -->
+<!-- <script src=".../../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script> -->
+<script src=".../../assets/lib/flexslider/jquery.flexslider.js"></script>
+<!-- <script src=".../../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script> -->
+<!-- <script src=".../../assets/lib/smoothscroll.js"></script> -->
+<!-- <script src=".../../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script> -->
+<!-- <script src=".../../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script> -->
+<!-- <script src=".../../assets/js/plugins.js"></script> -->
+<script src=".../../assets/js/main.js"></script>
 
-        const hamburgerMenuToggle = document.getElementById('hamburger-menu-toggle');
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
-        let hamburgerMenuIsOpen = false;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Doctor Carousel
+    const doctorCarouselElement = document.querySelector('#doctorCarousel');
+    const doctorCarousel = new bootstrap.Carousel(doctorCarouselElement, {
+        interval: 3000,
+        wrap: true
+    });
 
-        hamburgerMenuToggle.addEventListener('click', () => {
-            hamburgerMenuIsOpen = !hamburgerMenuIsOpen;
-            if (hamburgerMenuIsOpen) {
-                hamburgerMenu.style.right = '0';
-            } else {
-                hamburgerMenu.style.right = '-1000px';
-            }
-        });
+    // Custom indicator handling for max 3 visible dots
+    doctorCarouselElement.addEventListener('slid.bs.carousel', function(event) {
+        const indicators = document.querySelectorAll('#doctorCarousel .carousel-indicators button');
+        const totalIndicators = indicators.length; // Should be max 3
+        const currentIndex = event.to; // Current slide index
 
-        closeHamburgerMenu.addEventListener('click', () => {
+        // Remove active class from all indicators
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+
+        // Set active indicator based on slide index
+        if (currentIndex < totalIndicators) {
+            // For slides 0, 1, 2: activate corresponding indicator
+            indicators[currentIndex].classList.add('active');
+        } else {
+            // For slides 3 and beyond: keep the last visible indicator (index 2) active
+            indicators[totalIndicators - 1].classList.add('active');
+        }
+    });
+
+    // Initialize Berita Carousel
+    new bootstrap.Carousel(document.querySelector('#beritaCarousel'), {
+        interval: 4000,
+        wrap: true
+    });
+
+    // Existing hamburger menu and screen detection logic
+    const hamburgerMenuToggle = document.getElementById('hamburger-menu-toggle');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const closeHamburgerMenu = document.getElementById('close-hamburger-menu');
+    let hamburgerMenuIsOpen = false;
+
+    hamburgerMenuToggle.addEventListener('click', () => {
+        hamburgerMenuIsOpen = !hamburgerMenuIsOpen;
+        hamburgerMenu.style.right = hamburgerMenuIsOpen ? '0' : '-1000px';
+    });
+
+    closeHamburgerMenu.addEventListener('click', () => {
+        hamburgerMenuIsOpen = false;
+        hamburgerMenu.style.right = '-1000px';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (hamburgerMenuIsOpen && !hamburgerMenu.contains(event.target) && !hamburgerMenuToggle.contains(event.target)) {
             hamburgerMenuIsOpen = false;
             hamburgerMenu.style.right = '-1000px';
-        });
-
-        document.addEventListener('click', (event) => {
-            if (hamburgerMenuIsOpen && !hamburgerMenu.contains(event.target) && !hamburgerMenuToggle.contains(event.target)) {
-                hamburgerMenuIsOpen = false;
-                hamburgerMenu.style.right = '-1000px';
-            }
-        });
-
-        $(document).ready(() => {
-            detectScreen();
-            $(window).on('resize', detectScreen);
-        })
-
-        function detectScreen() {
-            var width = $(window).width();
-            
-            if (width >= 768) {
-                window.location.href = '<?= base_url('Dekstop') ?>';
-                console.log('dekstop');
-            } 
         }
-    </script>
+    });
 
-    <!-- slider -->
-    <script src=".../../assets/lib/jquery/dist/jquery.js"></script>
-    <!-- <script src=".../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src=".../../assets/lib/wow/dist/wow.js"></script>
-    <!-- <script src=".../../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script> -->
-    <!-- <script src=".../../assets/lib/isotope/dist/isotope.pkgd.js"></script> -->
-    <!-- <script src=".../../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script> -->
-    <script src=".../../assets/lib/flexslider/jquery.flexslider.js"></script>
-    <!-- <script src=".../../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script> -->
-    <!-- <script src=".../../assets/lib/smoothscroll.js"></script> -->
-    <!-- <script src=".../../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script> -->
-    <!-- <script src=".../../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script> -->
-    <!-- <script src=".../../assets/js/plugins.js"></script> -->
-    <script src=".../../assets/js/main.js"></script>
+    $(document).ready(() => {
+        detectScreen();
+        $(window).on('resize', detectScreen);
+    });
 
-    <!-- form -->
-    <script>
-        function validateForm(event) {
-            event.preventDefault(); // Hindari form langsung submit
-
-            let form = event.target; // Ambil form yang sedang di-submit
-            if (!form.checkValidity()) {
-                form.classList.add('was-validated'); // Tampilkan pesan error
-                return false;
-            }
-
-            // Jika valid, tampilkan form tambahan berdasarkan form yang di-submit
-            if (form.id === "bpjsForm") {
-                document.getElementById('extraForm').classList.remove('d-none');
-            } else if (form.id === "privatForm") {
-                document.getElementById('extraFormPrivat').classList.remove('d-none');
-            }
-            return true;
+    function detectScreen() {
+        if ($(window).width() >= 768) {
+            window.location.href = '<?= base_url('Dekstop') ?>';
+            console.log('dekstop');
         }
+    }
 
-        function showPrivatForm() {
-            document.getElementById('bpjsForm').classList.add('d-none');
-            document.getElementById('privatForm').classList.remove('d-none');
-            document.getElementById('privat').classList.add('active');
-            document.getElementById('bpjs').classList.remove('active');
+    // Existing form logic
+    function validateForm(event) {
+        event.preventDefault();
+        let form = event.target;
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            return false;
         }
-
-        function showBPJSForm() {
-            document.getElementById('privatForm').classList.add('d-none');
-            document.getElementById('bpjsForm').classList.remove('d-none');
-            document.getElementById('bpjs').classList.add('active');
-            document.getElementById('privat').classList.remove('active');
+        if (form.id === "bpjsForm") {
+            document.getElementById('extraForm').classList.remove('d-none');
+        } else if (form.id === "privatForm") {
+            document.getElementById('extraFormPrivat').classList.remove('d-none');
         }
-    </script>
+        return true;
+    }
 
-    <!-- layanan -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    function showPrivatForm() {
+        document.getElementById('bpjsForm').classList.add('d-none');
+        document.getElementById('privatForm').classList.remove('d-none');
+        document.getElementById('privat').classList.add('active');
+        document.getElementById('bpjs').classList.remove('active');
+    }
 
+    function showBPJSForm() {
+        document.getElementById('privatForm').classList.add('d-none');
+        document.getElementById('bpjsForm').classList.remove('d-none');
+        document.getElementById('bpjs').classList.add('active');
+        document.getElementById('privat').classList.remove('active');
+    }
+});
+</script>
     <!-- dokter-berita -->
     <script>
         new bootstrap.Carousel(document.querySelector('#doctorCarousel'), {
