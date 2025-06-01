@@ -9,11 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- slider -->
-    <link href=".../../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href=".../../../assets/css/style.css" rel="stylesheet">
+    <link href=".../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href=".../../assets/css/style.css" rel="stylesheet">
 
     <!-- form -->
-    <link rel="stylesheet" href=".../../../asset/css/form.css">
+    <link rel="stylesheet" href=".../../asset/css/form.css">
 
     <!-- layanan -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
     <style>
         body, html {
             min-height: 100vh;
-            background-image: url('.../../../asset/PORTOFOLIO.png');
+            background-image: url('.../../asset/PORTOFOLIO.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -336,12 +336,14 @@
     <div id="container">
         <section id="header">
             <div class="w-100 bg-white position-fixed" style="height: 80px; z-index: 30;">
-                <div class="d-flex align-items-center h-100">
-                    <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src=".../../../asset/image_2.png">
-                    <img style="margin-left: 85px;" src=".../../../asset/image_4.png">
-                </div>
+                <a href="<?php echo base_url('Mobile') ?>">
+                    <div class="d-flex align-items-center h-100">
+                        <img id="logomata" class="position-fixed" style="top: 25px; left: 20px; width: 57px; height: 29px;" src="<?= base_url('asset/image_2.png');?>">
+                        <img style="margin-left: 85px;" src="<?= base_url('asset/image_4.png');?>">
+                    </div>
+                </a>
                 <div id="hamburger-menu-toggle" class="position-fixed" style="top: 28px; right: 20px; padding-right: 20px;">
-                    <img src=".../../../asset/material-symbols_menu.png">   
+                    <img src=".../../asset/material-symbols_menu.png">   
                 </div>
             </div>
             
@@ -352,8 +354,8 @@
                 <div class="d-flex flex-column gap-4 mt-5 px-2 pe-4">
                     <p class="menu-border">Beranda</p>
                     <p class="menu-border">Pelayanan</p>
-                    <p class="menu-border">Dokter</p>
-                    <p class="menu-border">Jadwal Dokter</p>
+                    <a href="<?php echo base_url('Mobile/dokter_page') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Dokter</p></a>
+                    <a href="<?php echo base_url('Mobile/jadwal_dokter') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Jadwal Dokter</p></a>
                     <p class="menu-border">Berita Terbaru</p>
                 </div>
             </div>
@@ -363,7 +365,7 @@
             <section class="home-section home-fade home-full-height" id="home">
                 <div class="hero-slider">
                     <ul class="slides">
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/work-7.jpg);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/work-7.jpg);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-1">Hello & welcome</div>
@@ -372,7 +374,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../../assets/images/slide-1.png);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/slide-1.png);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-2">Titan is creative multipurpose html
@@ -381,7 +383,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-dark-30 bg-dark" style="background-image:url(assets/images/slide-2.png);">
+                        <li class="bg-dark-30 bg-dark" style="background-image:url(.../../assets/images/slide-2.png);">
                             <div class="titan-caption">
                                 <div class="caption-content">
                                     <div class="font-alt mb-30 titan-title-size-1">We build brands that build business</div>
@@ -550,7 +552,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card-dokter">
-                                <img src=".../../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
+                                <img src=".../../asset/dokter.png" class="d-block w-100" alt="Dokter 1">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Ria Sandy Deneska, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -560,7 +562,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="card-dokter">
-                                <img src=".../../../asset/dokter2.png" alt="Dokter 2">
+                                <img src=".../../asset/dokter2.png" alt="Dokter 2">
                                 <div class="desc-dokter">
                                     <h5 id="text-dokter" class="mt-2 fw-bold">dr. Budi Santoso, Sp.M(K)</h5>
                                     <p>Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
@@ -594,7 +596,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                         <div class="card-berita">
-                            <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 1">
+                            <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 1">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>12 Oktober 2021</span>
@@ -608,7 +610,7 @@
                         </div>
                         <div class="carousel-item">
                             <div class="card-berita">
-                                <img src=".../../../asset/berita.png" class="d-block w-100" alt="Berita 2">
+                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 2">
                                 <div class="tanggal-berita">
                                     <i class="fa-regular fa-calendar"></i>
                                     <span>12 Oktober 2021</span>
@@ -644,7 +646,7 @@
                 <!-- Clinic Logo and Description (Left-aligned) -->
                 <div class="mb-4">
                     <div class="d-flex align-items-center">
-                        <img src=".../../../asset/image3.png" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
+                        <img src=".../../asset/image3.png" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
                     </div>
                     <p class="mt-4">
                         Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.
@@ -733,26 +735,26 @@
             var width = $(window).width();
             
             if (width >= 768) {
-                window.location.href = '<?= base_url('DekstopSlider') ?>';
+                window.location.href = '<?= base_url('Dekstop') ?>';
                 console.log('dekstop');
             } 
         }
     </script>
 
     <!-- slider -->
-    <script src=".../../../assets/lib/jquery/dist/jquery.js"></script>
-    <!-- <script src=".../../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src=".../../../assets/lib/wow/dist/wow.js"></script>
-    <!-- <script src=".../../../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script> -->
-    <!-- <script src=".../../../assets/lib/isotope/dist/isotope.pkgd.js"></script> -->
-    <!-- <script src=".../../../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script> -->
-    <script src=".../../../assets/lib/flexslider/jquery.flexslider.js"></script>
-    <!-- <script src=".../../../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script> -->
-    <!-- <script src=".../../../assets/lib/smoothscroll.js"></script> -->
-    <!-- <script src=".../../../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script> -->
-    <!-- <script src=".../../../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script> -->
-    <!-- <script src=".../../../assets/js/plugins.js"></script> -->
-    <script src=".../../../assets/js/main.js"></script>
+    <script src=".../../assets/lib/jquery/dist/jquery.js"></script>
+    <!-- <script src=".../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src=".../../assets/lib/wow/dist/wow.js"></script>
+    <!-- <script src=".../../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script> -->
+    <!-- <script src=".../../assets/lib/isotope/dist/isotope.pkgd.js"></script> -->
+    <!-- <script src=".../../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script> -->
+    <script src=".../../assets/lib/flexslider/jquery.flexslider.js"></script>
+    <!-- <script src=".../../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script> -->
+    <!-- <script src=".../../assets/lib/smoothscroll.js"></script> -->
+    <!-- <script src=".../../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script> -->
+    <!-- <script src=".../../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script> -->
+    <!-- <script src=".../../assets/js/plugins.js"></script> -->
+    <script src=".../../assets/js/main.js"></script>
 
     <!-- form -->
     <script>

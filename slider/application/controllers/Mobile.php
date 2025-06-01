@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_Mobile extends CI_Controller {
+class Mobile extends CI_Controller {
 	public function __construct() {
         parent::__construct();
+		 $this->load->model('Dokter_model');
         // if (!detect_device_and_redirect()) {
 		// 	redirect('homedekstop');
 		// }
@@ -22,5 +23,23 @@ class Home_Mobile extends CI_Controller {
         // $this->load->view('mobile/footer');
 
 		$this->load->view('mobile/home_mobile');
+	}
+	public function dokter_page() {
+		 $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+		$this->load->view('mobile/dokter_page', $data);
+	}
+
+	 public function detail_dokter($doctor_id) {
+        $data['data_dokter'] = $this->Dokter_model->get_doctor_by_id($doctor_id);
+        if ($data['data_dokter']) {
+            $this->load->view('mobile/dokter_detail', $data);
+        } else {
+            show_404();
+        }
+    }
+
+	public function jadwal_dokter() {
+		$data['doctors'] = $this->Dokter_model->get_all_doctors(); 
+		$this->load->view('mobile/jadwal_dokter', $data);
 	}
 }

@@ -21,5 +21,4 @@ class Mobile extends CI_Controller {
 		// $this->load->view('Mobile/jammapsmobile');
 		$this->load->view('Mobile/footer');
 	}
-    
 }
