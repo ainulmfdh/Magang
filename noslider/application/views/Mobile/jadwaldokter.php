@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Mata dr Sjamsu - Jadwal Dokter Mobile</title>
+    <title>Klinik Mata dr Sjamsu - Jadwal Dokter</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
         }
         
         body {
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: #333;
-            font-size: 14px;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-        
-        .menu-icon {
-            color: #00b7c2;
-            font-size: 24px;
-            cursor: pointer;
         }
         
         .breadcrumb {
-            background-color: #F2FBFB;
+            background-color: #f8f9fa;
             padding: 12px 20px;
             font-size: 14px;
         }
@@ -47,158 +38,244 @@
         
         .section-title {
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 15px;
             color: #333;
         }
         
         .doctor-select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             margin-bottom: 20px;
-            font-size: 14px;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 16px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #333;
         }
         
-        .calendar-header-mobile {
+        .calendar-container {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .calendar-header {
+            background-color: #fff;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
         }
         
         .month-year {
-            font-weight: bold;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 18px;
         }
         
         .calendar-controls {
             display: flex;
+            gap: 10px;
             align-items: center;
         }
         
         .today-btn {
-            padding: 5px 12px;
+            padding: 6px 12px;
             background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            margin-right: 10px;
-            font-size: 13px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
         }
         
         .nav-btn {
-            width: 28px;
-            height: 28px;
+            padding: 8px 12px;
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: #00b7c2;
+        }
+        
+        .day-header {
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .calendar-dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: #fff;
+        }
+        
+        .date {
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+            min-height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 2px;
+            font-size: 16px;
         }
         
-        .calendar-mobile {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            table-layout: fixed;
+        .date:nth-child(7n) {
+            border-right: none;
         }
         
-        .calendar-mobile th {
-            background-color: #00b7c2;
-            color: white;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 12px;
-            font-weight: normal;
-        }
-        
-        .calendar-mobile td {
-            border: 1px solid #e0e0e0;
-            text-align: center;
-            padding: 8px 0;
-            height: 36px;
-            font-size: 13px;
-        }
-        
-        .calendar-mobile .other-month {
+        .date.other-month {
             color: #ccc;
         }
         
-        .calendar-mobile .today {
+        .date.today {
             background-color: #e6f7f8;
+            font-weight: bold;
+            color: #00b7c2;
+        }
+        
+        .date.selected {
+            background-color: #00b7c2;
+            color: #fff;
             font-weight: bold;
         }
         
-        .calendar-mobile .highlight {
-            color: #ff0000;
+        .date.highlight {
+            color: #ff4444;
+            font-weight: bold;
         }
         
         .register-btn {
-            display: block;
+            width: 100%;
             background-color: #00b7c2;
             color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            margin: 15px 0 30px;
-            font-weight: bold;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
         }
         
-        .doctor-schedule-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 25px 0 15px;
+        .schedule-section {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
-        .schedule-table-mobile {
-            width: 100%;
-            border-collapse: collapse;
+        .schedule-header {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
         
-        .schedule-table-mobile th {
-            background-color: #00b7c2;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            font-size: 13px;
-            font-weight: normal;
+        .day-tabs {
+            display: flex;
+            overflow-x: auto;
+            background-color: #f8f9fa;
+            padding: 0 20px;
+            gap: 5px;
+            -webkit-overflow-scrolling: touch;
         }
         
-        .schedule-table-mobile td {
-            border: 1px solid #e0e0e0;
-            padding: 10px 8px;
-            font-size: 13px;
+        .day-tab {
+            padding: 12px 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            font-size: 14px;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
         }
         
-        .schedule-table-mobile tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .day-tab.active {
+            color: #00b7c2;
+            border-bottom-color: #00b7c2;
+            font-weight: 600;
+        }
+        
+        .schedule-content {
+            padding: 0;
+        }
+        
+        .doctor-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .doctor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .doctor-item:last-child {
+            border-bottom: none;
+        }
+        
+        .doctor-item.hidden {
+            display: none;
         }
         
         .doctor-name {
             color: #00b7c2;
+            font-weight: 500;
+            font-size: 14px;
+            flex: 1;
             text-decoration: none;
-            display: block;
-            margin-bottom: 3px;
         }
         
-        .time-slot {
-            white-space: nowrap;
+        .doctor-time {
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .no-schedule {
+            color: #999;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 375px) {
+            .calendar-dates {
+                font-size: 14px;
+            }
+            
+            .date {
+                min-height: 40px;
+                padding: 10px 6px;
+            }
+            
+            .day-header {
+                padding: 10px 6px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
+    
     <!-- Breadcrumb -->
     <div class="breadcrumb">
-        <a href="#">Beranda</a> &gt; <span class="active">Detail Dokter</span>
+        <a href="#">Beranda</a> > <span class="active">Detail Dokter</span>
     </div>
     
     <!-- Main Content -->
@@ -207,197 +284,299 @@
         
         <!-- Doctor Selection Dropdown -->
         <select class="doctor-select" id="doctorSelect">
-            <option value="dr. Ria Sandy, Sp.M(K)">dr. Ria Sandy, Sp.M(K)</option>
+            <option value="">- Pilih Dokter -</option>
             <option value="Prof. dr. Sjamsu Budiono, Sp.M(K)">Prof. dr. Sjamsu Budiono, Sp.M(K)</option>
             <option value="dr. M. Firmansyah, Sp.M(K)">dr. M. Firmansyah, Sp.M(K)</option>
-            <option value="dr. Maha Arina Dian Ishriani, Sp.M">dr. Maha Arina Dian Ishriani, Sp.M</option>
-            <option value="dr. Vinca Deopardhi, Sp.M">dr. Vinca Deopardhi, Sp.M</option>
-            <option value="dr. Agaprina Caesari Putri, Sp.M">dr. Agaprina Caesari Putri, Sp.M</option>
-            <option value="dr. Finika Wahyu Lestari, Sp.M">dr. Finika Wahyu Lestari, Sp.M</option>
+            <option value="dr. Ria Sandy Deneska, Sp.M(K)">dr. Ria Sandy Deneska, Sp.M(K)</option>
+            <option value="dr. Maha Atma Dian Iehvara, Sp.M">dr. Maha Atma Dian Iehvara, Sp.M</option>
+            <option value="dr. Vinca Desyandri, Sp.M">dr. Vinca Desyandri, Sp.M</option>
+            <option value="dr. Agulina Caesari Putri, Sp.M">dr. Agulina Caesari Putri, Sp.M</option>
+            <option value="dr. Fitrika Wahyu Listari, Sp.M">dr. Fitrika Wahyu Listari, Sp.M</option>
+            <option value="dr. Astrid Priolia Syulianti, SpM">dr. Astrid Priolia Syulianti, SpM</option>
+            <option value="dr. Valeri Al Hakim, Sp.M">dr. Valeri Al Hakim, Sp.M</option>
+            <option value="dr. Sylva Dranindi T, Sp.M, M.Ked.Klin">dr. Sylva Dranindi T, Sp.M, M.Ked.Klin</option>
+            <option value="dr. Indriani Kartika Dewi, Sp.M">dr. Indriani Kartika Dewi, Sp.M</option>
+            <option value="dr. Amir Surya, Sp.M">dr. Amir Surya, Sp.M</option>
+            <option value="dr. Daya Banyu Bening, Sp.M">dr. Daya Banyu Bening, Sp.M</option>
+            <option value="dr. Citra Dewi Maharani, Sp.M">dr. Citra Dewi Maharani, Sp.M</option>
         </select>
         
-        <!-- Calendar Header with Controls -->
-        <div class="calendar-header-mobile">
-            <div class="month-year">Mei 2025</div>
-            <div class="calendar-controls">
-                <button class="today-btn">Today</button>
-                <button class="nav-btn">&lt;</button>
-                <button class="nav-btn">&gt;</button>
+        <!-- Calendar -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="month-year" id="monthYearDisplay">Mei 2025</div>
+                <div class="calendar-controls">
+                    <button class="today-btn" id="todayBtn">Today</button>
+                    <button class="nav-btn" id="prevBtn">&lt;</button>
+                    <button class="nav-btn" id="nextBtn">&gt;</button>
+                </div>
+            </div>
+            <div class="calendar-days">
+                <div class="day-header">Sun</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+            </div>
+            <div class="calendar-dates" id="calendarDates">
+                <!-- Calendar dates will be generated by JavaScript -->
             </div>
         </div>
         
-        <!-- Calendar for Mobile -->
-        <table class="calendar-mobile" id="calendarTable">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="other-month">30</td>
-                    <td class="other-month">31</td>
-                    <td>1</td>
-                    <td class="highlight">2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td class="highlight">5</td>
-                </tr>
-                <tr>
-                    <td class="highlight">6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td class="highlight">9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td class="highlight">12</td>
-                </tr>
-                <tr>
-                    <td class="highlight">13</td>
-                    <td>14</td>
-                    <td>15</td>
-                    <td class="highlight">16</td>
-                    <td>17</td>
-                    <td class="highlight">18</td>
-                    <td class="highlight">19</td>
-                </tr>
-                <tr>
-                    <td class="highlight">20</td>
-                    <td>21</td>
-                    <td>22</td>
-                    <td class="highlight">23</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td class="highlight">26</td>
-                </tr>
-                <tr>
-                    <td class="highlight">27</td>
-                    <td>28</td>
-                    <td>29</td>
-                    <td class="highlight">30</td>
-                    <td class="other-month">1</td>
-                    <td class="other-month">2</td>
-                    <td class="other-month">3</td>
-                </tr>
-                <tr>
-                    <td class="other-month">4</td>
-                    <td class="other-month">5</td>
-                    <td class="other-month">6</td>
-                    <td class="other-month">7</td>
-                    <td class="other-month">8</td>
-                    <td class="other-month">9</td>
-                    <td class="other-month">10</td>
-                </tr>
-            </tbody>
-        </table>
+        <button class="register-btn">Daftar</button>
         
-        <!-- Register Button -->
-        <a href="#" class="register-btn">Daftar</a>
-        
-        <!-- Schedule Title -->
-        <h2 class="doctor-schedule-title">Jadwal Harian Dokter</h2>
-        
-        <!-- Doctor Schedule Table for Mobile -->
-        <table class="schedule-table-mobile">
-            <thead>
-                <tr>
-                    <th style="width: 50%;">Doctor</th>
-                    <th style="width: 50%;">Monday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#" class="doctor-name">Prof. dr. Sjamsu Budiono, Sp.M(K)</a></td>
-                    <td class="time-slot">17:30 - 20:30</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. M. Firmansyah, Sp.M(K)</a></td>
-                    <td class="time-slot">19:30 - 20:00</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Ria Sandy Demeska, Sp.M(K)</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Maha Atma Dian Ishwara, Sp.M</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Vinca Deopardhi, Sp.M</a></td>
-                    <td class="time-slot">8:40 - 12:00</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Aqurina Caesari Putri, Sp.M</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Fitrika Wahyu Listari, Sp.M</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Astrid Pricilia Syulianti, SpM</a></td>
-                    <td class="time-slot">14:00 - 16:00</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Valeri Al Hakim, Sp.M</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Sylva Dranindi T, Sp.M, M.Ked.Klin</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Indrani Kartika Dewi, Sp.M</a></td>
-                    <td class="time-slot">-</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Amir Surya, Sp.M</a></td>
-                    <td class="time-slot">16:45 - 18:45</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Daya Banyu Bening, Sp.M</a></td>
-                    <td class="time-slot">12:40 - 14:40</td>
-                </tr>
-                <tr>
-                    <td><a href="#" class="doctor-name">dr. Citra Dewi Maharani, Sp.M</a></td>
-                    <td class="time-slot">8:40 - 14:40</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Schedule Section -->
+        <div class="schedule-section">
+            <div class="schedule-header">
+                <h2 class="section-title" style="margin-bottom: 0;">Jadwal Harian Dokter</h2>
+            </div>
+            
+            <!-- Day Tabs -->
+            <div class="day-tabs">
+                <button class="day-tab" data-day="monday">Monday</button>
+                <button class="day-tab active" data-day="tuesday">Tuesday</button>
+                <button class="day-tab" data-day="wednesday">Wednesday</button>
+                <button class="day-tab" data-day="thursday">Thursday</button>
+                <button class="day-tab" data-day="friday">Friday</button>
+                <button class="day-tab" data-day="saturday">Saturday</button>
+            </div>
+            
+            <!-- Schedule Content -->
+            <div class="schedule-content">
+                <div class="doctor-list" id="doctorList">
+                    <!-- Doctor schedule items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Calendar day click functionality
-            const calendarCells = document.querySelectorAll('.calendar-mobile td');
-            calendarCells.forEach(cell => {
-                cell.addEventListener('click', function() {
-                    // Remove selected class from all cells
-                    calendarCells.forEach(c => c.classList.remove('today'));
-                    // Add selected class to clicked cell
-                    this.classList.add('today');
-                });
-            });
-            
-            // Calendar navigation
-            const monthYearDisplay = document.querySelector('.month-year');
-            const prevBtn = document.querySelectorAll('.nav-btn')[0];
-            const nextBtn = document.querySelectorAll('.nav-btn')[1];
-            const todayBtn = document.querySelector('.today-btn');
-            
-            let currentMonth = 4; // May (0-indexed)
-            let currentYear = 2025;
-            
-            function updateCalendarTitle() {
-                const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-                monthYearDisplay.textContent = `${months[currentMonth]} ${currentYear}`;
+        // Data jadwal dokter
+        const doctorSchedules = {
+            'Prof. dr. Sjamsu Budiono, Sp.M(K)': {
+                'monday': '17:30 - 20:30',
+                'tuesday': '17:30 - 20:30',
+                'wednesday': '17:30 - 20:30',
+                'thursday': '17:30 - 20:30',
+                'friday': '17:30 - 20:30',
+                'saturday': '-'
+            },
+            'dr. M. Firmansyah, Sp.M(K)': {
+                'monday': '19:30 - 20:00',
+                'tuesday': '15:30 - 16:00',
+                'wednesday': '-',
+                'thursday': '18:00 - 20:00',
+                'friday': '18:00 - 20:00',
+                'saturday': '-'
+            },
+            'dr. Ria Sandy Deneska, Sp.M(K)': {
+                'monday': '-',
+                'tuesday': '15:15 - 19:05',
+                'wednesday': '-',
+                'thursday': '-',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Maha Atma Dian Iehvara, Sp.M': {
+                'monday': '8:40 - 11:40',
+                'tuesday': '9:00 - 11:40',
+                'wednesday': '-',
+                'thursday': '9:00 - 11:40',
+                'friday': '8:40 - 12:00',
+                'saturday': '-'
+            },
+            'dr. Vinca Desyandri, Sp.M': {
+                'monday': '8:40 - 12:00',
+                'tuesday': '9:40 - 11:40',
+                'wednesday': '8:40 - 11:30',
+                'thursday': '8:40 - 9:30',
+                'friday': '13:00 - 15:00',
+                'saturday': '-'
+            },
+            'dr. Agulina Caesari Putri, Sp.M': {
+                'monday': '-',
+                'tuesday': '18:00 - 20:00',
+                'wednesday': '14:30 - 16:30',
+                'thursday': '-',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Fitrika Wahyu Listari, Sp.M': {
+                'monday': '-',
+                'tuesday': '-',
+                'wednesday': '-',
+                'thursday': '-',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Astrid Priolia Syulianti, SpM': {
+                'monday': '14:00 - 16:00',
+                'tuesday': '-',
+                'wednesday': '-',
+                'thursday': '-',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Valeri Al Hakim, Sp.M': {
+                'monday': '-',
+                'tuesday': '-',
+                'wednesday': '14:30 - 16:30',
+                'thursday': '14:45 - 16:15',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Sylva Dranindi T, Sp.M, M.Ked.Klin': {
+                'monday': '-',
+                'tuesday': '-',
+                'wednesday': '-',
+                'thursday': '-',
+                'friday': '14:30 - 16:30',
+                'saturday': '-'
+            },
+            'dr. Indriani Kartika Dewi, Sp.M': {
+                'monday': '-',
+                'tuesday': '14:30 - 16:30',
+                'wednesday': '-',
+                'thursday': '17:00 - 19:00',
+                'friday': '17:00 - 19:00',
+                'saturday': '-'
+            },
+            'dr. Amir Surya, Sp.M': {
+                'monday': '16:45 - 18:45',
+                'tuesday': '-',
+                'wednesday': '16:45 - 18:45',
+                'thursday': '-',
+                'friday': '-',
+                'saturday': '-'
+            },
+            'dr. Daya Banyu Bening, Sp.M': {
+                'monday': '12:40 - 14:40',
+                'tuesday': '-',
+                'wednesday': '8:40 - 14:40',
+                'thursday': '12:40 - 14:40',
+                'friday': '13:00 - 15:00',
+                'saturday': '-'
+            },
+            'dr. Citra Dewi Maharani, Sp.M': {
+                'monday': '8:40 - 14:40',
+                'tuesday': '12:40 - 14:40',
+                'wednesday': '-',
+                'thursday': '-',
+                'friday': '8:40 - 11:40',
+                'saturday': '8:40 - 11:40'
             }
+        };
+        
+        let currentDay = 'tuesday';
+        let selectedDoctor = '';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarDates = document.getElementById('calendarDates');
+            const monthYearDisplay = document.getElementById('monthYearDisplay');
+            const todayBtn = document.getElementById('todayBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const doctorSelect = document.getElementById('doctorSelect');
+            const dayTabs = document.querySelectorAll('.day-tab');
+            const doctorList = document.getElementById('doctorList');
+            
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+            
+            // Generate calendar
+            function generateCalendar(month, year) {
+                calendarDates.innerHTML = '';
+                
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                
+                // Previous month days
+                const prevMonthDays = new Date(year, month, 0).getDate();
+                for (let i = firstDay - 1; i >= 0; i--) {
+                    const dateDiv = document.createElement('div');
+                    dateDiv.classList.add('date', 'other-month');
+                    dateDiv.textContent = prevMonthDays - i;
+                    calendarDates.appendChild(dateDiv);
+                }
+                
+                // Current month days
+                const today = new Date();
+                const isCurrentMonth = today.getMonth() === month && today.getFullYear() === year;
+                
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const dateDiv = document.createElement('div');
+                    dateDiv.classList.add('date');
+                    dateDiv.textContent = i;
+                    
+                    // Highlight today
+                    if (isCurrentMonth && i === today.getDate()) {
+                        dateDiv.classList.add('today');
+                    }
+                    
+                    // Highlight specific dates
+                    if ([2, 6, 9, 12, 13, 16, 18, 19, 20, 23, 26, 27, 30].includes(i)) {
+                        dateDiv.classList.add('highlight');
+                    }
+                    
+                    dateDiv.addEventListener('click', function() {
+                        document.querySelectorAll('.date').forEach(d => d.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                    
+                    calendarDates.appendChild(dateDiv);
+                }
+                
+                // Next month days
+                const totalCells = 42;
+                const remainingCells = totalCells - (firstDay + daysInMonth);
+                for (let i = 1; i <= remainingCells; i++) {
+                    const dateDiv = document.createElement('div');
+                    dateDiv.classList.add('date', 'other-month');
+                    dateDiv.textContent = i;
+                    calendarDates.appendChild(dateDiv);
+                }
+                
+                // Update month and year display
+                const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                monthYearDisplay.textContent = `${months[month]} ${year}`;
+            }
+            
+            // Update doctor list for current day
+            function updateDoctorList() {
+                doctorList.innerHTML = '';
+                
+                const doctorsToShow = selectedDoctor ? [selectedDoctor] : Object.keys(doctorSchedules);
+                
+                doctorsToShow.forEach(doctorName => {
+                    const schedule = doctorSchedules[doctorName];
+                    const timeSlot = schedule[currentDay] || '-';
+                    
+                    const doctorItem = document.createElement('div');
+                    doctorItem.classList.add('doctor-item');
+                    
+                    doctorItem.innerHTML = `
+                        <a href="#" class="doctor-name">${doctorName}</a>
+                        <div class="${timeSlot === '-' ? 'no-schedule' : 'doctor-time'}">${timeSlot}</div>
+                    `;
+                    
+                    doctorList.appendChild(doctorItem);
+                });
+            }
+            
+            // Initialize calendar and doctor list
+            generateCalendar(currentMonth, currentYear);
+            updateDoctorList();
+            
+            // Calendar controls
+            todayBtn.addEventListener('click', function() {
+                const today = new Date();
+                currentMonth = today.getMonth();
+                currentYear = today.getFullYear();
+                generateCalendar(currentMonth, currentYear);
+            });
             
             prevBtn.addEventListener('click', function() {
                 currentMonth--;
@@ -405,9 +584,7 @@
                     currentMonth = 11;
                     currentYear--;
                 }
-                updateCalendarTitle();
-                // In a real implementation, you would regenerate the calendar here
-                // For this demo, we're just updating the title
+                generateCalendar(currentMonth, currentYear);
             });
             
             nextBtn.addEventListener('click', function() {
@@ -416,55 +593,24 @@
                     currentMonth = 0;
                     currentYear++;
                 }
-                updateCalendarTitle();
-                // In a real implementation, you would regenerate the calendar here
+                generateCalendar(currentMonth, currentYear);
             });
             
-            todayBtn.addEventListener('click', function() {
-                const today = new Date();
-                currentMonth = today.getMonth();
-                currentYear = today.getFullYear();
-                updateCalendarTitle();
-                // In a real implementation, you would regenerate the calendar and highlight today
-            });
-            
-            // Doctor selection change
-            const doctorSelect = document.getElementById('doctorSelect');
+            // Doctor selection
             doctorSelect.addEventListener('change', function() {
-                const selectedDoctor = this.value;
-                console.log('Selected doctor:', selectedDoctor);
-                
-                // In a real implementation, you would update the schedule table
-                // based on the selected doctor
-                
-                // For this demo, we're just logging the selected doctor
+                selectedDoctor = this.value;
+                updateDoctorList();
             });
             
-            // Swipe functionality for calendar navigation (optional)
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            const calendarTable = document.getElementById('calendarTable');
-            
-            calendarTable.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
+            // Day tabs
+            dayTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    dayTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    currentDay = this.getAttribute('data-day');
+                    updateDoctorList();
+                });
             });
-            
-            calendarTable.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    // Swipe left - next month
-                    nextBtn.click();
-                } else if (touchEndX > touchStartX + swipeThreshold) {
-                    // Swipe right - previous month
-                    prevBtn.click();
-                }
-            }
         });
     </script>
 </body>
