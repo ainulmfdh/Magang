@@ -21,11 +21,11 @@ class Mobile extends CI_Controller {
 		// $this->load->view('mobile/background');
 		// $this->load->view('mobile/bd');
         // $this->load->view('mobile/footer');
-
-		$this->load->view('mobile/home_mobile');
+		$data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+		$this->load->view('mobile/home_mobile', $data);
 	}
 	public function dokter_page() {
-		 $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+		$data['data_dokter'] = $this->Dokter_model->get_all_doctors();
 		$this->load->view('mobile/dokter_page', $data);
 	}
 
