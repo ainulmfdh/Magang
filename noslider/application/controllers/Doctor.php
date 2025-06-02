@@ -14,7 +14,6 @@ class Doctor extends CI_Controller {
         $this->load->view('Desktop/header');
         $data['doctors'] = $this->Doctor_model->get_all_doctors();
         $this->load->view('Desktop/doctor_page', $data);
-        $this->load->view('Desktop/jammaps');
     	$this->load->view('Desktop/footer');
     }
     
