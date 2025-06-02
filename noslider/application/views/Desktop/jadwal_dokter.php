@@ -132,7 +132,7 @@ $doctorSchedules = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klinik Mata dr Sjamsu - Jadwal Dokter</title>
     <style>
-        * {
+        /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -142,7 +142,7 @@ $doctorSchedules = [
         body {
             background-color: #ffffff;
             color: #333;
-        }
+        } */
         
         .breadcrumb {
             background-color: #F2FBFB;
