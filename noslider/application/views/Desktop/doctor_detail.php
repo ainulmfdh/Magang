@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Dokter</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins';
-        }
         
         /* Breadcrumb Start */
       .breadcrumb {
@@ -22,9 +16,10 @@
       .breadcrumb-item {
         padding-left: 60px;
       }
-      .breadcrumb li {
-        font-size: 15px;
-      }
+        .breadcrumb li {
+        font-size: 18px;
+        font-weight: 500;
+     }
 
       .breadcrumb li a {
         text-decoration: none;

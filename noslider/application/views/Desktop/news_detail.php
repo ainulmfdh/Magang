@@ -6,12 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <title>Bakti Sosial Operasi Katarak Klinik Mata Dr. Sjamsu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
 
          /* Breadcrumb Start */
         .breadcrumb {
@@ -23,8 +17,9 @@
         .breadcrumb-item {
             padding-left: 60px;
         }
-        .breadcrumb li {
-            font-size: 15px;
+         .breadcrumb li {
+            font-size: 18px;
+            font-weight: 500;
         }
 
         .breadcrumb li a {
