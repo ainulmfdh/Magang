@@ -17,12 +17,13 @@
       padding-left: 60px;
     }
     .breadcrumb li {
-      font-size: 15px;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     .breadcrumb li a {
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
     /* Breadcrumb End */
 
