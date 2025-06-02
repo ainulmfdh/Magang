@@ -132,44 +132,45 @@ $doctorSchedules = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klinik Mata dr Sjamsu - Jadwal Dokter</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        body {
-            background-color: #ffffff;
-            color: #333;
-        }
-        
-        .breadcrumb {
-            background-color: #F2FBFB;
-            padding: 15px 40px;
-        }
-        
-        .breadcrumb a {
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .breadcrumb .active {
-            color: #00b7c2;
-        }
-        
-        .main-content {
-            padding: 30px 40px;
+        .bread-crumb {
             display: flex;
-            gap: 30px;
+            align-items: center;
+            height: 60px;
+            background-color: #00AAB5;
+            color: white;
         }
-        
-        .left-side {
-            flex: 1;
+
+        .bread-crumb > .container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-        
+
+        .bread-crumb > .container > a {
+            cursor: pointer;
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+        }
+        .bread-crumb > .container > p {
+            cursor: pointer;
+            padding-top: 10px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .main-content {
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
         .right-side {
-            flex: 2;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            overflow-x: scroll;
         }
         
         .section-title {
@@ -177,6 +178,7 @@ $doctorSchedules = [
             font-weight: bold;
             margin-bottom: 20px;
             color: #333;
+            align-self: center;
         }
         
         .doctor-select {
@@ -348,13 +350,18 @@ $doctorSchedules = [
     </style>
 </head>
 <body>
+    <?php $this->load->view("mobile/Header"); ?>
     <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="<?= base_url('/') ; ?>">Beranda</a> &gt; <span class="active">Jadwal Dokter</span>
+     <div class="bread-crumb">
+        <div class="container main-containent">
+            <a href="<?= base_url('Mobile') ?>"><p>Home</p></a>
+            <p>|</p>
+            <a href="<?= base_url('Mobile/dokter_page') ?>"><p>Dokter</p></a>
+        </div>
     </div>
-    
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="container" style="padding-bottom: 30px;">
+        <!-- <div class="main-content"> -->
         <!-- Left Side -->
         <div class="left-side">
             <h2 class="section-title">Jadwal berdasarkan dokter</h2>
@@ -415,7 +422,7 @@ $doctorSchedules = [
                     <?php foreach ($doctors as $doctor): ?>
                         <tr class="doctor-row" data-doctor="<?= htmlspecialchars($doctor->doctor_name) ?>">
                             <td>
-                                <a href="<?= site_url('jadwaldokter/view/' . $doctor->doctor_id); ?>" class="doctor-name">
+                                <a href="<?= site_url('Dekstop/detail_dokter/' . $doctor->doctor_id); ?>" class="doctor-name">
                                     <?= htmlspecialchars($doctor->doctor_name) ?>
                                 </a>
                             </td>
@@ -431,7 +438,8 @@ $doctorSchedules = [
             </table>
         </div>
     </div>
-
+    </div>
+    <?php $this->load->view("mobile/footer"); ?>
     <!-- Pass PHP data to JavaScript -->
     <script>
         // Data jadwal dokter dari PHP

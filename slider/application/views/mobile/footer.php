@@ -1,99 +1,80 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinik Mata dr. Sjamsu</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Dokter Page</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
+
         .footer-section {
             background-color: #00AAB5;
             color: white;
-            padding: 20px;
+            padding: 40px 0;
         }
-        
-        .form-control {
-            margin-bottom: 15px;
-            border-radius: 0;
+        .footer-title {
+            font-size: 20px;
+            margin-bottom: 20px;
         }
-        
-        .btn-submit {
-            background-color: white;
-            color: #00B3B3;
-            border: none;
-            border-radius: 0;
-            padding: 8px 0;
-            font-weight: 500;
-            width: 100%;
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
         }
-        
-        .social-icons a {
-            margin-right: 15px;
-            color: white;
+        .social-btn {
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 14px;
         }
+        .follow-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+        .copyright {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        .text-md-end {
+            text-align: right;
+        }
+        @media (max-width: 768px) {
+            .text-md-end {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .footer-section {
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
 
-<!-- Footer section matching the mobile design in the image -->
-<footer class="footer-section">
-    <div class="container">
-        <!-- Clinic Logo and Description (Left-aligned) -->
-        <div class="mb-4">
-            <div class="d-flex align-items-center">
-                <img src="<?= base_url('/asset/image3.png'); ?>" alt="Klinik Mata dr. Sjamsu" style="height: 30px;">
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="row align-items-start align-items-center">
+                <div class="col-md-4 align-items-center">
+                    <h3 class="footer-title">Klinik Mata dr. Sjamsu</h3>
+                </div>
+                <div class="col-md-4" >
+                    <!-- <h3 class="footer-title">Social Media</h3> -->
+                    <div class="d-flex justify-content-center">
+                        <button class="social-btn follow-btn">
+                            <i class="fab fa-facebook-f me-1"></i>
+                        </button>
+                        <button class="social-btn follow-btn">
+                            <i class="fab fa-instagram me-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end" >
+                    <p class="copyright">Copyright © 2025 CV SB</p>
+                </div>
             </div>
-            <p class="mt-4">
-                Kami adalah tim dokter mata yang professional dan berkompetensi tinggi. Kami peduli atas kesehatan mata Anda.
-            </p>
         </div>
-        
-        <!-- Social Media Section -->
-        <div class="mb-4">
-            <h5>Ikuti Kami</h5>
-            <div class="social-icons mt-2">
-                <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                <a href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
-                <a href="#"><i class="fab fa-whatsapp-square fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
-            </div>
-        </div>
-        
-        <!-- Contact Form Section (Centered) -->
-        <div>
-            <h5>Kontak Kami</h5>
-            <form action="#" method="post" class="mt-3">
-                <div class="mb-3">
-                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" required>
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" name="subjek" placeholder="Subjek" required>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" name="pesan" rows="4" placeholder="Pesan" required></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="btn-submit">Kirim</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Bootstrap JS Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

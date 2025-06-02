@@ -18,8 +18,8 @@ class Dekstop extends CI_Controller {
         // $this->load->view('dekstop/dokter_berita');
         // $this->load->view('dekstop/footer');
         // $this->load->view('dekstop/background');
-
-        $this->load->view('dekstop/home_dekstop');
+        $data['data_dokter'] = $this->Dokter_model->get_all_doctors();
+        $this->load->view('dekstop/home_dekstop', $data);
     }
 
     public function dokter_page() {
@@ -35,6 +35,19 @@ class Dekstop extends CI_Controller {
             show_404();
         }
         // $this->load->view('dekstop/detail_dokter');
+    }
+    public function news() {
+        $this->load->view('dekstop/news');
+    }
+    public function layanan() {
+        $this->load->view('dekstop/layanan_page');
+    }
+    public function detail_layanan() {
+        $this->load->view('dekstop/detail_layanan');
+    }
+    public function jadwal_dokter() {
+        $data['doctors'] = $this->Dokter_model->get_all_doctors(); 
+        $this->load->view('dekstop/jadwal_dokter', $data);
     }
 }
 

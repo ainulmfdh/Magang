@@ -31,7 +31,7 @@
             padding: 25px 10px;
         }
 
-        .dokter-card > a {
+        .dokter-card > .dokter-img {
             width: 100%;
             height: 300px;
         }
@@ -39,11 +39,9 @@
 </head>
 
 <body>
-
-   <div>
+    <?php $this->load->view("dekstop/Header"); ?>
+    <div>
         <div class="container" style="padding-bottom: 30px;">
-            <?php $this->load->view("dekstop/Header"); ?>
-
             <h4 class="heading">Dokter</h4>
             <div class="line-heading"></div>
             <p class="desc-heading">Berikut adalah daftar dokter yang praktik di Klinik Mata dr. Sjamsu, sebuah klinik mata terkemuka di Surabaya yang dikenal dengan pelayanan profesional dan teknologi canggih untuk perawatan kesehatan mata. Klinik ini menawarkan berbagai layanan, termasuk konsultasi, pemeriksaan dasar, serta perawatan khusus untuk kondisi seperti katarak, glaukoma, gangguan retina, dan masalah mata pada anak</p>
@@ -52,19 +50,21 @@
 
                     <div class="col-3">
                         <div class="dokter-card">
-                            <a href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>">
+                            <a class="dokter-img" href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>">
                                 <?php if (!empty($dokter->doctor_photo_open)): ?>
-                                    <img style="height: 100%; width: 100%;" src="<?php echo base_url('../asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                    <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
                                 <?php else: ?>
                                     <div class="no-photo">Tidak ada foto</div>
                                 <?php endif; ?>
                             </a>
                             <p class="nama-dokter" style="font-weight: bold; color: #00AAB5; font-size: 14px; margin-top: 6px; height: 7px;"><?php echo $dokter->doctor_name; ?></p>
                             <p class="spesialis-dokter" style="font-size: 12px; height: 7px; margin-top: 20px;"><?php echo $dokter->doctor_id_position; ?></p>
-                            <button style="display: flex; align-items: center; justify-content: center; gap: 5px; background-color: #00AAB5; color: white; margin-top: 10px; padding: 5px 10px; border-radius: 8px; border: none; width: 100px; align-self: center; font-size: 14px; font-weight: 500">
-                                <i class="fa-solid fa-book-open-reader"></i>
-                                Detail
-                            </button>
+                            <a href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>" style="display: flex; justify-content: center; text-decoration: none;">
+                                <button style="display: flex; align-items: center; justify-content: center; gap: 5px; background-color: #00AAB5; color: white; margin-top: 10px; padding: 5px 10px; border-radius: 8px; border: none; width: 100px; align-self: center; font-size: 14px; font-weight: 500">
+                                    <i class="fa-solid fa-book-open-reader"></i>
+                                    Detail
+                                </button>
+                            </a>
                         </div>
                     </div>
 
@@ -72,6 +72,6 @@
             </div>
         </div>
    </div>
-    
+    <?php $this->load->view('dekstop/footer') ?>
 </body>
 </html>
