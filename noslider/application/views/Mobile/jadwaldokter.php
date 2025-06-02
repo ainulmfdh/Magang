@@ -275,7 +275,7 @@
     
     <!-- Breadcrumb -->
     <div class="breadcrumb">
-        <a href="#">Beranda</a> > <span class="active">Detail Dokter</span>
+        <a href="<?= base_url('mobile')?>">Beranda</a> > <span class="active">Detail Dokter</span>
     </div>
     
     <!-- Main Content -->
