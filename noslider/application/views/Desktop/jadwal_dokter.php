@@ -438,7 +438,6 @@ $doctorSchedules = [
         const doctorSchedules = <?= json_encode($doctorSchedules) ?>;
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Calendar functionality
             const calendarDates = document.getElementById('calendarDates');
             const monthYearDisplay = document.getElementById('monthYearDisplay');
             const todayBtn = document.getElementById('todayBtn');

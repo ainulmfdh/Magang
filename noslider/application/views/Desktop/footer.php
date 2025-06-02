@@ -3,51 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokter Page</title>
-    <style>
-
-        .footer-section {
-            background-color: #00AAB5;
-            color: white;
-            padding: 40px 0;
-        }
-        .footer-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .footer-text {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .social-btn {
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-right: 5px;
-            font-size: 14px;
-        }
-        .follow-btn {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            color: #333;
-        }
-        .copyright {
-            font-size: 12px;
-            margin-top: 0;
-        }
-        .text-md-end {
-            text-align: right;
-        }
-        @media (max-width: 768px) {
-            .text-md-end {
-                text-align: center;
-                margin-top: 20px;
-            }
-            .footer-section {
-                text-align: center;
-            }
-        }
-
-    </style>
+    <title>Dokter</title>
+    <link rel="stylesheet" href="<?= base_url('asset/css/dekstop_footer.css'); ?>">
 </head>
 <body>
 

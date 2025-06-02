@@ -24,15 +24,17 @@
 <body id="header">
     <div class="container">
         <div class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; z-index: 30;">
-            <div class="d-flex align-items-center">
-                <img id="logomata" src=".../../../../asset/image_2.png">
-                <img src=".../../../../asset/image_4.png">
-            </div>
+            <a class="logo" href="<?php echo base_url('Dekstop'); ?>">
+                <div class="d-flex align-items-center">
+                    <img id="logomata" src="<?php echo base_url('asset/image_2.png'); ?>">
+                    <img src="<?php echo base_url('asset/image_4.png'); ?>">
+                </div>
+            </a>
             <div id="menu-navbar" class="d-flex flex-row align-items-center">
-                <p class="menu-border">Beranda</p>
+                <a href="<?php echo base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
                 <p class="menu-border">Pelayanan</p>
-                <p class="menu-border">Dokter</p>
-                <p class="menu-border">Jadwal Dokter</p>
+                <a href="<?php echo base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Dokter</p></a>
+                <a href="<?php echo base_url('Dekstop/jadwal_dokter') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Jadwal Dokter</p></a>
                 <p class="menu-border">Berita Terbaru</p>
             </div>
         </div>
@@ -50,19 +52,19 @@
             document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
         });
 
-        $(document).ready(() => {
-            detectScreen();
-            $(window).on('resize', detectScreen);
-        })
+        // $(document).ready(() => {
+        //     detectScreen();
+        //     $(window).on('resize', detectScreen);
+        // })
 
-        function detectScreen() {
-            var width = $(window).width();
+        // function detectScreen() {
+        //     var width = $(window).width();
             
-            if (width < 768) {
-                window.location.href = '<?= base_url('home_mobile') ?>';
-                console.log('mobile');
-            } 
-        }
+        //     if (width < 768) {
+        //         window.location.href = '<?= base_url('home_mobile') ?>';
+        //         console.log('mobile');
+        //     } 
+        // }
     </script>
 </body>
 </html>
