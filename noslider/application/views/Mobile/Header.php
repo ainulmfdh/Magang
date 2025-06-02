@@ -26,7 +26,7 @@
             <li><a href="<?= site_url('mobile'); ?>">Beranda</a></li>
             <li><a href="<?= site_url('mobile'); ?>">Pelayanan</a></li>
             <li><a href="<?= site_url('doctor/mobile'); ?>">Dokter</a></li>
-            <li><a href="<?= site_url('mobile'); ?>">Jadwal Dokter</a></li>
+            <li><a href="<?= site_url('mobile/jadwaldokter'); ?>">Jadwal Dokter</a></li>
             <li><a href="<?= site_url('news/mobile'); ?>">Berita Terbaru</a></li>
         </ul>
     </div>
