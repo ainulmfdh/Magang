@@ -100,7 +100,7 @@ class News extends CI_Controller {
 			$item->tanggal = $item->updated_at;
 		}
         $this->load->view('Mobile/news_baru', $data);
-		$this->load->view('Mobile/jammapsmobile');
+		$this->load->view('Mobile/footer');
     }
 
     // NEWS MOBILE DETAIL

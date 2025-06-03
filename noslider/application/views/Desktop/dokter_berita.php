@@ -275,7 +275,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
         <!-- Read More Button -->
-        <a href="#" class="read-more-btn">Read More</a>
+        <!-- <a href="#" class="read-more-btn">Read More</a> -->
     </div>
     </section>
     
