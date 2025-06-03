@@ -7,16 +7,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-			font-family: Arial, sans-serif;
-            box-sizing: border-box;
-        }
-	body {
-      background-color:rgb(255, 255, 255);
-      padding-bottom: 20px;
-    }
     
     /* Breadcrumb Start */
      .breadcrumb {
@@ -78,10 +68,10 @@
         }
 
         .header p {
-            font-size: 1.1rem;
+            font-size: 17px;
 			color: #333;
             opacity: 0.9;
-            max-width: 800px;
+            max-width:max-content
         }
 
         .content-section {
@@ -100,11 +90,62 @@
 
         .highlight-text {
             background: #e0f7fa;
-            padding: 15px;
+            padding: 20px;
             border-left: 4px solid #00aab5;
             margin: 15px 0;
             font-weight: 500;
+            font-size: 15px;
         }
+
+        /* Image Layout Styles - Modified for side-by-side layout */
+        .content-with-image {
+            display: flex;
+            gap: 25px;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+
+        .text-content {
+            flex: 2;
+            font-size: 20px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-right: 10px;
+        }
+
+        .text-content p {
+            margin: 0;
+            text-align: justify;
+			font-size: 15px;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+            min-width: 400px;
+            max-width: 400px;
+        }
+
+        .image-container img {
+            width: 100\%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
 				.sidebar {
             width: 280px;
             background: white;
@@ -226,7 +267,7 @@
                 margin-bottom: 20px;
             }
             
-            .container {
+            .container_desk {
                 margin-left: 0;
             }
             
@@ -236,6 +277,19 @@
             
             .content-section {
                 padding: 20px;
+            }
+
+            .content-with-image {
+                flex-direction: column;
+            }
+
+            .text-content {
+                padding-right: 0;
+            }
+
+            .image-container {
+                flex: none;
+                margin-top: 20px;
             }
         }
         
@@ -252,7 +306,7 @@
                 height: auto;
             }
             
-            .container {
+            .container_desk {
                 margin-left: 0;
             }
             
@@ -260,15 +314,19 @@
                 font-size: 1.8rem;
             }
             
-            .container {
+            .container_desk {
                 padding: 10px;
+            }
+
+            .image-container {
+                flex: 0 0 250px;
             }
         }
     </style>
 </head>
 <body>
 	 <div class="breadcrumb">
-        <a href="<?= base_url('/') ; ?>">Beranda</a> &gt; <span class="active">Pelayanan</span>
+        <a href="#">Beranda</a> &gt; <span class="active">Pelayanan</span>
     </div>
 
   <div class="main-wrapper">
@@ -366,7 +424,15 @@
             <div class="highlight-text">
                 <p>Lakukan check up rutin minimal 6 bulan atau setahun sekali untuk mengontrol kondisi penglihatan Anda.</p>
             </div>
-			 <p>Medical Check-Up (MCU) sangat penting dilakukan untuk mengantisipasi dan mencegah timbulnya gangguan kesehatan mata. Di Klinik Mata dr. Sjamsu, kami memberikan pelayanan untuk check up rutin baik bagi perorangan, perusahaan, maupun institusi pendidikan. Kami juga menyediakan paket medical checkup dengan harga terjangkau dan program-program pemeriksaan. Dengan adanya layanan medical checkup bisa diketahui gangguan-gangguan dan deteksi dini agar tidak semakin parah dan pengobatan bisa berjalan optimal.</p>
+            
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>Medical Check-Up (MCU) sangat penting dilakukan untuk mengantisipasi dan mencegah timbulnya gangguan kesehatan mata. Di Klinik Mata dr. Sjamsu, kami memberikan pelayanan untuk check up rutin baik bagi perorangan, perusahaan, maupun institusi pendidikan. Kami juga menyediakan paket medical checkup dengan harga terjangkau dan program-program pemeriksaan. Dengan adanya layanan medical checkup bisa diketahui gangguan-gangguan dan deteksi dini agar tidak semakin parah dan pengobatan bisa berjalan optimal.</p>
+                </div>
+                <div class="image-container">
+                    <img src="<?= base_url('asset/images/tes-mata.jpg'); ?>" alt="Klinik Mata Katarak">
+                    <div class="image-caption">Klinik Mata Katarak</div>
+               </div>
 			</section>
         </div>
 
@@ -376,8 +442,17 @@
             <div class="highlight-text">
                 Pemeriksaan mata lebih objektif, efisien, dan terjangkau di Klinik Mata dr. Sjamsu. Dilakukan dengan dokter yang terintegrasi pemeriksaan mata tidak mengganggu pasien dengan sempit.
             </div>
-            <p>Pemeriksaan mata umum di Klinik Mata dr. Sjamsu meliputi pemeriksaan dasar, pengukuran tekanan bola mata hingga konsultasi dokter. Klinik Mata dr. Sjamsu memberikan teknologi canggih untuk memberikan pemeriksaan dan hasil pemeriksaan yang akurat dan efisien. Bukan hanya saat seseorang sudah mengalami gangguan kesehatan, di Klinik Mata kami terapi saja mencegah gangguan kesehatan mata yang lebih parah. Klinik Mata dr. Sjamsu menggunakan pendekatan pencegahan komprehensif yang perlengkapan efisien untuk memudahkan dalam database pasien dan penyimpanan rawat pasien. Klinik Mata dr. Sjamsu menggunakan teknologi yang canggih dan terbaru besar untuk meningkatkan kualitas hidup seseorang. Ini berbagai mata tidak perlu mengkhawatirkan untuk memperoleh layanan yang berkualitas tinggi dan berteknologi.</p>
-			</section>
+			
+             <div class="content-with-image">
+                <div class="text-content">
+                    <p>Pemeriksaan mata umum di Klinik Mata dr. Sjamsu meliputi pemeriksaan dasar, pengukuran tekanan bola mata hingga konsultasi dokter. Klinik Mata dr. Sjamsu memberikan teknologi canggih untuk memberikan pemeriksaan dan hasil pemeriksaan yang akurat dan efisien. Bukan hanya saat seseorang sudah mengalami gangguan kesehatan, di Klinik Mata kami terapi saja mencegah gangguan kesehatan mata yang lebih parah. Klinik Mata dr. Sjamsu menggunakan pendekatan pencegahan komprehensif yang perlengkapan efisien untuk memudahkan dalam database pasien dan penyimpanan rawat pasien. Klinik Mata dr. Sjamsu menggunakan teknologi yang canggih dan terbaru besar untuk meningkatkan kualitas hidup seseorang. Ini berbagai mata tidak perlu mengkhawatirkan untuk memperoleh layanan yang berkualitas tinggi dan berteknologi.</p>
+                </div>
+                <div class="image-container">
+                    <img src="<?= base_url('asset/images/tes-mata.jpg'); ?>" alt="Klinik Mata Katarak">
+                    <div class="image-caption">Klinik Mata Katarak</div>
+               </div>
+            </div>
+            </section>
       </div>
 
       <div class="content-section">
@@ -386,8 +461,17 @@
             <div class="highlight-text">
                 Didukung dengan tim dokter spesialis mata professional, fasilitas dan peralatan canggih tim Klinik Mata dr. Sjamsu siap untuk mengatasi masalah katarak pada mata Anda.
             </div>
-            <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
-			</section>
+			
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
+                </div>
+                <div class="image-container">
+                    <img src="<?= base_url('asset/images/tes-mata.jpg'); ?>">
+                    <div class="image-caption">Skrining Retinopati Diabetik</div>
+                </div>
+            </div>
+            </section>
       </div>
 
       <div class="content-section">
@@ -396,8 +480,17 @@
             <div class="highlight-text">
                 Didukung dengan tim dokter spesialis mata professional, fasilitas dan peralatan canggih tim Klinik Mata dr. Sjamsu siap untuk mengatasi masalah katarak pada mata Anda.
             </div>
-            <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
-			</section>
+			
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
+                </div>
+                <div class="image-container">
+                    <img src="<?= base_url('asset/images/tes-mata.jpg'); ?>">
+                    <div class="image-caption">Klinik Mata Katarak</div>
+                </div>
+            </div>
+            </section>
       </div>
     </div>
   </div>

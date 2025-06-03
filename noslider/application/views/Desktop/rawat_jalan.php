@@ -7,17 +7,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-			font-family: Arial, sans-serif;
-        }
-		 body {
-      background-color:rgb(255, 255, 255);
-      padding-bottom: 20px;
-    }
-    
     /* Breadcrumb Start */
     .breadcrumb {
             background-color: #F2FBFB;
