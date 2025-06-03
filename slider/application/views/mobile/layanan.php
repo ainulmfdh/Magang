@@ -588,7 +588,7 @@
                     <p>Medical Check-Up (MCU) sangat penting dilakukan untuk mengantisipasi dan mencegah timbulnya gangguan kesehatan mata. Di Klinik Mata dr. Sjamsu, kami memberikan pelayanan untuk check up rutin baik bagi perorangan, perusahaan, maupun institusi pendidikan. Kami juga menyediakan paket medical checkup dengan harga terjangkau dan program-program pemeriksaan. Dengan adanya layanan medical checkup bisa diketahui gangguan-gangguan dan deteksi dini agar tidak semakin parah dan pengobatan bisa berjalan optimal.</p>
                 </div>
                 <div class="image-container">
-                    <img src="../../../asset/check.jpg" alt="Check Up Rutin">
+                    <img src="<?php echo base_url('asset/check.jpg'); ?>" alt="Check Up Rutin">
                     <div class="image-caption">Check Up Rutin</div>
                 </div>
             </div>
@@ -607,7 +607,7 @@
                     <p>Pemeriksaan mata umum di Klinik Mata dr. Sjamsu meliputi pemeriksaan dasar, pengukuran tekanan bola mata hingga konsultasi dokter. Klinik Mata dr. Sjamsu memberikan teknologi canggih untuk memberikan pemeriksaan dan hasil pemeriksaan yang akurat dan efisien. Bukan hanya saat seseorang sudah mengalami gangguan kesehatan, di Klinik Mata kami terapi saja mencegah gangguan kesehatan mata yang lebih parah. Klinik Mata dr. Sjamsu menggunakan pendekatan pencegahan komprehensif yang perlengkapan efisien untuk memudahkan dalam database pasien dan penyimpanan rawat pasien. Klinik Mata dr. Sjamsu menggunakan teknologi yang canggih dan terbaru besar untuk meningkatkan kualitas hidup seseorang. Ini berbagai mata tidak perlu mengkhawatirkan untuk memperoleh layanan yang berkualitas tinggi dan berteknologi.</p>
                 </div>
                 <div class="image-container">
-                   <img src="../../../asset/Amblyopia.jpg" alt="Skrining Amblyopia">
+                    <img src="<?php echo base_url('asset/Amblyopia.jpg'); ?>" alt="Skrining Amblyopia">
                     <div class="image-caption">Skrining Amblyopia</div>
                 </div>
             </div>
@@ -626,7 +626,7 @@
                     <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
                 </div>
                 <div class="image-container">
-                    <img src="../../../asset/Diabetik.jpg" alt="Skrining Retinopati Diabetik">
+                    <img src="<?php echo base_url('asset/Diabetik.jpg'); ?>" alt="Skrining Retinopati Diabetik">
                     <div class="image-caption">Skrining Retinopati Diabetik</div>
                 </div>
             </div>
@@ -645,7 +645,7 @@
                     <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
                 </div>
                 <div class="image-container">
-                    <img src="../../../asset/katarak.jpg" alt="Klinik Mata Katarak">
+                    <img src="<?php echo base_url('asset/katarak.jpg'); ?>" alt="Klinik Mata Katarak">
                     <div class="image-caption">Klinik Mata Katarak</div>
                 </div>
             </div>
