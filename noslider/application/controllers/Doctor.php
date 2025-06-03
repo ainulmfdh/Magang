@@ -26,7 +26,6 @@ class Doctor extends CI_Controller {
         } else {
             show_404();
         }
-        $this->load->view('Desktop/jammaps');
     	$this->load->view('Desktop/footer');
     }
 
@@ -35,7 +34,7 @@ class Doctor extends CI_Controller {
         $this->load->view('Mobile/Header');
         $data['doctors'] = $this->Doctor_model->get_all_doctors();
         $this->load->view('Mobile/doctor_page', $data);
-        $this->load->view('Mobile/jammapsmobile');
+        $this->load->view('Mobile/footer');
     }
 
      // Menampilkan detail dokter Mobile
@@ -47,6 +46,6 @@ class Doctor extends CI_Controller {
         } else {
             show_404();
         }
-        $this->load->view('Mobile/jammapsmobile');
+        $this->load->view('Mobile/footer');
     }
 }

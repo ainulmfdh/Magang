@@ -7,21 +7,26 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-    
+        
     /* Breadcrumb Start */
-     .breadcrumb {
-            background-color: #F2FBFB;
-            padding: 15px 40px;
-        }
-        
-        .breadcrumb a {
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .breadcrumb .active {
-            color: #00b7c2;
-        }
+    .breadcrumb {
+      width: 100%;
+      height: 50px;
+      background-color: rgba(0, 170, 181, 0.05);
+      padding: 12px 12px;
+    }
+    .breadcrumb-item {
+      padding-left: 60px;
+    }
+    .breadcrumb li {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .breadcrumb li a {
+      text-decoration: none;
+      font-weight: 600;
+    }
     /* Breadcrumb End */
     
     /* Main container with flexbox */
@@ -325,9 +330,12 @@
     </style>
 </head>
 <body>
-	 <div class="breadcrumb">
-        <a href="#">Beranda</a> &gt; <span class="active">Pelayanan</span>
-    </div>
+	 <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'%236c757d\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <!-- <li class="breadcrumb-item"><a href="#">Dokter</a></li> -->
+      <li class="breadcrumb-item active" aria-current="page">Layanan</li>
+    </ol>
+  </nav>
 
   <div class="main-wrapper">
     <div class="services-container">

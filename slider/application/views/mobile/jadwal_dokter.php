@@ -170,7 +170,6 @@ $doctorSchedules = [
             display: flex;
             flex-direction: column;
             margin-top: 50px;
-            overflow-x: scroll;
         }
         
         .section-title {
@@ -286,6 +285,10 @@ $doctorSchedules = [
         
         .date:hover {
             background-color: #f0f0f0;
+        }
+        .container-schedule {
+            overflow-x: scroll;
+            width: 100%;
         }
         
         .schedule-table {
@@ -406,36 +409,38 @@ $doctorSchedules = [
             <h2 class="section-title">Jadwal harian dokter</h2>
             
             <!-- Schedule Table -->
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Doctor</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                </thead>
-                <tbody id="scheduleTableBody">
-                    <?php foreach ($doctors as $doctor): ?>
-                        <tr class="doctor-row" data-doctor="<?= htmlspecialchars($doctor->doctor_name) ?>">
-                            <td>
-                                <a href="<?= site_url('Dekstop/detail_dokter/' . $doctor->doctor_id); ?>" class="doctor-name">
-                                    <?= htmlspecialchars($doctor->doctor_name) ?>
-                                </a>
-                            </td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['monday']) ? $doctorSchedules[$doctor->doctor_name]['monday'] : '-' ?></td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['tuesday']) ? $doctorSchedules[$doctor->doctor_name]['tuesday'] : '-' ?></td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['wednesday']) ? $doctorSchedules[$doctor->doctor_name]['wednesday'] : '-' ?></td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['thursday']) ? $doctorSchedules[$doctor->doctor_name]['thursday'] : '-' ?></td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['friday']) ? $doctorSchedules[$doctor->doctor_name]['friday'] : '-' ?></td>
-                            <td><?= isset($doctorSchedules[$doctor->doctor_name]['saturday']) ? $doctorSchedules[$doctor->doctor_name]['saturday'] : '-' ?></td>
+            <div class="container-schedule">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody id="scheduleTableBody">
+                        <?php foreach ($doctors as $doctor): ?>
+                            <tr class="doctor-row" data-doctor="<?= htmlspecialchars($doctor->doctor_name) ?>">
+                                <td>
+                                    <a href="<?= site_url('Dekstop/detail_dokter/' . $doctor->doctor_id); ?>" class="doctor-name">
+                                        <?= htmlspecialchars($doctor->doctor_name) ?>
+                                    </a>
+                                </td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['monday']) ? $doctorSchedules[$doctor->doctor_name]['monday'] : '-' ?></td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['tuesday']) ? $doctorSchedules[$doctor->doctor_name]['tuesday'] : '-' ?></td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['wednesday']) ? $doctorSchedules[$doctor->doctor_name]['wednesday'] : '-' ?></td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['thursday']) ? $doctorSchedules[$doctor->doctor_name]['thursday'] : '-' ?></td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['friday']) ? $doctorSchedules[$doctor->doctor_name]['friday'] : '-' ?></td>
+                                <td><?= isset($doctorSchedules[$doctor->doctor_name]['saturday']) ? $doctorSchedules[$doctor->doctor_name]['saturday'] : '-' ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     </div>
