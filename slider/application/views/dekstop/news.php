@@ -1,287 +1,515 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>News</title>
-
-  <!-- Font Awesome CDN (untuk ikon kalender) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-  <style>
-    /* === CSS news === */
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f9fa;
-    }
-
-    .berita-header {
-      background-color: #f0f8f9;
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .berita-header h1 {
-      color: #00aab5;
-      margin: 0;
-      font-weight: bold;
-      font-size: 36px;
-    }
-
-    .berita-terkini {
-      padding: 60px 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    .berita-title {
-      color: #00aab5;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .berita-subtitle {
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .berita-subtitle::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 340px;
-      height: 5px;
-      background-color: #00aab5;
-      border-radius: 2px;
-    }
-
-    .berita-description {
-      max-width: 1000px;
-      margin-bottom: 50px;
-      margin-top: 50px;
-      line-height: 1.6;
-    }
-
-    .berita-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    @media (max-width: 992px) {
-      .berita-grid {
-        grid-template-columns: repeat(2, 1fr);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Klinik Mata Dr. Sjamsu</title>
+    <style>
+    /* Breadcrumb Start */
+      .breadcrumb {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(0, 170, 181, 0.05);
+        padding: 12px 12px;
       }
-    }
-
-    @media (max-width: 768px) {
-      .berita-grid {
-        grid-template-columns: 1fr;
+      .breadcrumb-item {
+        padding-left: 60px;
       }
-    }
+        .breadcrumb li {
+        font-size: 18px;
+        font-weight: 500;
+      }
 
-    .berita-card {
-      background-color: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
+      .breadcrumb li a {
+        text-decoration: none;
+        font-weight: 500;
+      }
+      /* Breadcrumb End */
+      
+        .container-news {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
 
-    .berita-card:hover {
-      transform: translateY(-5px);
-    }
+        /* Sidebar Styles */
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: fit-content;
+        }
 
-    .berita-card-image {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-    }
+        .sidebar-section {
+            padding: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
 
-    .berita-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
 
-    .berita-card-content {
-      padding: 20px;
-    }
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #00bcd4; /* Main theme color */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    .berita-card-date {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
+        .archive-list {
+            list-style: none;
+            padding-left: 0; /* Removed default padding */
+        }
 
-    .berita-card-date i {
-      margin-right: 5px;
-    }
+        .archive-year {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
 
-    .berita-card-title {
-      color: #00aab5;
-      font-size: 18px;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
+        .archive-month {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
 
-    .berita-card-text {
-      color: #333;
-      font-size: 15px;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
+        .archive-month a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
 
-    .berita-card-button {
-      background-color: transparent;
-      color: #00aab5;
-      border: 1px solid #00aab5;
-      border-radius: 50px;
-      padding: 10px 25px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: block;
-      width: fit-content;
-      text-decoration: none;
-      margin: 0 auto;
-    }
+        .archive-month a:hover {
+            color: #00bcd4; /* Main theme color */
+        }
 
-    .berita-card-button:hover {
-      background-color: #00aab5;
-      color: white;
-    }
-  </style>
+        .archive-count {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .tab-navigation {
+            display: flex;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: #00bcd4; /* Main theme color */
+            border-bottom-color: #00bcd4; /* Main theme color */
+            font-weight: 600;
+        }
+
+        .popular-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popular-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .popular-image {
+            width: 60px;
+            height: 45px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .popular-content h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.3;
+             /* Ensure long titles wrap */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+        }
+
+        .popular-views {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content-header {
+            margin-bottom: 30px;
+        }
+
+        .content-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00bcd4; /* Main theme color */
+            margin-bottom: 10px;
+        }
+
+        .content-subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .article-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            padding-right: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            /* background: white; */ /* Already white, no need to re-declare */
+        }
+
+        .article-image {
+            width: 300px;
+            height: 220px;
+            border-radius: 8px; /* Slightly more rounded */
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00bcd4; /* Main theme color */
+            margin-bottom: 10px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .article-date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-excerpt {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+             /* For multi-line excerpt */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Adjust number of lines shown */
+            -webkit-box-orient: vertical;
+        }
+
+        .button-container {
+        display: flex;
+        justify-content: flex-end;
+        }
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #00bcd4, #00acc1);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            /* align-self: flex-start; */ /* Moved to button-container if needed */
+            box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3);
+            text-decoration: none; /* For <a> tags */
+        }
+
+        .read-more-btn:hover {
+            background: linear-gradient(135deg, #00acc1, #0097a7);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) { /* Adjusted breakpoint for sidebar stack */
+            .container-news {
+                grid-template-columns: 1fr;
+                padding: 15px; /* Adjusted padding */
+                gap: 25px; /* Adjusted gap */
+            }
+            .sidebar {
+                order: 2; /* Sidebar appears after main content */
+            }
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-card {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px; /* Adjusted padding */
+            }
+
+            .article-image {
+                width: 100%;
+                height: 200px; /* Adjusted for mobile */
+            }
+
+            .article-title {
+                font-size: 18px;
+            }
+             .main-content { /* Ensure main content padding is consistent */
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar-section {
+                padding: 20px; /* Adjusted padding */
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .content-title {
+                font-size: 20px;
+            }
+             .breadcrumb-item {
+                padding-left: 20px; /* Adjust breadcrumb padding for small screens */
+            }
+            .article-excerpt {
+                -webkit-line-clamp: 2; /* Show fewer lines on very small screens */
+            }
+        }
+
+        /* Icons */
+        .icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+    </style>
 </head>
 <body>
-  <?php $this->load->view('dekstop/header'); ?>
+    <nav style="--bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'%236c757d\'/%3E%3C/svg%3E');" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Berita</li>
+    </ol>
+  </nav>
 
-  <!-- Header Berita -->
-  <section class="berita-header">
-    <h1>Berita</h1>
-  </section>
-
-  <!-- Berita Terkini Section -->
-  <section class="berita-terkini">
-    <div class="container">
-      <h2 class="berita-title">Berita Terkini</h2>
-      <div class="berita-subtitle"></div>
-      <p class="berita-description">
-        Berita dan informasi terkini seputar inovasi pelayanan kesehatan terintegrasi di Klinik Mata Dr.Sjamsu, termasuk pengembangan layanan dan teknologi terbaru yang mendukung pendekatan holistik dalam perawatan kesehatan mata.
-      </p>
-
-      <div class="berita-grid">
-        <!-- Berita Card 1 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita1.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>10 Februari 2025</span>
+    <div class="container-news">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Arsip</h3>
+                <ul class="archive-list">
+                    <?php
+                    // Placeholder for dynamic archive.
+                    // You'll need to fetch and process this data in your controller/model
+                    // For now, using the static example:
+                    ?>
+                    <li class="archive-year">2023</li>
+                    <li class="archive-month">
+                        <a href="#">Oct <span class="archive-count">(1)</span></a>
+                    </li>
+                    <li class="archive-month">
+                        <a href="#">Jun <span class="archive-count">(1)</span></a>
+                    </li>
+                    <li class="archive-year">2022</li>
+                    <li class="archive-month">
+                        <a href="#">Mar <span class="archive-count">(1)</span></a>
+                    </li>
+                </ul>
             </div>
-            <h3 class="berita-card-title">BAKTI SOSIAL OPERASI KATARAK GRUP NUSANTARA & KLINIK MATA DR. SJAMSU</h3>
-            <p class="berita-card-text">Dalam upaya meningkatkan kualitas hidup masyarakat, Grup Nusantara bekerja sama dengan Klinik Mata Dr. Sjamsu menggelar bakti sosial operasi katarak bagi masyarakat.</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
-        </div>
 
-        <!-- Berita Card 2 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita2.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>20 Februari 2025</span>
-            </div>
-            <h3 class="berita-card-title">KLINIK MATA DR. SJAMSU GELAR PEMERIKSAAN MATA GRATIS UNTUK LANSIA</h3>
-            <p class="berita-card-text">Klinik Mata Dr. Sjamsu menyelenggarakan pemeriksaan mata gratis khusus untuk lansia sebagai bagian dari program peduli kesehatan mata masyarakat usia lanjut.</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
-        </div>
+            <div class="sidebar-section">
+                <div class="tab-navigation">
+                    <button class="tab-btn active">Populer</button>
+                    <button class="tab-btn">Dipromosikan</button>
+                    <button class="tab-btn">Terbaru</button>
+                </div>
 
-        <!-- Berita Card 3 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita3.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>05 Maret 2025</span>
+                <div class="popular-articles">
+                    <?php
+                    // Assuming popular articles are the first few from the $news array or from a dedicated query.
+                    // For this example, let's take the first 3 if available.
+                    // You might want a separate $popular_news variable from your controller.
+                    $popular_news_items = array_slice($news, 0, 3); // Get first 3 news items
+                    ?>
+                    <?php if (!empty($popular_news_items)): ?>
+                        <?php foreach ($popular_news_items as $index => $popular_item): ?>
+                            <div class="popular-item">
+                                <img src="<?= base_url('asset/images/' . htmlspecialchars($popular_item->gambar)); ?>" alt="<?= htmlspecialchars($popular_item->judul_berita); ?>" class="popular-image">
+                                <div class="popular-content">
+                                    <a href="<?= site_url('news/view/' . $popular_item->id); ?>" style="text-decoration:none; color: inherit;">
+                                       <h4><?= htmlspecialchars($popular_item->judul_berita); ?></h4>
+                                    </a>
+                                    <div class="popular-views">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                        </svg>
+                                        <?php
+                                        // Placeholder for view count. Your $popular_item should have a views property.
+                                        // For example: $popular_item->views or $popular_item->news_views
+                                        // Using placeholder values for now:
+                                        echo 1000 + ($index * 150) + rand(0,50); // Example view count
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p>Belum ada berita populer.</p>
+                    <?php endif; ?>
+                </div>
             </div>
-            <h3 class="berita-card-title">EDUKASI MENCEGAH RABUN JAUH SEJAK DINI DI SEKOLAH DASAR DAN MENEGAH</h3>
-            <p class="berita-card-text">Tim medis dari Klinik Mata Dr. Sjamsu mengunjungi beberapa sekolah dasar untuk memberikan edukasi tentang pentingnya menjaga kesehatan mata dan deteksi dini rabun jauh.</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
-        </div>
+        </aside>
 
-        <!-- Berita Card 4 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita4.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>18 Maret 2025</span>
+        <div class="main-content">
+            <div class="content-header">
+                <h1 class="content-title">Semua Berita</h1>
+                <?php
+                // Basic pagination info (can be enhanced with CI's pagination library)
+                $total_news = count($news);
+                $items_per_page = 10; // Example, adjust as needed
+                $total_pages = ceil($total_news / $items_per_page);
+                $current_page = 1; // Assuming page 1 for now
+                ?>
+                <p class="content-subtitle">Menampilkan <?= $total_news > 0 ? '1' : '0'; ?> - <?= $total_news < $items_per_page ? $total_news : $items_per_page; ?> dari <?= $total_news; ?> berita. Halaman <?= $current_page; ?> dari <?= $total_pages; ?></p>
             </div>
-            <h3 class="berita-card-title">PELATIHAN DETEKSI GANGGUAN MATA UNTUK TENAGA KESEHATAN DESA</h3>
-            <p class="berita-card-text"> Klinik Mata Dr. Sjamsu memberikan pelatihan kepada tenaga kesehatan desa agar dapat melakukan deteksi awal gangguan mata seperti katarak, glaukoma, dan infeksi.</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
-        </div>
 
-        <!-- Berita Card 5 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita5.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>03 Mei 2025</span>
+            <div class="article-list">
+                <?php if (!empty($news)): ?>
+                    <?php foreach ($news as $news_item): ?>
+                        <article class="article-card">
+                            <?php if (!empty($news_item->gambar)): ?>
+                                <img src="<?= base_url('asset/images/' . htmlspecialchars($news_item->gambar)); ?>" alt="<?= htmlspecialchars($news_item->judul_berita); ?>" class="article-image">
+                            <?php else: ?>
+                                <img src="<?= base_url('asset/images/default.jpg'); ?>" alt="Default Image" class="article-image"> <?php endif; ?>
+                            <div class="article-content">
+                                <div>
+                                    <h2 class="article-title">
+                                        <a href="<?= site_url('news/view/' . $news_item->id); ?>" style="text-decoration:none; color:inherit;">
+                                            <?= htmlspecialchars($news_item->judul_berita); ?>
+                                        </a>
+                                    </h2>
+                                    <div class="article-date">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                        </svg>
+                                        <?php
+                                        // Format the date. Example: Senin, 21 Maret 2021
+                                        // Set locale to Indonesian for day/month names if not already set globally
+                                        // You might need to install the intl PHP extension for full localization
+                                        setlocale(LC_TIME, 'id_ID.UTF-8', 'Indonesian_Indonesia.1252');
+                                        echo strftime('%A, %d %B %Y', strtotime($news_item->tanggal));
+                                        // If strftime isn't working as expected (locale issues), use date():
+                                        // $date = new DateTime($news_item->tanggal);
+                                        // echo $date->format('l, d F Y'); // F might be in English, requires more work for Indonesian month names
+                                        ?>
+                                    </div>
+                                    <p class="article-excerpt">
+                                        <?php
+                                        // Create a short excerpt, limit to e.g., 150 characters
+                                        $excerpt = strip_tags($news_item->deskripsi);
+                                        if (strlen($excerpt) > 150) {
+                                            $excerpt = substr($excerpt, 0, 150) . '...';
+                                        }
+                                        echo htmlspecialchars($excerpt);
+                                        ?>
+                                    </p>
+                                </div>
+                                <div class="button-container">
+                                    <a href="<?= site_url('news/view/' . $news_item->id); ?>" class="read-more-btn">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Belum ada berita yang tersedia.</p>
+                <?php endif; ?>
             </div>
-            <h3 class="berita-card-title">PEMBAGIAN KACAMATA GRATIS BAGI ANAK BERKEBUTUHAN KHUSUS DI SURABAYA</h3>
-            <p class="berita-card-text">Sebagai bentuk kepedulian terhadap anak berkebutuhan khusus, Klinik Mata Dr. Sjamsu membagikan kacamata gratis kepada anak-anak dengan gangguan penglihatan ringan</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
         </div>
-
-        <!-- Berita Card 6 -->
-        <div class="berita-card">
-          <div class="berita-card-image">
-            <img src="../../../asset/cardberita6.png" alt="Pemeriksaan Mata">
-          </div>
-          <div class="berita-card-content">
-            <div class="berita-card-date">
-              <i class="fa-regular fa-calendar"></i>
-              <span>18 Mei 2025</span>
-            </div>
-            <h3 class="berita-card-title">PELATIHAN DETEKSI PENYAKIT MATA UNTUK KADER POSYANDU DI SURABAYA</h3>
-            <p class="berita-card-text">Klinik Mata Dr. Sjamsu mengadakan pelatihan bagi kader Posyandu agar mampu mendeteksi dini penyakit mata seperti glaukoma dan katarak di lingkungan sekitar.</p>
-            <button class="berita-card-button">Baca Selengkapnya</button>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // Add logic here to change the content of .popular-articles based on the tab
+                // For example, fetch different data via AJAX or show/hide different pre-loaded sections.
+                // For now, it only changes the active tab style.
+            });
+        });
+
+        // The "Read More" buttons are now <a> tags with href, so direct JS for navigation isn't strictly needed
+        // unless you want to add AJAX loading or other effects.
+        // The commented-out code below is not necessary if using <a> tags.
+        //
+        // document.querySelectorAll('.read-more-btn').forEach(btn => {
+        //     btn.addEventListener('click', function(event) {
+        //         // If the button itself is an <a> tag, the default action will navigate.
+        //         // If it's a <button> and you want it to navigate:
+        //         // event.preventDefault(); // Prevent default if it's a form submit button
+        //         // const url = this.dataset.href; // Assuming you add data-href attribute to the button
+        //         // if (url) {
+        //         //     window.location.href = url;
+        //         // }
+        //         // For the original example where it was always news_detail.php:
+        //         // window.location.href = "<?= site_url('news/view'); ?>"; // This would need an ID
+        //     });
+        // });
+    </script>
 </body>
 </html>
