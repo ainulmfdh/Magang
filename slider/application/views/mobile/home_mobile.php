@@ -491,7 +491,7 @@
                             <div class="carousel-item <?= $index_dokter == 0 ? 'active' : '' ?>">
                                 <div class="card-dokter mx-auto">
                                     <a href="<?php echo site_url('Mobile/detail_dokter/' . $dokter->doctor_id); ?>">
-                                        <img src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                        <img src="<?php echo base_url('asset/images/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
                                     </a>
                                     <div class="desc-dokter">
                                         <h5 id="text-dokter" class="mt-2 fw-bold"><?php echo $dokter->doctor_name; ?></h5>
