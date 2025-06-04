@@ -22,7 +22,7 @@
             right: -1000px;
             padding-left: 40px;
             color: white;
-            z-index: 40;
+            z-index: 99;
             transition: all 0.3s linear;
         }
         .menu-border {

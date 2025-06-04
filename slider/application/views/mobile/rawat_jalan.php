@@ -15,6 +15,7 @@
         }
 	body {
       background-color:rgb(255, 255, 255);
+      padding-bottom: 20px;
     }
     
     /* Breadcrumb Start */
@@ -484,12 +485,11 @@
 <body>
     <?php $this->load->view('Mobile/Header') ?> 
 
-	 <div class="breadcrumb">
+	<div class="breadcrumb" style="padding: 15px 40px; background-color: #F2FBFB;">
         <a href="#">Beranda</a> &gt; <span class="active">Pelayanan</span>
     </div>
 
   <div class="main-wrapper">
-
     <div class="services-container">
 	 <div class="sidebar">
         <!-- Home with submenu -->
@@ -502,11 +502,11 @@
                     </svg>
                 </span>
             </div>
-            <div class="nav-content show">
+            <div class="nav-content">
                 <ul class="nav-submenu">
-                    <li><a href="#cur">Check Up Rutin</a></li>
-                    <li><a href="#sa">Skrining Amblyopia</a></li>
-                    <li><a href="#srd">Skrining Retinopati Diabetik</a></li>
+                    <li><a href="<?= base_url('mobile/layanan'); ?>">Check Up Rutin</a></li>
+                    <li><a href="<?= base_url('mobile/layanan'); ?>">Skrining Amblyopia</a></li>
+                    <li><a href="<?= base_url('mobile/layanan'); ?>">Skrining Retinopati Diabetik</a></li>
                 </ul>
             </div>
         </div>
@@ -521,14 +521,14 @@
                     </svg>
                 </span>
             </div>
-            <div class="nav-content">
+            <div class="nav-content show">
                 <ul class="nav-submenu">
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Konsultasi</a></li>
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Pemeriksaan Dasar</a></li>
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Pemeriksaan Dasar</a></li>
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Klinik Mata Retina</a></li>
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Klinik Mata Glaucoma</a></li>
-                     <li><a href="<?= base_url('mobile/rawat_jalan'); ?>">Klinik Mata Anak</a></li>
+                    <li><a href="#cur">Konsultasi</a></li>
+                    <li><a href="#sa">Pemeriksaan Dasar</a></li>
+                    <li><a href="#srd">Klinik Mata Katarak</a></li>
+                    <li><a href="#kms">Klinik Mata Retina</a></li>
+                    <li><a href="#">Klinik Mata Glaucoma</a></li>
+                    <li><a href="#">Klinik Mata Anak</a></li>
                 </ul>
             </div>
         </div>
@@ -545,9 +545,9 @@
             </div>
             <div class="nav-content">
                 <ul class="nav-submenu">
-                    <li><a href="#foto">Foto Fundus</a></li>
-                    <li><a href="#oct">Optical Coherence Tomography (OCT)</a></li>
-                    <li><a href="#humphrey">Humphrey (HVFA)</a></li>
+                    <li><a href="#">Foto Fundus</a></li>
+                    <li><a href="#">Optical Coherence Tomography (OCT)</a></li>
+                    <li><a href="#">Humphrey (HVFA)</a></li>
                 </ul>
             </div>
         </div>
@@ -564,8 +564,8 @@
             </div>
             <div class="nav-content">
                 <ul class="nav-submenu">
-                    <li><a href="#ndyag">NdYAG Laser</a></li>
-                    <li><a href="#laser">Laser Retina</a></li>
+                    <li><a href="#">NdYAG Laser</a></li>
+                    <li><a href="#">Laser Retina</a></li>
                 </ul>
             </div>
         </div>
@@ -574,24 +574,24 @@
     
     <div class="container_desk">
         <div class="header">
-            <h1>Skrining & Check Up</h1>
-            <p>Klinik Mata dr. Sjamsu turut berkontribusi dalam pencegahan gangguan kesehatan mata salah satunya dengan memberikan pelayanan berupa skrining dan check-up berkala. Skrining bertujuan untuk mendeteksi lebih awal suatu gejala sehingga bisa dilakukan tindakan pencegahan agar gangguan tidak semakin parah dan pengobatan bisa lebih optimal. Untuk mengetahui lebih lanjut tentang skrining apa saja yang ada di Klinik Mata dr. Sjamsu, pilih salah satu pelayanan skrining dibawah ini:</p>
+            <h1>Rawat Jalan</h1>
+             <p>Pelayanan rawat jalan di Klinik Mata dr. Sjamsu meliputi konsultasi, pemeriksaan dasar, terapi mata hingga tindakan mata minor. Layanan langsung tindakan di mata-mata dengan ruang tunggu dan ruang pemeriksaan yang nyaman dan asri, tim kami siap memberikan pelayanan terbaik untuk kesehatan mata Anda. Untuk mengetahui lebih lanjut tentang perjalanan rawat jalan, silakan hubungi sub pelayanan di bawah ini:</p>
         </div>
 
         <div class="content-section">
 			<section id="cur">
-            <h2 class="section-title">Check Up Rutin</h2>
+            <h2 class="section-title">Konsultasi</h2>
             <div class="highlight-text">
-                <p>Lakukan check up rutin minimal 6 bulan atau setahun sekali untuk mengontrol kondisi penglihatan Anda.</p>
+                 <p>Konsultasikan kesehatan mata Anda di Klinik Mata dr. Sjamsu. Tim dokter kami siap membantu seputar kesehatan Anda.</p>
             </div>
             
-             <div class="content-with-image">
+            <div class="content-with-image">
                 <div class="text-content">
-                    <p>Medical Check-Up (MCU) sangat penting dilakukan untuk mengantisipasi dan mencegah timbulnya gangguan kesehatan mata. Di Klinik Mata dr. Sjamsu, kami memberikan pelayanan untuk check up rutin baik bagi perorangan, perusahaan, maupun institusi pendidikan. Kami juga menyediakan paket medical checkup dengan harga terjangkau dan program-program pemeriksaan. Dengan adanya layanan medical checkup bisa diketahui gangguan-gangguan dan deteksi dini agar tidak semakin parah dan pengobatan bisa berjalan optimal.</p>
+                    <p>Bukan hanya pelayanan untuk pemeriksaan, namun Klinik Mata dr. Sjamsu juga menyediakan layanan untuk konsultasi. Tim dokter kami yang profesional dan berpengalaman tinggi siap melayani pemeriksaan/konsultasi Anda seputar kesehatan mata dan gangguannya. Dilakukan dengan tenang pemeriksaan yang harus dilakukan sehingga dapat memberikan hasil yang optimal dan sesuai kebutuhan pasien. Jangan khawatir dan takut saat berhadapan dengan dokter. Dokter bisa memberikan saran terbaik yang sesuai dengan kondisi pasien, layanan konsultasi mata di klinik kami sudah termasuk dengan pemeriksaan dasar.</p>
                 </div>
-                <div class="image-container">
-                    <img src="<?php echo base_url('asset/check.jpg'); ?>" alt="Check Up Rutin">
-                    <div class="image-caption">Check Up Rutin</div>
+                <div class="image-container">                    
+                    <img src="<?php echo base_url('asset/check.jpg'); ?>" alt="Konsultasi">
+                    <div class="image-caption">Konsultasi</div>
                 </div>
             </div>
 			</section>
@@ -599,18 +599,18 @@
 
       <div class="content-section">
 			<section id="sa">
-            <h2 class="section-title">Skrining Amblyopia</h2>
+            <h2 class="section-title">Pemeriksaan Dasar</h2>
             <div class="highlight-text">
-                Pemeriksaan mata lebih objektif, efisien, dan terjangkau di Klinik Mata dr. Sjamsu. Dilakukan dengan dokter yang terintegrasi pemeriksaan mata tidak mengganggu pasien dengan sempit.
+                Didukung dengan tim dokter spesialis mata professional, fasilitas dan peralatan canggih tim Klinik Mata dr. Sjamsu siap untuk mengatasi masalah katarak pada mata Anda.
             </div>
 			
-              <div class="content-with-image">
+             <div class="content-with-image">
                 <div class="text-content">
                     <p>Pemeriksaan mata umum di Klinik Mata dr. Sjamsu meliputi pemeriksaan dasar, pengukuran tekanan bola mata hingga konsultasi dokter. Klinik Mata dr. Sjamsu memberikan teknologi canggih untuk memberikan pemeriksaan dan hasil pemeriksaan yang akurat dan efisien. Bukan hanya saat seseorang sudah mengalami gangguan kesehatan, di Klinik Mata kami terapi saja mencegah gangguan kesehatan mata yang lebih parah. Klinik Mata dr. Sjamsu menggunakan pendekatan pencegahan komprehensif yang perlengkapan efisien untuk memudahkan dalam database pasien dan penyimpanan rawat pasien. Klinik Mata dr. Sjamsu menggunakan teknologi yang canggih dan terbaru besar untuk meningkatkan kualitas hidup seseorang. Ini berbagai mata tidak perlu mengkhawatirkan untuk memperoleh layanan yang berkualitas tinggi dan berteknologi.</p>
                 </div>
-                <div class="image-container">
-                    <img src="<?php echo base_url('asset/Amblyopia.jpg'); ?>" alt="Skrining Amblyopia">
-                    <div class="image-caption">Skrining Amblyopia</div>
+                <div class="image-container">.
+                    <img src="<?php echo base_url('asset/Amblyopia.jpg'); ?>" alt="Pemeriksaan Dasar">
+                    <div class="image-caption">Pemeriksaan Dasar</div>
                 </div>
             </div>
             </section>
@@ -620,10 +620,10 @@
 			<section id="srd">
             <h2 class="section-title">Skrining Retinopati Diabetik</h2>
             <div class="highlight-text">
-                Didukung dengan tim dokter spesialis mata professional, fasilitas dan peralatan canggih tim Klinik Mata dr. Sjamsu siap untuk mengatasi masalah retinopati diabetik pada mata Anda.
+                Didukung dengan tim dokter spesialis mata professional, fasilitas dan peralatan canggih tim Klinik Mata dr. Sjamsu siap untuk mengatasi masalah katarak pada mata Anda.
             </div>
 			
-             <div class="content-with-image">
+            <div class="content-with-image">
                 <div class="text-content">
                     <p>Tindakan operatif katarak di Klinik Mata dr. Sjamsu didukung dengan fasilitas kamar tindakan dan peralatan teknologi canggih. Peralatan yang menunjang tindakan antara lain surgical microscope for cataract surgery, Infiniti, dan Compact. Selain itu, Klinik kami memiliki tim dokter professional yang ahli dalam bidang bedah refraktif. Tindakan operatif yang dilakukan menggunakan teknik terkini yaitu fakoemulsifikasi, dimana proses recovery berlangsung singkat. Kini tak perlu takut untuk melakukan tindakan operatif katarak di Klinik Mata dr. Sjamsu, karena prosesnya singkat dengan harga yang terjangkau. Klinik Mata dr. Sjamsu memberikan pelayanan mulai dari pemeriksaan pre-operatif katarak, tindakan operatif hingga konsultasi pasca tindakan.</p>
                 </div>
@@ -633,9 +633,9 @@
                 </div>
             </div>
             </section>
-        </div>
-        
-         <div class="content-section">
+      </div>
+
+      <div class="content-section">
 			<section id="kms">
             <h2 class="section-title">Klinik Mata Katarak</h2>
             <div class="highlight-text">
@@ -655,8 +655,8 @@
       </div>
     </div>
   </div>
-  <?php $this->load->view('Mobile/footer') ?>
 	 <script>
+         <?php $this->load->view('Mobile/footer') ?>
     function toggleNav(header) {
             const content = header.nextElementSibling;
             const arrow = header.querySelector('.nav-arrow');
