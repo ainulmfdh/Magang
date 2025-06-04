@@ -617,7 +617,17 @@
     <body>
         <div id="container">
             <section id="header" class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
-                <?php $this->load->view('dekstop/header') ?>
+                <div class="d-flex align-items-center">
+                    <img id="logomata" src=".../../asset/image_2.png" alt="Logo">
+                    <img src=".../../asset/image_4.png" alt="Logo">
+                </div>
+                <div id="menu-navbar" class="d-flex flex-row align-items-center">
+                    <a href="<?= base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
+                    <p>Pelayanan</p>
+                    <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p>Dokter</p></a>
+                    <a href="<?= base_url('Dekstop/jadwal_dokter') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Jadwal Dokter</p></a>
+                    <p class="menu-border">Berita Terbaru</p>
+                </div>
             </section>
 
             <section id="slider" class="home-section home-fade home-full-height">
