@@ -52,7 +52,7 @@
                         <div class="dokter-card">
                             <a class="dokter-img" href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>">
                                 <?php if (!empty($dokter->doctor_photo_open)): ?>
-                                    <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                    <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/images/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
                                 <?php else: ?>
                                     <div class="no-photo">Tidak ada foto</div>
                                 <?php endif; ?>

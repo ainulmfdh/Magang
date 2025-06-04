@@ -6,7 +6,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome CDN -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <!-- Slider Theme -->
         <link href=".../../assets/lib/flexslider/flexslider.css" rel="stylesheet">
         <link href=".../../assets/css/style.css" rel="stylesheet">
@@ -36,6 +36,7 @@
 
             #slider, #form, #layanan, #dokter, #berita, #footer {
                 scroll-snap-align: start;
+                padding-top: 50px;
             }
 
             #menu-navbar {
@@ -44,10 +45,19 @@
                 width: 100%;
             }
 
-            /* #menu-navbar p {
-                margin: 0;
-                font-weight: 400;
-            } */
+            #menu-navbar > a {
+                color: black;
+                text-decoration: none;
+                transition-duration: .2s;
+            }
+
+            #menu-navbar > a:hover {
+                color: #00AAB5;
+            }
+
+            #menu-navbar p {
+                font-weight: 600;
+            }
 
             /* Layanan */
             .service-card {
@@ -276,6 +286,7 @@
                 text-align: left;
                 min-width: 350px;
                 max-width: 350px;
+                height: 550px;
             }
             .card-berita > button {
                 background-color: white;
@@ -606,17 +617,7 @@
     <body>
         <div id="container">
             <section id="header" class="w-100 bg-white position-sticky top-0 d-flex align-items-center" style="height: 80px; padding-left: 50px; padding-right: 50px; z-index: 30;">
-                <div class="d-flex align-items-center">
-                    <img id="logomata" src=".../../asset/image_2.png" alt="Logo">
-                    <img src=".../../asset/image_4.png" alt="Logo">
-                </div>
-                <div id="menu-navbar" class="d-flex flex-row align-items-center">
-                    <a href="<?= base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
-                    <p>Pelayanan</p>
-                    <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p>Dokter</p></a>
-                    <a href="<?= base_url('Dekstop/jadwal_dokter') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Jadwal Dokter</p></a>
-                    <p class="menu-border">Berita Terbaru</p>
-                </div>
+                <?php $this->load->view('dekstop/header') ?>
             </section>
 
             <section id="slider" class="home-section home-fade home-full-height">
@@ -788,7 +789,7 @@
 
             <section id="layanan" style="padding-top: 100px;">
                 <div class="section-title-container">
-                    <h2 class="text-center text-secondary mt-5">Layanan Kami</h2>
+                    <h2 class="text-center text-secondary mt-5 section-title">Layanan Kami</h2>
                 </div>
                 <div class="container py-5">
                     <div class="row">
@@ -897,7 +898,7 @@
                                                     <div class="doctor-card">
                                                         <a class="dokter-img" href="<?php echo site_url('Dekstop/detail_dokter/' . $dokter->doctor_id); ?>">
                                                             <?php if (!empty($dokter->doctor_photo_open)): ?>
-                                                                <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
+                                                                <img style="height: 100%; width: 100%;" src="<?php echo base_url('asset/images/' . $dokter->doctor_photo_open); ?>" alt="Foto Dokter">
                                                             <?php else: ?>
                                                                 <div class="no-photo">Tidak ada foto</div>
                                                             <?php endif; ?>
@@ -989,6 +990,30 @@
                                 <!-- Second Slide -->
                                 <div class="carousel-item">
                                     <div class="row justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="card-berita">
+                                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 4">
+                                                <div class="tanggal-berita">
+                                                    <i class="fa-regular fa-calendar"></i>
+                                                    <span>28 Oktober 2021</span>
+                                                </div>
+                                                <h5 class="text-berita mt-2">SEMINAR KESEHATAN MATA</h5>
+                                                <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
+                                                <button class="btn btn-custom">Baca Selengkapnya</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card-berita">
+                                                <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 4">
+                                                <div class="tanggal-berita">
+                                                    <i class="fa-regular fa-calendar"></i>
+                                                    <span>28 Oktober 2021</span>
+                                                </div>
+                                                <h5 class="text-berita mt-2">SEMINAR KESEHATAN MATA</h5>
+                                                <p>Ikuti seminar kesehatan mata untuk mengetahui lebih lanjut...</p>
+                                                <button class="btn btn-custom">Baca Selengkapnya</button>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
                                             <div class="card-berita">
                                                 <img src=".../../asset/berita.png" class="d-block w-100" alt="Berita 4">
