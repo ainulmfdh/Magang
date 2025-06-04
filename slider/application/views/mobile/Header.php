@@ -49,11 +49,11 @@
             <i id="close-hamburger-menu" class="fa-solid fa-x"></i>
         </div>
         <div class="d-flex flex-column gap-4 mt-5 px-2 pe-4">
-             <a href="<?php echo base_url('Mobile') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Beranda</p></a>
-            <p class="menu-border">Pelayanan</p>
+            <a href="<?php echo base_url('Mobile') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Beranda</p></a>
+            <a href="<?php echo base_url('Mobile/layanan') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Layanan</p></a>
             <a href="<?php echo base_url('Mobile/dokter_page') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Dokter</p></a>
             <a href="<?php echo base_url('Mobile/jadwal_dokter') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Jadwal Dokter</p></a>
-            <p class="menu-border">Berita Terbaru</p>
+            <a href="<?php echo base_url('News') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Berita</p></a>
         </div>
     </div>
 
@@ -94,19 +94,19 @@
             }
         });
 
-        $(document).ready(() => {
-            detectScreen();
-            $(window).on('resize', detectScreen);
-        })
+        // $(document).ready(() => {
+        //     detectScreen();
+        //     $(window).on('resize', detectScreen);
+        // })
 
-        function detectScreen() {
-            var width = $(window).width();
+        // function detectScreen() {
+        //     var width = $(window).width();
             
-            if (width >= 768) {
-                window.location.href = '<?= base_url('homedekstop') ?>';
-                console.log('mobile');
-            } 
-        }
+        //     if (width >= 768) {
+        //         window.location.href = '<?= base_url('homedekstop') ?>';
+        //         console.log('mobile');
+        //     } 
+        // }
     </script>
 </body>
 </html>
