@@ -502,7 +502,7 @@
                     </svg>
                 </span>
             </div>
-            <div class="nav-content show">
+            <div class="nav-content">
                 <ul class="nav-submenu">
                     <li><a href="#cur">Check Up Rutin</a></li>
                     <li><a href="#sa">Skrining Amblyopia</a></li>
@@ -523,12 +523,12 @@
             </div>
             <div class="nav-content">
                 <ul class="nav-submenu">
-                    <li><a href="#konsultasi">Konsultasi</a></li>
-                    <li><a href="#pemeriksaan">Pemeriksaan Dasar</a></li>
-                    <li><a href="#katarak">Klinik Mata Katarak</a></li>
-                    <li><a href="#retina">Klinik Mata Retina</a></li>
-                    <li><a href="#glaucoma">Klinik Mata Glaucoma</a></li>
-                    <li><a href="#anak">Klinik Mata Anak</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Konsultasi</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Pemeriksaan Dasar</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Klinik Mata Katarak</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Klinik Mata Retina</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Klinik Mata Glaucoma</a></li>
+                    <li><a href="<?= site_url('rawat_jalan/mobile'); ?>">Klinik Mata Anak</a></li>
                 </ul>
             </div>
         </div>

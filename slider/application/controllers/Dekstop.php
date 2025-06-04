@@ -40,7 +40,10 @@ class Dekstop extends CI_Controller {
         $this->load->view('dekstop/news');
     }
     public function layanan() {
-        $this->load->view('dekstop/layanan_page');
+        $this->load->view('dekstop/layanan');
+    }
+    public function rawat_jalan() {
+        $this->load->view('dekstop/rawat_jalan');
     }
     public function detail_layanan() {
         $this->load->view('dekstop/detail_layanan');
