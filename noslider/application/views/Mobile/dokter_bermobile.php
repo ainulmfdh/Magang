@@ -183,7 +183,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="doctor-card">
-                                    <img src="<?= base_url('asset/images/dokter.png'); ?>" alt="Doctor" class="img-fluid">
+                                    <img src="<?= base_url('asset/images/amir.jpeg'); ?>" alt="Doctor" class="img-fluid">
                                     <div class="doctor-info">
                                         <h3 class="doctor-name">dr. Ria Sandy Deneska, Sp.M(K)</h3>
                                         <p class="doctor-specialty">Dokter Oftalmologi Umum, Refraksi dan Low Vision</p>
