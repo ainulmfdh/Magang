@@ -42,4 +42,13 @@ class Mobile extends CI_Controller {
 		$data['doctors'] = $this->Dokter_model->get_all_doctors(); 
 		$this->load->view('mobile/jadwal_dokter', $data);
 	}
+
+	public function layanan() {
+        $this->load->view('mobile/layanan');
+    }
+    public function rawat_jalan() {
+        $this->load->view('mobile/rawat_jalan');
+    }	
 }
+
+	

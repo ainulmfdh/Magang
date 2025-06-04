@@ -378,12 +378,12 @@
                     </div>
                     <div class="nav-content">
                         <ul class="nav-submenu">
-                            <li><a href="#">Konsultasi</a></li>
-                            <li><a href="#">Pemeriksaan Dasar</a></li>
-                            <li><a href="#">Klinik Mata Katarak</a></li>
-                            <li><a href="#">Klinik Mata Retina</a></li>
-                            <li><a href="#">Klinik Mata Glaucoma</a></li>
-                            <li><a href="#">Klinik Mata Anak</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Konsultasi</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Pemeriksaan Dasar</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Pemeriksaan Dasar</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Klinik Mata Retina</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Klinik Mata Glaucoma</a></li>
+                            <li><a href="<?= base_url('dekstop/rawat_jalan'); ?>">Klinik Mata Anak</a></li>
                         </ul>
                     </div>
                 </div>
