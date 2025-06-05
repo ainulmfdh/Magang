@@ -48,6 +48,9 @@
             z-index: 40;
             transition: all 0.3s linear;
         }
+        #hamburger-menu > a {
+            
+        }
         .menu-border {
             border-bottom: 1px solid white;
             padding-bottom: 20px;
