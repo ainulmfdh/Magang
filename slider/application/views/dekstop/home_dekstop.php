@@ -623,10 +623,10 @@
                 </div>
                 <div id="menu-navbar" class="d-flex flex-row align-items-center">
                     <a href="<?= base_url('Dekstop') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Beranda</p></a>
-                    <p>Pelayanan</p>
+                    <a href="<?= base_url('Dekstop/layanan') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Pelayanan</p></a>
                     <a href="<?= base_url('Dekstop/dokter_page') ?>" style="text-decoration: none; color: black;"><p>Dokter</p></a>
                     <a href="<?= base_url('Dekstop/jadwal_dokter') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Jadwal Dokter</p></a>
-                    <p class="menu-border">Berita Terbaru</p>
+                    <a href="<?= base_url('News') ?>" style="text-decoration: none; color: black;"><p class="menu-border">Berita</p></a>
                 </div>
             </section>
 
