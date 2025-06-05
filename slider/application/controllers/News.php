@@ -99,7 +99,7 @@ class News extends CI_Controller {
 			$item->gambar = $item->news_cover;
 			$item->tanggal = $item->updated_at;
 		}
-        $this->load->view('Mobile/news_baru', $data);
+        $this->load->view('Mobile/news', $data);
 		$this->load->view('Mobile/footer');
     }
 

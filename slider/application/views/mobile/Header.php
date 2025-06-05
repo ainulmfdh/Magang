@@ -53,7 +53,7 @@
             <a href="<?php echo base_url('Mobile/layanan') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Layanan</p></a>
             <a href="<?php echo base_url('Mobile/dokter_page') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Dokter</p></a>
             <a href="<?php echo base_url('Mobile/jadwal_dokter') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Jadwal Dokter</p></a>
-            <a href="<?php echo base_url('News') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Berita</p></a>
+            <a href="<?php echo base_url('News/mobile') ?>" style="text-decoration: none; color: white;"><p class="menu-border">Berita</p></a>
         </div>
     </div>
 
