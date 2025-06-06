@@ -126,6 +126,6 @@ class News extends CI_Controller {
 
     $this->load->view('Mobile/header');
     $this->load->view('Mobile/news_detail', $data);
-    $this->load->view('Mobile/jammapsmobile');
+    $this->load->view('Mobile/footer');
     }
 }
